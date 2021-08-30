@@ -5,7 +5,7 @@ const Footer = () =>
 
 <footer 
 className="bg-dark w-100" >
-    <Container className="fluid text-center text-md-left p-2">
+    <Container className="text-center text-md-left p-2">
         <Row>
             <Col className="md-6 mt-md-0">
                 <h5 className="text-uppercase text-light">Sweet Home</h5>

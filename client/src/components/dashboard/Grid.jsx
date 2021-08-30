@@ -23,7 +23,7 @@ const Grid = ({updateTeam}) => {
         
     return (
         <Container className=" w-100 pb-3">
-            <Card  bg="light" fluid style={{"paddingLeft": "20px", "paddingTop": "5px", "margin":"20px"}}>
+            <Card  bg="light" style={{"paddingLeft": "20px", "paddingTop": "5px", "margin":"20px"}}>
                 <Row>
                     {radios.map((radio) => {
                         return (
@@ -42,7 +42,7 @@ const Grid = ({updateTeam}) => {
                     })}
                 </Row>
             </Card>
-            <div  fluid style={{"maxWidth":"1200px"}}>
+            <div style={{"maxWidth":"1200px"}}>
                <Row className="justify-content-center w-100 m-0">
                     { selectedRadio === "Equipe educative" &&
                     <>

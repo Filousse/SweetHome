@@ -8,7 +8,7 @@ const Header = () => {
         <Navbar>
         <Navbar.Brand >
         <Navbar.Brand className="justify-content-end">     
-              <Link to="/">
+              <Link to="/dashboard">
                 <img   
                     cursor= "pointer"
                     alt="disconnect"

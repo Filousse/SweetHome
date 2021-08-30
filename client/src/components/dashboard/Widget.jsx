@@ -16,7 +16,7 @@ const Widget = (props) => {
         case 'Equipe educative': {
             return {
               "backgroundColor": "rgb(209, 229, 255)",
-              "border-color": "#61a6fb",
+              "borderColor": "#61a6fb",
               "color": "#61a6fb",
               "cursor":"pointer"
             }
@@ -24,7 +24,7 @@ const Widget = (props) => {
         case 'Equipe Médical': {
             return  {
               "backgroundColor": "rgb(208, 250, 222)",
-              "border-color": "#28da69",
+              "borderColor": "#28da69",
               "color": "#28da69",
               "cursor":"pointer"
             }
@@ -32,7 +32,7 @@ const Widget = (props) => {
         case 'Administrateur': {
             return  {
               "backgroundColor": "rgb(252, 230, 248)",
-              "border-color": "#e826b1",
+              "borderColor": "#e826b1",
               "color": "#e826b1",
               "cursor":"pointer"
             }
@@ -40,7 +40,7 @@ const Widget = (props) => {
         default:
         return  {
           "backgroundColor": "rgb(252, 230, 248)", 
-          "border-color": "#e826b1",
+          "borderColor": "#e826b1",
           "color": "#e826b1",
           "cursor":"pointer" 
         }

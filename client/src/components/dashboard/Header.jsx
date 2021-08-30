@@ -1,5 +1,5 @@
 import React from "react"
-// import { useAuth } from "../../contexts/AuthContext"
+import { useSelector } from 'react-redux'
 import { useHistory, Link } from "react-router-dom"
 import { Navbar, Badge, Nav } from "react-bootstrap"
 import Logout from '../authentification/Logout'
@@ -7,24 +7,14 @@ import Logout from '../authentification/Logout'
 
 export default function Header(props) {
   const team = props.team
-  // const { currentUser } = useAuth()
-  // const { logout } = useAuth()
   const history = useHistory()
-
-  async function handleLogout() {
-    try {
-      // await logout()
-      history.push("/home")
-    } catch {
-      console.log("Failed to log out")
-    }
-  }
+  const userData = useSelector((state) => state.userReducer);
 
   const handleStaffSetting = () => {
     history.push("/create-staff")
   }
 
-  const getClass = (team) =>{
+  const switchColorTeam = (team) =>{
     switch(team){
         case 'Equipe educative': {
             return {"backgroundColor": "#61a6fb"}
@@ -41,45 +31,35 @@ export default function Header(props) {
   }
 
   return (
-        <Navbar style={getClass(team)}  expand="md">
+        <Navbar style={switchColorTeam(team)}  expand="md">
             <Navbar.Brand>
-              <Link to="/update-profile"> 
+              <Link to="/update-profil"> 
                 <img   
                     alt=""
-                    src="./assets/img/avatarIMG.jpeg"
+                    src={userData.photoProfil}
                     width="40"
                     height="40"
+                    style={{'borderRadius':'20px'}}
                     className="d-inline-block align-top" 
                   />
               </Link>   
             </Navbar.Brand>
             <Navbar.Text className="text-light" >
-             {/* Bonjour {currentUser.name}   */}
+              Bonjour {userData.name} 
             </Navbar.Text>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse className="justify-content-end">     
               <Nav.Link className="text-light" href="#Service" active="active" ></Nav.Link>
               { team === "Administrateur" && 
-               <Nav.Link className="text-light" onClick={handleStaffSetting} >Personnels</Nav.Link>
+               <Nav.Link className="text-light" onClick={handleStaffSetting} >Employés</Nav.Link>
               }   
               { team === ""  && 
-               <Nav.Link className="text-light" onClick={handleStaffSetting} >Personnels</Nav.Link>
+               <Nav.Link className="text-light" onClick={handleStaffSetting} >Employés</Nav.Link>
               }   
-                <Nav.Link className="text-light" href="#Contact">Usagers</Nav.Link>
-                <Nav.Link className="text-light" href="#Contact">Notification  <Badge class="badge-warning">4</Badge></Nav.Link>
+                <Nav.Link className="text-light" href="#Contact">Messages</Nav.Link>
+                <Nav.Link className="text-light" href="#Contact">Notification  <Badge className="badge-warning">4</Badge></Nav.Link>
                 <Navbar.Brand>
                   <Logout />
-                  {/* <Link style={{"{margin":"20px"}}>
-                    <img   
-                        onClick={handleLogout}
-                        cursor= "pointer"
-                        alt="disconnect"
-                        src="./assets/img/logout.png"
-                        width="25"
-                        height="25"
-                        className="d-inline-block " 
-                      />
-                  </Link> */}
                 </Navbar.Brand>
             </Navbar.Collapse>
         </Navbar> 

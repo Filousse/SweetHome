@@ -20,7 +20,6 @@ const corsOptions = {
   }
 app.use(cors(corsOptions));
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
@@ -33,7 +32,6 @@ app.get('/jwtid', requireAuth, (req,res) => {
 
 // routes
 app.use('/api/user', userRoutes)
-
 
 // server
 app.listen(process.env.PORT, () => {

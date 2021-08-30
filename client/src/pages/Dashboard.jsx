@@ -6,8 +6,6 @@ import Footer from "../components/Footer"
 const Dashboard = () => {
   const [team, updateTeam ]= useState("")
 
-
-  console.log("team in parents=>", team);
   return (
   
     <>

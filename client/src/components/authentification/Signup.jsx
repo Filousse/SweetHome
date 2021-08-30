@@ -6,7 +6,7 @@ import { Link} from "react-router-dom"
 
 
 const Signup = () => {
-  const [loading, setLoading] = useState(false);
+const [loading, /*setLoading*/] = useState(false);
   const [formSubmit, setFormSubmit] = useState(false);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -15,7 +15,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [controlPassword, setControlPassword] = useState("");
-  const [ adminName, setAdminName ] = useState("admin name")
+  const [ adminName, /*setAdminName*/ ] = useState("admin name")
   const [team, setTeam] = useState("");
   const [job, setJob] = useState("");
 
