@@ -22,7 +22,12 @@ const Logout = () => {
   };
 
   return (
-      <img onClick={logout} src="./assets/img/logout.png" alt="logout" />
+      <img 
+        onClick={logout} 
+        src="./assets/img/logout.png" 
+        alt="logout"
+        style={{"height":"30px", "width":"30px"}}
+      />
   );
 };
 

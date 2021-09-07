@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { uploadPicture } from "../../actions/user.action";
+import { uploadPicture } from "../../actions/user.actions";
 
 const UploadImg = () => {
 const [loading, setLoading] = useState(false);
@@ -19,6 +19,7 @@ const userData = useSelector((state) => state.userReducer);
 
     dispatch(uploadPicture(data, userData._id));
     setLoading(!loading);
+    window.location = "/update-profil"
   };
 
   return (

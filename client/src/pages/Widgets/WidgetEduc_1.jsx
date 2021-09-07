@@ -5,7 +5,7 @@ import Header from "../../components/dashboard/Header"
 const WidgetEduc_1 = () => {
     return (
         <>
-            <Header></Header>
+            <Header logout={false}></Header>
             WidgetEduc_1
         </>
     );

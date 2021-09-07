@@ -1,11 +1,13 @@
 import React from "react";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import { Card, Col } from 'react-bootstrap';
+import { useSelector } from "react-redux";
+
 
 const Widget = (props) => {
   const { data } = props;
-  const team = props.team;
-  const history = useHistory()
+  const history = useHistory();
+  const userdata = useSelector(state => state.userReducer);
 
   const handleWidget = ()=> {
     history.push('/'+data.name)
@@ -13,7 +15,7 @@ const Widget = (props) => {
 
   const getClass = (team) =>{
     switch(team){
-        case 'Equipe educative': {
+        case 'Éducative': {
             return {
               "backgroundColor": "rgb(209, 229, 255)",
               "borderColor": "#61a6fb",
@@ -21,7 +23,7 @@ const Widget = (props) => {
               "cursor":"pointer"
             }
         }
-        case 'Equipe Médical': {
+        case 'Médical': {
             return  {
               "backgroundColor": "rgb(208, 250, 222)",
               "borderColor": "#28da69",
@@ -29,7 +31,7 @@ const Widget = (props) => {
               "cursor":"pointer"
             }
         }
-        case 'Administrateur': {
+        case '': {
             return  {
               "backgroundColor": "rgb(252, 230, 248)",
               "borderColor": "#e826b1",
@@ -49,10 +51,10 @@ const Widget = (props) => {
 
   return (
     <Col className="d-flex justify-content-center col-md-3 col-sm-4 col-xs-6" >
-    <Card className="widget" style={getClass(team)}  onClick={handleWidget} >
+    <Card className="widget" style={getClass(userdata.team)}  onClick={handleWidget} >
       <img className="img" src={data.flag} alt="flag" />
       <div className="data-container" >
-        <ul style={getClass(team)} >
+        <ul style={getClass(userdata.team)} >
           <p>{data.name}</p>
         </ul>
       </div>

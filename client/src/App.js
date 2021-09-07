@@ -3,7 +3,7 @@ import { UidContext } from "./components/appContext";
 import axios from "axios";
 import Routes from "./components/routes/Routes";
 import { useDispatch } from "react-redux";
-import { getUser } from './actions/user.action';
+import { getUser } from './actions/user.actions';
 
 const App = () => {
   const [uid, setUid] = useState(null);
@@ -17,7 +17,6 @@ const App = () => {
         withCredentials: true,
       })
         .then((res) => {
-          console.log(res.data);
           setUid(res.data);
         })
         .catch((err) => console.log("No token"));

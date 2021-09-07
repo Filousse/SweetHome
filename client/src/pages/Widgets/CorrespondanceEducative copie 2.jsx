@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from "../../components/widget/Header";
+import Header from "../../components/dashboard/Header";
 import Footer from "../components/Footer"
 
 
 const CorrespondanceEducative = () => {
     return (
         <>
-            <Header></Header>
+            <Header logout={false}></Header>
             CorrespondanceEducative
             <Footer/>
 

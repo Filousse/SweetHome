@@ -1,0 +1,43 @@
+.left-nav-container {
+    position: absolute;
+    right:  100px;
+    top: 80px;
+    .icons {
+      position: fixed;
+      z-index: 10;
+      
+      .icons-bis {
+        cursor: pointer;
+        background-color: #FCF3CF;
+        border: solid black 1px;
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+            .img {
+                position: relative;
+                left: 15px;
+                top: 12px;
+            }
+        }
+        .icons-bis {
+            @media screen and(max-width: 590px) {
+                height: 50px;
+                width: 50px;
+                .img {
+                    position: relative;
+                    left: 11px;
+                    top: 9px;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        } 
+        img{
+            height: 50px;
+            width: 50px;
+        }
+       
+         
+    }  
+}
+  

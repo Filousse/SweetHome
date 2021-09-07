@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "../uploads/profil/random-user.png"
     },
+    association:{
+      type: String,
+      trim: true
+    },
     bio :{
       type: String,
       max: 1024,
@@ -42,11 +46,9 @@ const userSchema = new mongoose.Schema(
     },
     adminName: {
       type: String,
-      required: true,
     },
     team: {
       type: String,
-      required: true,
       trim: true
     },
     job: {
@@ -67,8 +69,6 @@ const userSchema = new mongoose.Schema(
         from: {type: String},
         message: {type: String}
     }],
-    
-
   },
   {
     timestamps: true,

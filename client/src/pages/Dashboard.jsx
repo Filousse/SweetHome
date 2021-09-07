@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from '../components/dashboard/Header'
 import Grid from '../components/dashboard/Grid'
 import Footer from "../components/Footer"
+import SwitchUser from "../components/dashboard/SwitchUser"
 
 const Dashboard = () => {
-  const [team, updateTeam ]= useState("")
 
   return (
   
     <>
-      <Header team={team}></Header>
-      <Grid team={team} updateTeam={updateTeam}></Grid>
+      <Header logout={true}></Header>
+      <SwitchUser />
+      <Grid></Grid>
       <Footer/>
     </>
   );
