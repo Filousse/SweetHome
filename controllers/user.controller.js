@@ -19,7 +19,6 @@ module.exports.userInfo = (req, res) => {
 module.exports.updateUser = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknown : " + req.params.id);
-
   try {
     await UserModel.findOneAndUpdate(
       { _id: req.params.id },
@@ -27,7 +26,6 @@ module.exports.updateUser = async (req, res) => {
         $set: {
           photoProfil: req.body.photoProfil,
           bio: req.body.bio,
-          
         },
       },
       { new: true, upsert: true, setDefaultsOnInsert: true },

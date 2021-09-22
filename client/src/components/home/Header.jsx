@@ -18,7 +18,7 @@ const Header = () => {
         <Navbar.Brand>
             <Button onClick={handleLogin} size="sm" style={{"marginRight":"10px"}} variant="light" >Se connecter</Button>
             <Button onClick={handleSignIn} size="sm" style={{"marginRight":"10px"}} variant="warning" >Essai Gratuit</Button>
-            <Button onClick={handleSignIn} size="sm" variant="danger" >Visite Gratuit</Button>
+            <Button onClick={handleSignIn} size="sm" variant="danger" >Visite Gratuite</Button>
 
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Card, Row, Col, Container } from "react-bootstrap"
+import { Form, Button, Card, Row, Container } from "react-bootstrap"
 import axios from "axios";
 import Login from "./Login";
 import { Link } from "react-router-dom"
@@ -9,7 +9,6 @@ const Signup = (props) => {
   const [formSubmit, setFormSubmit] = useState(false);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
-  const [photoProfil, setPhotoProfil] = useState("photo");
   const [association, setAssociation] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

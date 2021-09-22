@@ -1,25 +1,22 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { Button } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-import Delete from './Delete';
-import ModalReferences from './ModalReferences';
-
-
+import { Link } from "react-router-dom";
+import Delete from './DeleteUser';
+import ModalRefs from './RefsSettings/ModalRefs';
+import {uid } from '../appContext'
 const Read = () => {
     const usersData = useSelector((state) => state.usersReducer);
     const userData = useSelector((state) => state.userReducer);
 
-    const history = useHistory()
-
-    const handelCreateEmployee = () => {
-        history.push("/employee-create")
-    }
-
     return (
         <>
             <div className="table-responsive pl-3 pr-3">
-                <Button className="mb-3 mt-3 bg-warning border border-dark text-light" onClick={handelCreateEmployee}>Nouvel employé</Button>
+                <div className="justify-content-center d-flex align-items-center m-2" style={{ cursor: "pointer", border: '1px solid black', width: '55px', height: '55px', borderRadius: '20px' }}>
+                    <Link className="p-3" to="/employee-create">
+                        <img src="./assets/icon/addEmployee.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                    </Link>
+                </div>
                 <table className="table table-sm">
                     <thead class="bg-primary">
                         <tr class="bg-primary">
@@ -46,15 +43,17 @@ const Read = () => {
                                         <td class="table-primary" >{user.name} {user.surname}</td>
                                         <td class="table-primary" >{user.job}</td>
                                         <td class="table-primary" >
-                                            <ModalReferences
-                                                DataUser_id={user._id}
-                                                DataName={user.name} DataSurname={user.surname} />
+                                            <ModalRefs
+                                                user_team={user.team}
+                                                user_id={user._id}
+                                                user_adminName={user.adminName}
+                                            />
                                         </td>
                                         <td class="table-primary" >
                                             <Delete
                                                 DataUser_id={user._id}
-                                                DataName={user.name}
-                                                DataSurname={user.surname}
+                                                name={user.name}
+                                                surname={user.surname}
                                             />
                                         </td>
                                     </tr>
@@ -90,23 +89,22 @@ const Read = () => {
                                         <td class="table-success" >{user.name} {user.surname}</td>
                                         <td class="table-success" >{user.job}</td>
                                         <td class="table-success" >
-                                            <ModalReferences
-                                                DataUser_id={user._id}
-                                                DataName={user.name} DataSurname={user.surname} />
+                                            <ModalRefs
+                                                user_team={user.team}
+                                                user_id={user._id} 
+                                                user_adminName={user.adminName}
+                                            />
                                         </td>
                                         <td class="table-success" >
                                             <Delete
                                                 DataUser_id={user._id}
-                                                DataName={user.name}
-                                                DataSurname={user.surname}
+                                                name={user.name}
+                                                surname={user.surname}
                                             />
                                         </td>
                                     </tr>
                                 );
-                            } else {
-                                return [];
-                            }
-
+                            } else { return []; }
                         })}
                     </tbody>
                 </table>

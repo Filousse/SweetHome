@@ -24,9 +24,9 @@ const Logout = () => {
   return (
       <img 
         onClick={logout} 
-        src="./assets/img/logout.png" 
+        src="./assets/icon/logout.png" 
         alt="logout"
-        style={{"height":"30px", "width":"30px"}}
+        style={{"height":"30px", "width":"30px", cursor:"pointer"}}
       />
   );
 };

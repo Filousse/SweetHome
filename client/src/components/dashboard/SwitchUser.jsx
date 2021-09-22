@@ -5,8 +5,6 @@ import axios from "axios";
 import cookie from "js-cookie";
 import { useHistory } from "react-router-dom"
 
-
-
 function MydModalWithGrid(props) {
     const history = useHistory()
     const user = useSelector(state => state.usersReducer);
@@ -64,38 +62,34 @@ function MydModalWithGrid(props) {
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[11].photoProfil}
+                                        src={user[1].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}
                                         className="d-inline-block align-top"
                                     />
                                 </td>
-                                <td className="pt-3">{user[11].surname} {user[11].name}</td>
-                                <td className="pt-3">{user[11].job}</td>
-                                <td><Button onClick={() => handelSwitchUser(user[11].email, user[11].name)} variant="outline-primary" >Service Éducatif</Button></td>
+                                <td className="pt-3">{user[2].surname} {user[2].name}</td>
+                                <td className="pt-3">{user[2].job}</td>
+                                <td><Button onClick={() => handelSwitchUser(user[2].email, user[2].name)} variant="outline-primary" >Service Éducatif</Button></td>
 
                             </tr>
-                        </>
-                    }
-                    {admin.name !== "Alfana" &&
-                        <>
                             <tr className="table-success" >
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[12].photoProfil}
+                                        src={user[1].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}
                                         className="d-inline-block align-top"
                                     />
                                 </td>
-                                <td className="pt-3">{user[12].surname}</td>
-                                <td className="pt-3">{user[12].job}</td>
+                                <td className="pt-3">{user[5].surname} {user[5].name}</td>
+                                <td className="pt-3">{user[5].job}</td>
                                 <td >
                                     <Button
-                                        onClick={() => handelSwitchUser(user[12].email, user[12].name)} variant="outline-success" >Service Médical</Button>
+                                        onClick={() => handelSwitchUser(user[5].email, user[5].name)} variant="outline-success" >Service Médical</Button>
                                 </td>
                             </tr>
                         </>
@@ -119,7 +113,7 @@ const SwitchUser = () => {
             <div className="left-nav-container">
                 <div className="icons">
                     <div onClick={() => setModalShow(true)} className="icons-bis">
-                        <img className="img" src="./assets/img/switchUser.png" alt="home" />
+                        <img className="img" src="./assets/icon/switchUser.png" alt="home" />
                     </div>
                 </div>
             </div>

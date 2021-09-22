@@ -3,13 +3,13 @@ import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadPicture } from "../../actions/user.actions";
 
-const UploadImg = () => {
+const UploadImage = () => {
 const [loading, setLoading] = useState(false);
 const [file, setFile] = useState();
 const dispatch = useDispatch();
 const userData = useSelector((state) => state.userReducer);
 
-  const handlePicture = (e) => {
+  const handlePicture = async (e) => {
     setLoading(!loading);
     e.preventDefault();
     const data = new FormData();
@@ -17,9 +17,8 @@ const userData = useSelector((state) => state.userReducer);
     data.append("userId", userData._id);
     data.append("file", file);
 
-    dispatch(uploadPicture(data, userData._id));
+    await dispatch(uploadPicture(data, userData._id));
     setLoading(!loading);
-    window.location = "/update-profil"
   };
 
   return (
@@ -37,4 +36,4 @@ const userData = useSelector((state) => state.userReducer);
   );
 };
 
-export default UploadImg;
+export default UploadImage;

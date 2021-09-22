@@ -5,9 +5,7 @@ export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
 export const UPDATE_BIO = "UPDATE_BIO";
 export const DELETE_USER = "DELETE_USER";
 
-
 export const GET_USER_ERRORS = "GET_USER_ERRORS";
-
 
 export const getUser = (uid) => {
     return(dispatch) => {
@@ -54,15 +52,17 @@ export const uploadPicture = (data, id) => {
     };
   };
 
+ 
   export const deleteUser = (userId) => {
-    return (dispatch) => {
-      return axios({
-        method: "delete",
-        url: `${process.env.REACT_APP_API_URL}api/user/` + userId,
-      })
-        .then((res) => {
-          dispatch({ type: DELETE_USER, payload: res.data });
+    return(dispatch) => {
+        axios.delete(`${process.env.REACT_APP_API_URL}api/user/`+ userId)
+        .then((res)=> {
+            axios.get(`${process.env.REACT_APP_API_URL}api/user`)
+            .then((res) =>{
+                dispatch({type: DELETE_USER, payload: res.data });
+            })
+            .catch((err)=> console.log(err));
         })
-        .catch((err) => console.log(err));
-    };
-  };
+        .catch((err)=> console.log(err));
+    }
+}

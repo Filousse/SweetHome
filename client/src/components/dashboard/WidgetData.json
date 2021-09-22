@@ -21,7 +21,7 @@
         },
         {
           "flag": "./assets/img/003-journal-de-bord.png",
-          "name": "cahier de correspondance"  
+          "name": "cahier de transmission"  
         }
     ],  
     "overall" : [
@@ -31,7 +31,7 @@
         },
         {
         "flag": "./assets/img/003-tchat-telephonique.png",
-        "name": "Messagerie"
+        "name": "Contacts téléphonique"
       },
         {
           "flag": "./assets/img/001-blueprint.png",

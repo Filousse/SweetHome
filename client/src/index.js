@@ -8,6 +8,7 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { getUsers } from './actions/users.actions';
+import { getGuests } from './actions/guest.actions';
 // DevTools
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
@@ -17,6 +18,7 @@ const store = createStore(
 )
 
 store.dispatch(getUsers())
+store.dispatch(getGuests())
 
 ReactDOM.render(
   <Provider store={store}>

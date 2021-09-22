@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Modal } from "react-bootstrap"
 import { useDispatch } from "react-redux";
-import { deleteUser } from "../../actions/user.actions";
+import { deleteGuest } from "../../actions/guest.actions";
 
-
-const Delete = (props) => {
-    const userId = props.DataUser_id;
-    const userName = props.DataName;
-    const userSurname = props.DataSurname;
+const DeleteGuest = (props) => {
+    const guestName = props.DataName;
+    const guestSurname = props.DataSurname;
+    const guestId = props.DataId;
     const dispatch = useDispatch();
 
     const [show, setShow] = useState(false);
@@ -15,9 +14,9 @@ const Delete = (props) => {
     const handleShow = () => setShow(true);
 
     const handleDelete = () => {
-        dispatch(deleteUser(userId));
-        window.location = "/employee";
-        setShow(false);
+        dispatch(deleteGuest(guestId));
+        // window.location = "/guest";
+        // setShow(false);
     };
 
     return (
@@ -25,7 +24,7 @@ const Delete = (props) => {
             <img
                 onClick={handleShow}
                 src="./assets/icon/delete.png"
-                className="icon"
+                style={{width:"30px", height:"30px", cursor:"pointer"}}
                 alt="basket_icon"
             />
             <Modal show={show} onHide={handleClose}>
@@ -33,7 +32,7 @@ const Delete = (props) => {
                     <Modal.Title >Avertissement :</Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
-                    Êtes-vous sûr de supprimer le compte de {userName} {userSurname}!
+                        Êtes-vous sûr de supprimer le compte de {guestId} {guestName} {guestSurname}!
                     </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
@@ -48,4 +47,4 @@ const Delete = (props) => {
     )
 }
 
-export default Delete;
+export default DeleteGuest;

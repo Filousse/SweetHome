@@ -9,9 +9,15 @@ import UpdateProfil from "../profil/UpdateProfil"
 // Routes pages
 import Home from "../../pages/Home"
 import Dashboard from "../../pages/Dashboard"
-import Read from "../../pages/Employee"
-// Routes employee
-import Create from "../employee/Create"
+import ReadUsers from "../../pages/Employee"
+import CreateUsers from "../employee/CreateUsers"
+import ReadGuests from "../../pages/Guest"
+import NewGuest from "../guest/CreateGuest/NewGuest"
+import ProfilGuest from "../guest/CreateGuest/ProfilGuest"
+import FilesGuest from "../guest/CreateGuest/FilesGuest"
+
+
+
 // Routes widgets pages 
 import CorrespondanceEducative from "../../pages/Widgets/CorrespondanceEducative"
 import WidgetEduc_1 from "../../pages/Widgets/WidgetEduc_1"
@@ -29,8 +35,12 @@ const Routes = () => {
                 {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/update-profil" component={UpdateProfil} />
-                <Route path="/employee" component={Read} />
-                <Route path="/employee-create" component={Create} />
+                <Route path="/employee" component={ReadUsers} />
+                <Route path="/employee-create" component={CreateUsers} />
+                <Route path="/guest" component={ReadGuests} />
+                <Route path="/new-guest" component={NewGuest} />
+                <Route path="/profil-guest" component={ProfilGuest} />
+                <Route path="/files-guest" component={FilesGuest} />
                 <Route path="/Cahier de correspondance" component={CorrespondanceEducative} />
                 <Route path="/widgetEduc_1" component={WidgetEduc_1} />
             </Switch>

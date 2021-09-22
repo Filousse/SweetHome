@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
-const followController = require("../controllers/follow.controller");
 const uploadController = require("../controllers/upload.controller");
 const multer = require('multer');
 const upload = multer();
@@ -20,11 +19,5 @@ router.delete('/:id', userController.deleteUser);
 
 // upload
 router.post('/upload', upload.single('file'), uploadController.uploadProfil)
-
-// follow => a faire quand la collection beneficary sera créer!
-router.patch('/followEducatif/:id', followController.followByEducatif);
-router.patch('/followMedical/:id', followController.followByMedical)
-router.patch('/unFollowEducatif/:id', followController.unFollowByEducatif)
-router.patch('/unFollowMedical/:id', followController.unFollowByMedical)
 
 module.exports =  router;

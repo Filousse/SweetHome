@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/dashboard/Header'
-import Read from '../components/employee/Read'
+import ReadUsers from '../components/employee/ReadUsers';
 import Footer from '../components/Footer';
 
 const Employee = () => {
     return (
         <>
             <Header />
-            <Read />
+            <ReadUsers />
             <Footer />
         </>
     );
