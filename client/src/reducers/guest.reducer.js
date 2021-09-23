@@ -11,20 +11,11 @@ export default function gestReducer(state = initialState, action) {
         case DELETE_GUEST:
             return action.payload;
         case UPDATE_EDUC_REF:
-            return {
-                ...state,
-                educRef: action.payload
-            }
+            return action.payload;
         case UPDATE_MEDICAL_REF:
-            return {
-                ...state,
-                educRef: action.payload
-            }
+            return action.payload;
         case UPLOAD_GUEST_PIC:
-            return {
-                ...state,
-                picture: action.payload,
-            }
+            return action.payload;
         default:
             return state;
     }

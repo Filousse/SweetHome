@@ -72,7 +72,7 @@ export const uploadGuestPicture = ( data, id ) => {
         })
         return axios.get(`${process.env.REACT_APP_API_URL}api/guest/` + id)
         .then((res)=> {
-            dispatch({ type: UPLOAD_GUEST_PIC, payload: res.data });
+            dispatch({ type: UPLOAD_GUEST_PIC, payload: res.data.picture });
         })
     }
 }
@@ -99,7 +99,7 @@ export const updateMedicalRef = ( guestId, medicalRef ) => {
         data: { medicalRef },
       })
         .then((res) => {
-            dispatch({ type: UPDATE_EDUC_REF, payload: medicalRef });
+            dispatch({ type: UPDATE_MEDICAL_REF, payload: medicalRef });
         })
         .catch((err) => console.log(err));
     };

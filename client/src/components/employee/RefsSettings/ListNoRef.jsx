@@ -1,8 +1,11 @@
-import React from 'react';
-import { useDispatch } from "react-redux";
-import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions"
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions"
+import { isEmpty } from "../../Utils"
 
 const ListNoRef = (props) => {
+    const [ loading, setLoading ] = useState(false);
+    const guestsData = useSelector((state) => state.guestsReducer);
     const user_id = props.user_id;
     const guest_id = props.guest_id;
     const guestName = props.guest_name;
@@ -13,19 +16,22 @@ const ListNoRef = (props) => {
     const user_adminName = props.user_adminName;
     const dispatch = useDispatch();
 
+
+    useEffect(() => {
+        !isEmpty(guestsData) && setLoading(false);
+    }, [guestsData]);
+
     const handelAddRef = () => {
         if (user_team === "Éducative") {
-            // console.log("user_adminName=>", user_adminName);
-            // console.log("user_team =>", user_team);
-            // console.log("user_id ADD EDUC=>", user_id);
-            // console.log("guest_id ADD EDUC=>", guest_id);
             dispatch(updateEducRef(guest_id, user_id));
+            dispatch(getGuests());
+            alert("Votre bénéficiare à été ajouter !")
+            window.location = "/employee";
         } else {
-            // console.log("user_adminName=>", user_adminName);
-            // console.log("user_team =>", user_team);
-            // console.log("user_id ADD MEDICAL=>", user_id);
-            // console.log("guest_id ADD MEDICAL=>", guest_id);
             dispatch(updateMedicalRef(guest_id, user_id));
+            dispatch(getGuests());
+            alert("Votre bénéficiare à été ajouter !")
+            window.location = "/employee";
         }
     }
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Modal, Button } from "react-bootstrap"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import ListRef from "./ListRef"
 import ListNoRef from "./ListNoRef"
 
@@ -14,7 +14,6 @@ function MydModalWithGrid(props) {
 
     const handleToggle = () => {
         setToggleModal(!toggleModal);
-        console.log("user_adminName=>", user_adminName);
     }
 
     return (
@@ -43,7 +42,7 @@ function MydModalWithGrid(props) {
                                             guest_name={guest.name}
                                             guest_surname={guest.surname}
                                             guest_picture={guest.picture}
-                                            guest_team={user_team}
+                                            user_team={user_team}
                                         />
                                     )
                                 }
@@ -55,7 +54,7 @@ function MydModalWithGrid(props) {
                                             guest_name={guest.name}
                                             guest_surname={guest.surname}
                                             guest_picture={guest.picture}
-                                            guest_team={user_team}
+                                            user_team={user_team}
                                         />
                                     )
                                 }
@@ -88,7 +87,6 @@ function MydModalWithGrid(props) {
                                             guest_surname={guest.surname}
                                             guest_picture={guest.picture}
                                             guest_adminName={guest.adminName}
-
                                             user_team={user_team}
                                             user_adminName={user_adminName}
                                         />

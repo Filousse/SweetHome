@@ -26,11 +26,12 @@ const IconHoverInfo = (props) => {
             <div class="container">
                 <div class="tooltip--right" data-tooltip={data}>
                     <img
-                        class="size_of_img"
+                        // style={{marginLeft:"-10px"}}
                         alt=""
                         src={srcImg}
                         width="40"
                         height="40"
+                        
                         class={switchColorTeam(team)}
                     />
                 </div>

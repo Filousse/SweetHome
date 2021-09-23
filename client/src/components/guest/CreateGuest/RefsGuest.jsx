@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Form, Row, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions";
+import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions";
 import { isEmpty } from "../../Utils";
 
 
@@ -20,20 +20,18 @@ const RefsGuest = () => {
         !isEmpty(guestsData[guestsData.length - 1]) && setLoading(false);
     }, [guestsData]);
 
-    const handelEducRef = async () => {
-        await dispatch(updateEducRef(guestsData[guestsData.length - 1]._id, educRef));
+    const handelEducRef = () => {
         setLoading(true);
-        axios.get(`${process.env.REACT_APP_API_URL}api/guest/${guestsData[guestsData.length - 1]._id}`)
-        .then((res)=> {
-            console.log(res);
-        });
-        setLoading(false);
-
+        dispatch(updateEducRef(guestsData[guestsData.length - 1]._id, educRef));
+        dispatch(getGuests());
+        setLoading(false)
     }
 
-    const handelMedicalRef = async () => {
-        await dispatch(updateMedicalRef(guestsData[guestsData.length - 1]._id, medicalRef));
+    const handelMedicalRef = () => {
         setLoading(true);
+        dispatch(updateMedicalRef(guestsData[guestsData.length - 1]._id, medicalRef));
+        dispatch(getGuests());
+        setLoading(false)
     }
     return (
         <>
@@ -56,7 +54,7 @@ const RefsGuest = () => {
                             })}
                         </Form.Control>
                         <Button onClick={handelEducRef} className="w-100 mt-2">
-                            {isLoading ? "Valider" : "Envoyer"}
+                            {isLoading ? "Envoi..." : "Valider"}
                         </Button>
                         { usersData.map((user) => {
                                 if (user._id === guestsData[guestsData.length - 1].educRef) {
@@ -82,7 +80,7 @@ const RefsGuest = () => {
                             })}
                         </Form.Control>
                         <Button onClick={handelMedicalRef} className="w-100 mt-2">
-                            {isLoading ? "Valider" : "Envoyer"}
+                        {isLoading ? "Envoi..." : "Valider"}
                         </Button>
                         { usersData.map((user) => {
                                 if (user._id === guestsData[guestsData.length - 1].medicalRef) {

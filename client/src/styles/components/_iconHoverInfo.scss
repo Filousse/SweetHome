@@ -9,13 +9,13 @@ $cubic: cubic-bezier(.64,.09,.08,1);
     content: attr(data-tooltip);
     padding: 6px 10px;
     top: 1.4em;
-    left: 50%;
+    left: 80%;
     transform: translateX(-50%) translateY(-2px);
-    background: black;
-    color: white;
+    color : black;
+    background: white;
     white-space: nowrap;
     z-index: 2;
-    border-radius: 20px;
+    border-radius: 5px;
     transition: opacity 0.2s $cubic, transform 0.2s $cubic;
   }
   &:hover {
@@ -40,4 +40,6 @@ $cubic: cubic-bezier(.64,.09,.08,1);
     }
   }
 }
+
+
 

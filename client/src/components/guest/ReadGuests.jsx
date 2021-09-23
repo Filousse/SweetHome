@@ -47,7 +47,7 @@ const ReadGuests = () => {
                                             <td class="table-warning" ></td>
                                             <td class="table-warning" style={{ maxWidth: "50px" }}  >
                                                 <Row className="justify-content-md-start">
-                                                    <Col xs lg="2" >
+                                                    <Col xs lg="2" style={{ backgroundImage: "url(/assets/icon/001-nothing.png)", height:'35px', backgroundRepeat: 'no-repeat',backgroundPosition: "center" }}>
                                                         {usersData.map((user) => {
                                                             if (user._id === guest.educRef) {
                                                                 return (
@@ -56,7 +56,7 @@ const ReadGuests = () => {
                                                             }
                                                         })}
                                                     </Col>
-                                                    <Col xs lg="2">
+                                                    <Col xs lg="2" style={{ backgroundImage: "url(/assets/icon/001-nothing.png)", height:'35px', backgroundRepeat: 'no-repeat',backgroundPosition: "center" }}>
                                                         {usersData.map((user) => {
                                                             if (user._id === guest.medicalRef) {
                                                                 return (

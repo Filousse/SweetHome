@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { isEmpty } from "../../Utils";
 
 import RefsGuest from "./RefsGuest";
-import { uploadGuestPicture } from "../../../actions/guest.actions"
+import { uploadGuestPicture, getGuests } from "../../../actions/guest.actions"
 
 const ProfilGuest = () => {
     const error = useSelector((state) => state.errorReducer.guestError);
@@ -20,17 +20,13 @@ const ProfilGuest = () => {
       }, [guestsData]);
 
 
-    const handlePicture = async () => {
+    const handlePicture = () => {
         const data = new FormData();
         data.append("name", guestsData[guestsData.length - 1].name);
         data.append("guestId", guestsData[guestsData.length - 1]._id);
         data.append("file", file);
-        await dispatch(uploadGuestPicture(data, guestsData[guestsData.length - 1]._id));
-        setLoading(true);
-        axios.get(`${process.env.REACT_APP_API_URL}api/guest/${guestsData[guestsData.length - 1]._id}`)
-        .then((res)=> {
-            console.log(res);
-        });
+        dispatch(uploadGuestPicture(data, guestsData[guestsData.length - 1]._id));
+        dispatch(getGuests());
     };
     
     return (

@@ -1,20 +1,35 @@
-import React from 'react';
-import { useDispatch } from "react-redux";
-import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions"
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions"
+import { isEmpty } from "../../Utils"
 
 const ListRef = (props) => {
+    const [ loading, setLoading ] = useState(false);
+    const guestsData = useSelector((state) => state.guestsReducer);
     const guest_id = props.guest_id;
     const guestName = props.guest_name;
     const guestSurname = props.guest_surname;
     const guest_picture = props.guest_picture;
-    const guest_team = props.guest_team;
+    const user_team = props.user_team;
+
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        !isEmpty(guestsData) && setLoading(false);
+    }, [guestsData]);
+
     const handelDeleteRef = () => {
-        if(guest_team === "Éducative"){
+        if (user_team === "Éducative") {
             dispatch(updateEducRef(guest_id, ""));
-        }else {
+            dispatch(getGuests());
+            alert("Votre bénéficiare à été ajouter !")
+            window.location = "/employee";
+
+        } else {
             dispatch(updateMedicalRef(guest_id, ""));
+            dispatch(getGuests());
+            alert("Votre bénéficiare à été ajouter !")
+            window.location = "/employee";
         }
     }
 
