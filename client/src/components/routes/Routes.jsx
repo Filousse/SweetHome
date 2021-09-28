@@ -10,11 +10,13 @@ import UpdateProfil from "../profil/UpdateProfil"
 import Home from "../../pages/Home"
 import Dashboard from "../../pages/Dashboard"
 import ReadUsers from "../../pages/Employee"
-import CreateUsers from "../employee/CreateUsers"
+import CreateUser from "../user/CreateUser"
 import ReadGuests from "../../pages/Guest"
-import NewGuest from "../guest/CreateGuest/NewGuest"
-import ProfilGuest from "../guest/CreateGuest/ProfilGuest"
-import FilesGuest from "../guest/CreateGuest/FilesGuest"
+import NewGuest from "../guest/createGuest/NewGuest"
+import PictureGuest from "../guest/createGuest/PictureGuest"
+import RefsGuest from "../guest/createGuest/RefsGuest"
+
+import FilesGuest from "../guest/filesGuest/FilesGuest"
 
 
 
@@ -36,10 +38,11 @@ const Routes = () => {
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/update-profil" component={UpdateProfil} />
                 <Route path="/employee" component={ReadUsers} />
-                <Route path="/employee-create" component={CreateUsers} />
+                <Route path="/employee-create" component={CreateUser} />
                 <Route path="/guest" component={ReadGuests} />
                 <Route path="/new-guest" component={NewGuest} />
-                <Route path="/profil-guest" component={ProfilGuest} />
+                <Route path="/picture-guest" component={PictureGuest} />
+                <Route path="/references-guest" component={RefsGuest} />
                 <Route path="/files-guest" component={FilesGuest} />
                 <Route path="/Cahier de correspondance" component={CorrespondanceEducative} />
                 <Route path="/widgetEduc_1" component={WidgetEduc_1} />

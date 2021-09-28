@@ -62,7 +62,7 @@ function MydModalWithGrid(props) {
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[1].photoProfil}
+                                        src={user[2].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}
@@ -78,7 +78,7 @@ function MydModalWithGrid(props) {
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[1].photoProfil}
+                                        src={user[5].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}

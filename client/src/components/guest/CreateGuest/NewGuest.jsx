@@ -24,7 +24,7 @@ const NewGuest = () => {
             educRef,
             medicalRef,
             ));
-        history.push('./profil-guest');
+        history.push('./Picture-guest');
       }
 
     return (
@@ -76,9 +76,6 @@ const NewGuest = () => {
                                 </Form.Control>
                             </Form.Group>
                             <Button className="w-100 mt-3" type="submit" >Créer le dossier bénéficiare</Button>
-                            <Row className="justify-content-center mt-4">
-                                <Link to='/guest'>Retour à la liste des bénéficiares</Link>
-                            </Row>
                         </Form>
                     </Card.Body>
                 </Card>

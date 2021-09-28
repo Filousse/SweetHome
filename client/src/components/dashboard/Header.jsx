@@ -62,7 +62,7 @@ export default function Header(props) {
             ) : (
               <>
                 <Navbar.Brand >
-                  <Link to="/">
+                  <Link to="/guest">
                     <img src="./assets/icon/references.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
                   </Link>
                 </Navbar.Brand>

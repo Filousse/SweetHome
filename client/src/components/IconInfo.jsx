@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconHoverInfo = (props) => {
+const IconInfo = (props) => {
     const srcImg = props.srcImg;
     const data = props.data;
     const team = props.team;
@@ -40,4 +40,4 @@ const IconHoverInfo = (props) => {
     );
 };
 
-export default IconHoverInfo;
+export default IconInfo;

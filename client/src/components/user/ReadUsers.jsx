@@ -1,22 +1,27 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import Delete from './DeleteUser';
-import ModalRefs from './RefsSettings/ModalRefs';
-import {uid } from '../appContext'
-const Read = () => {
+import DeleteUser from './DeleteUser';
+import ModalRefs from './refsSettings/ModalRefs';
+
+const ReadUsers = () => {
     const usersData = useSelector((state) => state.usersReducer);
     const userData = useSelector((state) => state.userReducer);
 
     return (
         <>
             <div className="table-responsive pl-3 pr-3">
-                <div className="justify-content-center d-flex align-items-center m-2" style={{ cursor: "pointer", border: '1px solid black', width: '55px', height: '55px', borderRadius: '20px' }}>
-                    <Link className="p-3" to="/employee-create">
+                <Row >
+                <Col md={4} className="m-3 mt-4">
+                    <Link  style={{ cursor: "pointer", border: '3px solid black', width: '50px', height: '50px', borderRadius: '25px' }}className="p-3" to="/employee-create">
                         <img src="./assets/icon/addEmployee.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
                     </Link>
-                </div>
+                </Col>
+                <Col md={5} className="m-3 mt-4">
+                    <h1>Gestion du personnel :</h1>
+                </Col>
+                </Row>
                 <table className="table table-sm">
                     <thead class="bg-primary">
                         <tr class="bg-primary">
@@ -50,7 +55,7 @@ const Read = () => {
                                             />
                                         </td>
                                         <td class="table-primary" >
-                                            <Delete
+                                            <DeleteUser
                                                 DataUser_id={user._id}
                                                 name={user.name}
                                                 surname={user.surname}
@@ -96,7 +101,7 @@ const Read = () => {
                                             />
                                         </td>
                                         <td class="table-success" >
-                                            <Delete
+                                            <DeleteUser
                                                 DataUser_id={user._id}
                                                 name={user.name}
                                                 surname={user.surname}
@@ -113,4 +118,4 @@ const Read = () => {
     );
 };
 
-export default Read;
+export default ReadUsers;

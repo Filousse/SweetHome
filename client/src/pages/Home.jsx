@@ -3,13 +3,13 @@ import Logo from '../components/home/Logo'
 import Services from "../components/home/Services"
 import Widgets from "../components/home/Widgets"
 import Contact from "../components/home/Contact"
-import Header from "../components/home/Header"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const Home = () => {
     return (
         <>
-            <Header/>
+            <Header home={true}/>
             <Logo/>
             <section id="Service">   
                 <Services/>

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { deleteUser } from "../../actions/user.actions";
 
 
-const Delete = (props) => {
+const DeleteUser = (props) => {
     const userId = props.DataUser_id;
     const userName = props.DataName;
     const userSurname = props.DataSurname;
@@ -49,4 +49,4 @@ const Delete = (props) => {
     )
 }
 
-export default Delete;
+export default DeleteUser;

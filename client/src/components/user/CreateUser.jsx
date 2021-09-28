@@ -1,7 +1,7 @@
 import React from 'react';
 import Signup from "../authentification/Signup"
 
-const CreateGuests = () => {
+const CreateUser = () => {
   return (
     <>
     <Signup createEmployee={true} />
@@ -9,4 +9,4 @@ const CreateGuests = () => {
   );
 };
 
-export default CreateGuests;
+export default CreateUser;

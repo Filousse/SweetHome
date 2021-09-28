@@ -1,0 +1,88 @@
+.title {
+  font-weight: bolder;
+  padding-top: 5px;
+}
+
+.menu-trigger-left {
+  color:white;
+  display: inline-block;
+  position: relative;
+  padding:6px;
+  border-radius: 20px;
+}
+.menu-trigger-left:hover {
+  cursor: pointer;
+}
+.menu-trigger-left:hover > .menu {
+  left: 0;
+}
+.menu-trigger-left .menu-hidden, .menu-trigger-left .menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.menu-trigger-left .menu-show, .menu-trigger-left .menu-trigger-below:hover > .menu, .menu-trigger-left .menu-trigger-above:hover > .menu, .menu-trigger-left .menu-trigger-right:hover > .menu, .menu-trigger-left:hover > .menu, .menu-trigger-left .tooltip:hover > .menu {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-trigger-left .menu {
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  padding-right: 10px;
+  top: 50%;
+  left: -20px;
+  transform: translate(-100%, -50%);
+}
+.menu-trigger-left .menu .menu-content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 12px;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  margin-top: -12px;
+  border-top-color: transparent;
+  border-right-width: 0;
+  border-bottom-color: transparent;
+  border-left-color: rgba(179, 179, 179, 0.3);
+}
+.menu-trigger-left .menu .menu-content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -10px;
+  border-top-color: transparent;
+  border-right-width: 0;
+  border-bottom-color: transparent;
+  border-left-color: #5bc0de;
+}
+.menu-trigger-left .menu .menu-content {
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  line-height: 1.4rem;
+  background-color: #5bc0de;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.menu-trigger-left .menu .menu-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu .menu-content.custom-3 li {
+  color: white;
+  padding: 0 10px;
+  line-height: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+

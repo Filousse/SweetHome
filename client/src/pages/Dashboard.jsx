@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/dashboard/Header'
+import Header from '../components/Header'
 import Grid from '../components/dashboard/Grid'
 import Footer from "../components/Footer"
 import SwitchUser from "../components/dashboard/SwitchUser"
