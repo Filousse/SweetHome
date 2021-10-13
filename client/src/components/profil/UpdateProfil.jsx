@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import UploadImage from "./UploadImage";
 import { updateBio } from "../../actions/user.actions";
 import { dateParser } from "../Utils";
-import Header from "../../components/dashboard/Header";
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { isEmpty } from "../Utils";
 

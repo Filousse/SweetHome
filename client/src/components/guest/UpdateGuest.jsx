@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Modal, Button } from 'react-bootstrap'
 import PictureGuest from "./createGuest/PictureGuest"
-import FilesGuest from "./filesGuest/FilesGuest"
+import FilesGuest from "./createGuest/FilesGuest"
 import { useSelector } from "react-redux"
 
 

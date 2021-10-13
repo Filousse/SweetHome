@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { useHistory, Link } from "react-router-dom"
 import { Navbar, Nav, Button } from "react-bootstrap"
 import Logout from './authentification/Logout'
+import { switchColorTeam } from "../components/Utils"
+
 
 export default function Header(props) {
   const home = props.home;
@@ -16,22 +18,6 @@ export default function Header(props) {
 
   const handleLogin= () => {
       history.push("/login")
-  }
-
-  const switchColorTeam = (team) => {
-    switch (team) {
-      case 'Éducative': {
-        return { "backgroundColor": "#61a6fb" }
-      }
-      case 'Médical': {
-        return { "backgroundColor": "#28da69" }
-      }
-      case '': {
-        return { "backgroundColor": "#e826b1" }
-      }
-      default:
-        return { "backgroundColor": "#e826b1" }
-    }
   }
 
   return (

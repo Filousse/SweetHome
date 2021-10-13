@@ -1,58 +1,70 @@
-
 {
-    "medical" : [
-        {
-          "flag": "./assets/img/002-rotation.png",
-          "name": "Roulement du personnel médical"
-        },
-        {
-          "flag": "./assets/img/001-medical-file.png",
-          "name": "Dossiers médicaux"
-        }
-    ],
-    "educative" : [
-        {
-          "flag": "./assets/img/002-rotation.png",
-          "name": "Roulement du personnel éducatif"
-        },
-        {
-          "flag": "./assets/img/002-family.png",
-          "name": "Cahier de liaison"
-        },
-        {
-          "flag": "./assets/img/003-journal-de-bord.png",
-          "name": "cahier de transmission"  
-        }
-    ],  
-    "overall" : [
-        {
-          "flag": "./assets/img/001-basic-needs.png",
-          "name": "Fiches besoins"
-        },
-        {
-        "flag": "./assets/img/003-tchat-telephonique.png",
-        "name": "Contacts téléphonique"
-      },
-        {
-          "flag": "./assets/img/001-blueprint.png",
-          "name": "Plan des chambres"
-        },
-        {
-          "flag": "./assets/img/002-translation.png",
-          "name": "Pictograme"
-          },
-          {
-            "flag": "./assets/img/003-planning.png",
-            "name": "Planning des jeunes"
-          },
-          {
-            "flag": "./assets/img/001-meeting.png",
-            "name": "Réunions"
-          },
-          {
-            "flag": "./assets/img/002-medicament.png",
-            "name": "Suivi et traitement"
-          }
-
-    ]
-  }
+  "educative": [
+    {
+      "flag": "./assets/img/ficheBesoin.png",
+      "name": "Fiche besoin",
+      "route": "/widget-needs"
+    },
+    {
+      "flag": "./assets/img/pictogramme.png",
+      "name": "Pictograme",
+      "route": "/widget-picto"
+    },
+    {
+      "flag": "./assets/img/planningJeunes.png",
+      "name": "Planning des jeunes",
+      "route": "/widget-planning"
+    },
+    {
+      "flag": "./assets/img/hygiène.png",
+      "name": "Aide à l'hygiène",
+      "route": "/widget-hygiene"
+    },
+    {
+      "flag": "./assets/img/ficheRepas.png",
+      "name": "Fiche repas",
+      "route": "/widget-meal"
+    }
+  ],
+  "medical": [
+    {
+      "flag": "./assets/img/ficheMedical.png",
+      "name": "Fiche médicale",
+      "route": "/widget-medical"
+    },
+    {
+      "flag": "./assets/img/traitementMedical.png",
+      "name": "Traitement médicale",
+      "route": "/widget-treatment"
+    },
+    {
+      "flag": "./assets/img/materielMedical.png",
+      "name": "Matériel médicale",
+      "route": "/widget-material"
+    }
+  ],
+  "admin": [
+    {
+      "flag": "./assets/img/abstreinte.png",
+      "name": "Contact des abstreintes",
+      "route": "/widget-abstreinte"
+    }
+  ],
+  "educ_medic": [
+    {
+      "flag": "./assets/img/transmission.png",
+      "name": "Transmission d'équipe",
+      "route": "/widget-transmission"
+    },
+    {
+      "flag": "./assets/img/roulement.png",
+      "name": "Roulement du personnel",
+      "route": "/widget-staff"
+    },
+    {
+      "flag": "./assets/img/information.png",
+      "name": "Information général",
+      "route": "/widget-info"
+    }
+  ]
+}

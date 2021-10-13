@@ -15,7 +15,6 @@ const ReadGuests = () => {
         <>
             <div className="table-responsive pl-3 pr-3">
                 <Row >
-                    
                 { !userData.adminName && (
                     <Col md={4} className="m-3 mt-4">
                         <Link style={{ cursor: "pointer", border: '3px solid black', width: '50px', height: '50px', borderRadius: '25px' }} className="p-3" to="/new-guest">

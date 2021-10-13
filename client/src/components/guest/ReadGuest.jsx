@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Modal, Button } from 'react-bootstrap'
-import FilesGuest from "./filesGuest/FilesGuest"
+import FilesGuest from "./createGuest/FilesGuest"
 import { useSelector } from "react-redux"
 
 
@@ -22,7 +22,7 @@ function ReadGuest(props) {
             </Modal.Header>
             <Modal.Body className="show-grid">
                 <Container>
-                    <FilesGuest />
+                    <FilesGuest onlyRead={true} />
                 </Container>
             </Modal.Body>
             <Modal.Footer>

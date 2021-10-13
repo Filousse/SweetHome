@@ -14,7 +14,6 @@ router.delete('/:id', guestController.deleteGuest);
 router.put('/educRef/:id', guestController.updateEducRef);
 router.put('/medicalRef/:id', guestController.updateMedicalRef);
 
-
 // upload
 router.post('/upload', upload.single('file'), uploadController.uploadPicture)
 
