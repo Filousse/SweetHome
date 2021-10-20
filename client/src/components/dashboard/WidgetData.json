@@ -2,22 +2,22 @@
   "educative": [
     {
       "flag": "./assets/img/ficheBesoin.png",
-      "name": "Fiche besoin",
+      "name": "Fiche besoins",
       "route": "/widget-needs"
     },
     {
       "flag": "./assets/img/pictogramme.png",
-      "name": "Pictograme",
+      "name": "Pictogrammes",
       "route": "/widget-picto"
     },
     {
       "flag": "./assets/img/planningJeunes.png",
-      "name": "Planning des jeunes",
+      "name": "Planning des résidents",
       "route": "/widget-planning"
     },
     {
       "flag": "./assets/img/hygiène.png",
-      "name": "Aide à l'hygiène",
+      "name": "Fiche hygiène",
       "route": "/widget-hygiene"
     },
     {
@@ -39,14 +39,14 @@
     },
     {
       "flag": "./assets/img/materielMedical.png",
-      "name": "Matériel médicale",
+      "name": "Matériel médical",
       "route": "/widget-material"
     }
   ],
   "admin": [
     {
       "flag": "./assets/img/abstreinte.png",
-      "name": "Contact des abstreintes",
+      "name": "Contacts des abstreintes",
       "route": "/widget-abstreinte"
     }
   ],
@@ -63,7 +63,7 @@
     },
     {
       "flag": "./assets/img/information.png",
-      "name": "Information général",
+      "name": "Information générale",
       "route": "/widget-info"
     }
   ]

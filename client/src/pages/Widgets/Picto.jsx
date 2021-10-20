@@ -8,7 +8,7 @@ const Picto = () => {
     return (
         <>
             <Header logout={false}></Header>
-            <GridGuests widget="Pictogramme" />
+            <GridGuests widget="Pictogrammes" />
             <Footer/>
 
         </>

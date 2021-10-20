@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Form, Row, Button, Container } from 'react-bootstrap';
+import { Card, Form, Row, Button, Container, Alert } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import { Link, useHistory } from "react-router-dom"
 import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions";
 import { isEmpty } from "../../Utils";
 
@@ -12,9 +11,12 @@ const RefsGuest = () => {
     const usersData = useSelector((state) => state.usersReducer);
     const userData = useSelector((state) => state.userReducer);
     const dispatch = useDispatch();
+    const history = useHistory();
     const [isLoading, setLoading] = useState(false);
     const [educRef, setEducRef] = useState("");
     const [medicalRef, setMedicalRef] = useState("");
+    const [errorEduc, setErrorEduc] = useState(false);
+    const [errorMedical, setErrorMedical] = useState(false);
 
     useEffect(() => {
         !isEmpty(guestsData[guestsData.length - 1]) && setLoading(false);
@@ -33,6 +35,19 @@ const RefsGuest = () => {
         dispatch(getGuests());
         setLoading(false)
     }
+
+    const handelNext = () => {
+        console.log("yep");
+        if (educRef == "") {
+            setErrorEduc(true)
+            console.log("ErrorEduc",errorEduc);
+        } if (medicalRef == "") {
+            setErrorMedical(true)
+        }
+        if (!medicalRef == "" && !educRef == "") {
+            history.push("/validation-guest")
+        }
+    }
     return (
         <>
             <Container className="justify-content-center p-4" style={{ maxWidth: "600px" }}>
@@ -47,6 +62,7 @@ const RefsGuest = () => {
                                 as="select"
                                 custom
                                 onChange={(e) => { setEducRef(e.target.value) }}
+                                required
                             >
                                 <option >selectionner</option>
                                 {usersData.map((user) => {
@@ -66,6 +82,9 @@ const RefsGuest = () => {
                                 }
                             })
                             }
+                            {errorEduc &&
+                                <Alert className="m-4" variant="danger">Veuillez selectionner votre référent éducatif</Alert>
+                            }
                         </Row >
                         <Row className="justify-content-center m-4 pt-4" >
                             <h5>Référent Médical</h5>
@@ -73,6 +92,7 @@ const RefsGuest = () => {
                                 as="select"
                                 custom
                                 onChange={(e) => { setMedicalRef(e.target.value) }}
+                                required
                             >
                                 <option >selectionner</option>
                                 {usersData.map((user) => {
@@ -92,11 +112,14 @@ const RefsGuest = () => {
                                 }
                             })
                             }
+                            {errorMedical &&
+                                <Alert className="m-4" variant="danger">Veuillez selectionner votre référent médical</Alert>
+                            }
                         </Row >
                     </Card.Body>
                     <Card.Footer>
                         <Row className="justify-content-center m-2">
-                            <Link to="/files-guest">Suivant</Link>
+                            <Link onClick={handelNext}>Suivant</Link>
                         </Row>
                     </Card.Footer>
                 </Card>

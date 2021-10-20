@@ -8,6 +8,7 @@ import { uploadGuestPicture, getGuests } from "../../../actions/guest.actions"
 
 const PictureGuest = (props) => {
     const guestId = props.guestId;
+    const withoutFooter = props.withoutFooter;
     const error = useSelector((state) => state.errorReducer.guestError);
     const guestsData = useSelector((state) => state.guestReducer);
     const dispatch = useDispatch();
@@ -98,11 +99,13 @@ const PictureGuest = (props) => {
                             </Form>
                         </Row>
                     </Card.Body>
-                    <Card.Footer>
-                    <Row className="justify-content-center m-2">
-                        <Link to="/references-guest">Suivant</Link>
-                    </Row>
-                </Card.Footer>
+                    {!withoutFooter &&
+                        <Card.Footer>
+                            <Row className="justify-content-center m-2">
+                                <Link to="/references-guest">Suivant</Link>
+                            </Row>
+                        </Card.Footer>
+                    }
                 </Card>
             </Container>
         </>

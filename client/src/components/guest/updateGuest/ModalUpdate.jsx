@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Modal, Button } from 'react-bootstrap'
-import PictureGuest from "./createGuest/PictureGuest"
-import FilesGuest from "./createGuest/FilesGuest"
+import PictureGuest from "../createGuest/PictureGuest"
+import FilesGuest from "./FilesGuest"
 import { useSelector } from "react-redux"
 
 
@@ -23,11 +23,17 @@ function UpdateGuest(props) {
             </Modal.Header>
             <Modal.Body className="show-grid">
                 <Container>
-                    <PictureGuest guestId={props.idGuest} />
+                    <PictureGuest withoutFooter={true} guestId={props.idGuest} />
                     {guestReducer.map((guest)=> {
                         if(guest._id === props.idGuest){
                             return(
-                                <FilesGuest guestId={props.idGuest} educRef={guest.educRef} medicalRef={guest.medicalRef}/>
+                                <>
+                                <FilesGuest 
+                                    idGuest={props.idGuest} 
+                                    educRef={guest.educRef} 
+                                    medicalRef={guest.medicalRef}
+                                />
+                                </>
                                 )
                         }
                     })}

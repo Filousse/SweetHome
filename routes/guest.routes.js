@@ -11,7 +11,7 @@ router.get('/:id', guestController.infoGuest);
 router.post('/', guestController.createGuest);
 // router.put('/:id', guestController.updateGuest);
 router.delete('/:id', guestController.deleteGuest);
-router.put('/educRef/:id', guestController.updateEducRef);
+router.put('/educRef/:id', guestController.followingEducRef);
 router.put('/medicalRef/:id', guestController.updateMedicalRef);
 
 // upload

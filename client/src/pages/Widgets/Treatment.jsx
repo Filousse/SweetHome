@@ -7,9 +7,8 @@ const Treatment = () => {
     return (
         <>
             <Header logout={false}></Header>
-            <GridGuests widget="Traitements et médicaments" />
+            <GridGuests widget="Traitement médicale" />
             <Footer/>
-
         </>
     );
 };

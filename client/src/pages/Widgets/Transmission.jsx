@@ -81,9 +81,10 @@ const Transmission = () => {
                         <Row style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
                             <h3 className={"text-center"} >Cahier de transmission éducatif</h3>
                         </Row>
-                        <LayoutTransmission team={team} />
-                        <Footer />
-                    </>    
+                        <LayoutTransmission team={userReducer.team} />
+                            <Footer />
+                        </>
+                        
                     }
                 </>
 

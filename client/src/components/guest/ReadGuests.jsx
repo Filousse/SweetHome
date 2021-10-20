@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import DeleteGuest from './DeleteGuest';
-import BtnUpdateRead from './BtnUpdateRead';
+import BtnUpdateRead from '../guest/updateGuest/BtnUpdateRead';
 import IconInfo from '../IconInfo';
 import { Col, Row } from 'react-bootstrap'
 
@@ -58,16 +58,16 @@ const ReadGuests = () => {
                                             <td class="table-warning" ></td>
                                             <td class="table-warning" style={{ maxWidth: "50px" }}  >
                                                 <Row className="justify-content-md-start">
-                                                    <Col xs lg="2" style={{ backgroundImage: "url(/assets/icon/001-nothing.png)", height: '35px', backgroundRepeat: 'no-repeat', backgroundPosition: "center" }}>
+                                                    <Col className="mr-3" xs lg="2">
                                                         {usersData.map((user) => {
                                                             if (user._id === guest.educRef) {
                                                                 return (
-                                                                    < IconInfo team="Éducative" srcImg={user.photoProfil} data={user.name} />
+                                                                    < IconInfo  team="Éducative" srcImg={user.photoProfil} data={user.name} />
                                                                 )
                                                             }
                                                         })}
                                                     </Col>
-                                                    <Col xs lg="2" style={{ backgroundImage: "url(/assets/icon/001-nothing.png)", height: '35px', backgroundRepeat: 'no-repeat', backgroundPosition: "center" }}>
+                                                    <Col xs lg="2">
                                                         {usersData.map((user) => {
                                                             if (user._id === guest.medicalRef) {
                                                                 return (

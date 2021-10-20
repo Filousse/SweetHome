@@ -86,7 +86,7 @@ export default function Header(props) {
               )
             }
             <Navbar.Brand >
-              <Link to="/">
+              <Link to="/messaging">
                 <img src="./assets/icon/chat.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
               </Link>
             </Navbar.Brand>

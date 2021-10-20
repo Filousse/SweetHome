@@ -8,7 +8,7 @@ const Info = () => {
     return (
         <>
             <Header logout={false}></Header>
-            <GridGuests widget="Information général" />
+            <GridGuests widget="Information générale" />
             <Footer/>
 
         </>

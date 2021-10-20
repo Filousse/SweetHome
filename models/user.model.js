@@ -56,8 +56,8 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
-    benificaryRef: {
-      type: [String]
+    guestRef: {
+      type: String,
     },
     Notifications: [
       {

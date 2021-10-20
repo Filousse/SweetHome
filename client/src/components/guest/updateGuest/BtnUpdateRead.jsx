@@ -1,45 +1,44 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import UpdateGuest from "./UpdateGuest"
-import ReadGuest from "./ReadGuest"
+import ModalUpdate from "./ModalUpdate"
+import ModalRead from "./ModalRead"
 
 const BtnUpdateRead = (props) => {
-    const guest = {...props};
+    const data = {...props};
     const [modalShowUpdate, setModalShowUpdate] = useState(false);
     const [modalShowView, setModalShowView] = useState(false)
     const userData = useSelector((state) => state.userReducer);
 
-
     const handleUpdateGuest = () => {
-        console.log("guestguest=>", guest.adminName);
         setModalShowUpdate(true)
     }
+
     const handleViewGuest = () => {
         setModalShowView(true)
     }
 
     return (
         <>
-            {(guest.educRef === userData._id || guest.medicalRef === userData._id || guest.adminName === userData.name ) 
+            {(data.educRef === userData._id || data.medicalRef === userData._id || data.adminName === userData.name ) 
                 ?(
                     <img
                     onClick={handleUpdateGuest}
                     src="./assets/icon/update.png"
                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
                     alt="basket_icon"
-                />
+                    />
                 ) : (
                     <img
                     onClick={handleViewGuest}
                     src="./assets/icon/visit.png"
                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
                     alt="basket_icon"
-                />
+                    />
                 )
             }
                 
-            <UpdateGuest show={modalShowUpdate} idGuest={guest.idGuest} onHide={() => setModalShowUpdate(false)} />
-            <ReadGuest show={modalShowView} idGuest={guest.idGuest} onHide={() => setModalShowView(false)} />
+            <ModalUpdate show={modalShowUpdate} idGuest={data.idGuest} onHide={() => setModalShowUpdate(false)} />
+            <ModalRead show={modalShowView} idGuest={data.idGuest} onHide={() => setModalShowView(false)} />
 
         </>
     );

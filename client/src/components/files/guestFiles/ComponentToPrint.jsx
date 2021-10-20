@@ -18,15 +18,14 @@ export class ComponentToPrint extends PureComponent {
         return (
             <>
                 <Card>
-                    <div>{widget}</div>
                     <HeaderFile widget={widget} guestId={guestId} />
                     {widget === "Fiche besoins" &&
                         <Needs showUpdate={showUpdate} />
                     }
-                    {widget === "Information général" &&
+                    {widget === "Information générale" &&
                         <GeneralInfo showUpdate={showUpdate} />
                     }
-                    {widget === "Pictogramme" &&
+                    {widget === "Pictogrammes" &&
                         <Pictogramme showUpdate={showUpdate} />
                     }
                     {widget === "Planning des résidents" &&
@@ -44,9 +43,10 @@ export class ComponentToPrint extends PureComponent {
                     {widget === "Matériel médical" &&
                         <Material showUpdate={showUpdate} />
                     }
-                    { widget === "Traitements et médicaments" &&
+                    {widget === "Traitement médicale" &&
                         <Medications showUpdate={showUpdate} />
                     }
+                    {/* widget === "Contacts des abstreintes" => pages/abstreinte.jsx */}
                 </Card>
             </>
         );

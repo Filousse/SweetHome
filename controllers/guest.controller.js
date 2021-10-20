@@ -1,4 +1,5 @@
 const GuestModel = require("../models/guest.model");
+const UserModel = require('../models/user.model');
 const ObjectID = require("mongoose").Types.ObjectId;
 // const { uploadErrors } = require("../utils/errors.utils");
 // const fs = require("fs");
@@ -63,7 +64,7 @@ module.exports.createGuest = async (req, res) => {
 //     );
 //   };
 
-  module.exports.updateEducRef = async (req, res) => {
+  module.exports.followingEducRef = async (req, res) => {
     if (!ObjectID.isValid(req.params.id))
       return res.status(400).send("ID unknown : " + req.params.id);
       await GuestModel.findByIdAndUpdate(

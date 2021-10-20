@@ -16,10 +16,32 @@ const GridGuests = (props) => {
             <Row className="justify-content-center w-100 m-0">
                 {guestsReducer.map((guest) => {
                     if (guest.adminName === userData.name || guest.adminName === userData.adminName) {
+                        const checkRefEduc = () => {
+                            let result;
+                            if (guest.educRef === userData._id) {
+                              result = "Référence";
+                            } else {
+                              result = "";
+                            }
+                            return result;
+                        }
+                        const checkRefMedical = () => {
+                            let result;
+                            if (guest.medicalRef  === userData._id) {
+                              result = "Référence";
+                            } else {
+                              result = "";
+                            }
+                            return result;
+                        }
                         return (
+                            <>
+                            {/* <div> {checkRefEduc()}</div> */}
                             <Widget
+                                checkRefMedical = {checkRefMedical()}
+                                checkRefEduc = {checkRefEduc()}
                                 guestId = {guest._id}
-                                guestWidget={true}
+                                guestWidget="guestWidget"
                                 flag={guest.picture}
                                 widget={dashboardData.widget}
                                 name={guest.name}
@@ -27,6 +49,7 @@ const GridGuests = (props) => {
                                 route={guest.name}
                                 team={"guest"}
                             />
+                            </>
                         )
                     }
                 })}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row } from "react-bootstrap";
 import DayContainer from './DayContainer';
-import { switchColorTeam } from "../Utils"
 
 const LayoutTransmission = (props) => {
     const teamData = { ...props };
