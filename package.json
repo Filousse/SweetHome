@@ -31,6 +31,9 @@
     "multer": "^2.0.0-rc.1",
     "nodemon": "^2.0.12",
     "react-bootstrap": "^1.6.4",
+    "react-hover-image": "^2.0.1",
+    "react-notifications": "^1.7.2",
+    "react-responsive-font-size": "^1.1.2",
     "react-to-print": "^2.13.0",
     "validator": "^13.6.0"
   }

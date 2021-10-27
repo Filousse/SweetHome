@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap"
 
 const Logo = () => { 
     return (
-        <div className="content">
+        <div className="content mt-4">
             <div className="cat">
             <div className="ears">
                 <span></span>
@@ -28,7 +28,7 @@ const Logo = () => {
             </div>
             <Container className="w-75 p-3 text-light text-center wall" >
                 <h1 style={{"fontWeight": "bold"}}>SWEET HOME</h1>
-                <h3>Logiciel de gestion du quotidien des usagers du secteur social et médico social.</h3>
+                <h3 className="m-2">Logiciel du dossier de l'usager personnalisé pour les acteurs de l'action social et médicaux-social.</h3>
             </Container>
         </div>
     );

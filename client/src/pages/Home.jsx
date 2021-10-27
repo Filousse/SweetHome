@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../components/home/Logo'
 import Services from "../components/home/Services"
-import Widgets from "../components/home/Widgets"
+import HomeWidget from "../components/home/HomeWidget"
 import Contact from "../components/home/Contact"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -15,7 +15,7 @@ const Home = () => {
                 <Services/>
             </section>
             <section id="Widget">  
-                <Widgets/>
+                <HomeWidget/>
             </section>
             <section id="Contact">            
                 <Contact/>

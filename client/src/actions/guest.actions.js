@@ -80,7 +80,7 @@ export const uploadGuestPicture = ( data, id ) => {
 export const updateEducRef = ( guestId, educRef ) => {
     return (dispatch) => {
       return axios({
-        method: "put",
+        method: "patch",
         url: `${process.env.REACT_APP_API_URL}api/guest/educRef/` + guestId,
         data: { educRef },
       })
@@ -94,7 +94,7 @@ export const updateEducRef = ( guestId, educRef ) => {
 export const updateMedicalRef = ( guestId, medicalRef ) => {
     return (dispatch) => {
       return axios({
-        method: "put",
+        method: "patch",
         url: `${process.env.REACT_APP_API_URL}api/guest/medicalRef/` + guestId,
         data: { medicalRef },
       })

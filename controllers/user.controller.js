@@ -50,3 +50,26 @@ module.exports.deleteUser = async (req, res) => {
     return res.status(500).json({ message: err });
   }
 };
+
+// module.exports.deleteNotif = (req, res) => {
+//   if (!ObjectID.isValid(req.params.id))
+//     return res.status(400).send("ID unknown : " + req.params.id);
+
+//   try {
+//     return UserModel.findById(req.params.id, (err, docs) => {
+//       const guestRef = docs.guestRefArray.find((guestRefArray) =>
+//       guestRefArray._id.equals(req.body.guestId)
+//       );
+
+//       if (!guestRef) return res.status(404).send("guestRef not found");
+//       guestRef.checkNotification = req.body.checkNotification;
+
+//       return docs.save((err) => {
+//         if (!err) return res.status(200).send(docs);
+//         return res.status(500).send(err);
+//       });
+//     });
+//   } catch (err) {
+//     return res.status(400).send(err);
+//   }
+// };

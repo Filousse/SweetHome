@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom"
 function MydModalWithGrid(props) {
     const history = useHistory()
     const user = useSelector(state => state.usersReducer);
-    const admin = useSelector(state => state.userReducer);
+    const userReducer = useSelector(state => state.userReducer);
 
     const removeCookie = (key) => {
         if (window !== "undefined") {
@@ -56,22 +56,22 @@ function MydModalWithGrid(props) {
             </Modal.Header>
             <Modal.Body>
                 <table className="table justify-content-md-center">
-                    {admin.name !== "Gomesin" &&
+                    {userReducer.name !== "Gomesin" &&
                         <>
                             <tr className="table-primary" >
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[2].photoProfil}
+                                        src={user[15].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}
                                         className="d-inline-block align-top"
                                     />
                                 </td>
-                                <td className="pt-3">{user[2].surname} {user[2].name}</td>
-                                <td className="pt-3">{user[2].job}</td>
-                                <td><Button onClick={() => handelSwitchUser(user[2].email, user[2].name)} variant="outline-primary" >Service Éducatif</Button></td>
+                                <td className="pt-3">{user[15].surname} {user[15].name}</td>
+                                <td className="pt-3">{user[15].job}</td>
+                                <td><Button onClick={() => handelSwitchUser(user[15].email, user[15].name)} variant="outline-primary" >Service Éducatif</Button></td>
 
                             </tr>
                             <tr className="table-success" >
@@ -96,7 +96,7 @@ function MydModalWithGrid(props) {
                     }
                 </table>
             </Modal.Body>
-            { admin.adminName &&
+            { userReducer.adminName &&
                 <Modal.Footer>
                     <Button  variant="outline-danger" onClick={handelAdminLogin}>Me connecter à mon profil</Button>
                 </Modal.Footer>

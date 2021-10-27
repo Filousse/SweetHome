@@ -66,7 +66,6 @@ const Routes = () => {
                 <Route path="/widget-transmission" component={Transmission} />
                 <Route path="/widget-staff" component={Staff} />
                 <Route path="/read-file/:Id/:Widget" component={ActionsFile} />
-
             </Switch>
         ) : (
             <Switch>

@@ -59,16 +59,21 @@ const userSchema = new mongoose.Schema(
     guestRef: {
       type: String,
     },
-    Notifications: [
-      {
-        benificaryRef: {type: Number},
-        message: {type: String}
-    }],
-    Messages: [
-      {
-        from: {type: String},
-        message: {type: String}
-    }],
+    // guestRefArray: {
+    //   type: [
+    //     {
+    //       guestId: String,
+    //       checkNotification: Boolean,
+    //     }
+    //   ],
+    //   required: true,
+    // },
+
+    // Messages: [
+    //   {
+    //     from: {type: String},
+    //     message: {type: String}
+    // }],
   },
   {
     timestamps: true,

@@ -4,6 +4,7 @@ export const GET_USER = "GET_USER";
 export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
 export const UPDATE_BIO = "UPDATE_BIO";
 export const DELETE_USER = "DELETE_USER";
+export const DELETE_NOTIFICATION = "DELETE_NOTIFICATION"
 
 export const GET_USER_ERRORS = "GET_USER_ERRORS";
 
@@ -66,3 +67,4 @@ export const uploadPicture = (data, id) => {
         .catch((err)=> console.log(err));
     }
 }
+

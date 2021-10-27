@@ -6,6 +6,7 @@ mongoose.connect("mongodb+srv://" + process.env.DB_USER_PASS +  "@clustersweetho
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
+    unique: true
     }
 )
 .then(() => console.log('Connected to MongoDB'))
