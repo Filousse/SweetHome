@@ -51,62 +51,51 @@ const ActionsFile = () => {
         <>
             <Container style={{ "maxWidth": "1200px" }} className=" p-4 mt-4 ">
                 <Row>
-                    <Alert className=" border border-danger ">
+                    <Alert className="bg-secondary ml-3">
                         <Row className="justify-content-center ">
                             <Col >
-                                {showUpdate &&
-                                    <img
-                                        src="../../assets/icon/previous.png"
-                                        style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
-                                        alt="print_file"
-                                        onClick={handlePreview}
-                                    />
-                                }
+                                <img
+                                    src="../../assets/icon/btn_Previous.png"
+                                    style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
+                                    alt="btn_Previous"
+                                    onClick={handlePreview}
+                                />
                             </Col>
-                            {
-                                userReducer._id === educRef || userReducer._id === medicalRef || userReducer.adminName == null
-                                    ? (
-                                        <>
-                                            <Col  >
-                                                {showUpdate
-                                                    ? (
-                                                        <img
-                                                            src="../../assets/icon/updateFiles.png"
-                                                            style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
-                                                            alt="print_file"
-                                                            onClick={handleUpdate}
-                                                        />
-                                                    ) : (
-                                                        <img
-                                                            className="ml-4"
-                                                            src="../../assets/icon/visit.png"
-                                                            style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
-                                                            alt="print_file"
-                                                            onClick={handleUpdate}
-                                                        />
-                                                    )}
-                                            </Col>
-                                            <Col >
-                                                {showUpdate &&
+                            {userReducer._id === educRef || userReducer._id === medicalRef || userReducer.adminName == null
+                                ? (
+                                    <>
+                                        <Col>
+                                            {showUpdate
+                                                ? (
                                                     <img
-                                                        src="../../assets/icon/save.png"
+                                                        src="../../assets/icon/btn_UpdateFiles.png"
                                                         style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
-                                                        alt="print_file"
-                                                        onClick={handlePreview}
+                                                        alt="btn_UpdateFiles"
+                                                        onClick={handleUpdate}
                                                     />
-                                                }
-                                            </Col>
-                                        </>
-                                    ) : (
-                                        <></>
-                                    )
+                                                ) : (
+
+                                                    <img
+                                                        className="ml-4"
+                                                        src="../../assets/icon/btn_Save.png"
+                                                        style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
+                                                        alt="btn_Visit"
+                                                        onClick={handleUpdate}
+                                                    />
+                                                )}
+                                        </Col>
+                                    </>
+                                ) : (
+                                    <>
+                                    </>
+                                )
                             }
                             <Col >
                                 {showUpdate &&
                                     <img
-                                        src="../../assets/icon/printPDF.png"
+                                        src="../../assets/icon/btn_PrintPDF.png"
                                         style={{ "height": "35px", "width": "35px", "cursor": "pointer" }}
-                                        alt="print_file"
+                                        alt="btn_PrintPDF"
                                         onClick={handlePrint}
                                     />
                                 }

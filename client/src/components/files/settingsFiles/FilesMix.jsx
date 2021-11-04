@@ -14,7 +14,7 @@ const FilesMix = (props) => {
     return (
         <Card.Body style={{ backgroundColor: "#FCE6F8" }}>
           <Row className="bg-danger color-light rounded  mb-4 p-1 justify-content-center" >
-          <h5 className="mt-1 text-light" >Fiches éducatives et médicales :</h5>
+          <h5 className="mt-1 text-light text-center" >Fiches éducatives et médicales :</h5>
           </Row>
                   <button onClick={handelFile} type="button" class="m-1 w-100 btn btn-outline-danger">
                   Information générale

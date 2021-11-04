@@ -16,7 +16,7 @@ const Plannings = (props) => {
     const [vendrediAM, setVendrediAM] = useState("14h Kinéthérapie - 15h30 Velo")
 
     return (
-        <Row className="m-4 p-2">
+        <Row className="m-4 p-2"  style={{overflow:"scroll"}}>
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>

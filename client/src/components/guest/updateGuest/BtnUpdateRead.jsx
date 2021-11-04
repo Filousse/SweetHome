@@ -23,16 +23,16 @@ const BtnUpdateRead = (props) => {
                 ?(
                     <img
                     onClick={handleUpdateGuest}
-                    src="./assets/icon/update.png"
+                    src="./assets/icon/btn_Update.png"
                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                    alt="basket_icon"
+                    alt="btn_Update"
                     />
                 ) : (
                     <img
                     onClick={handleViewGuest}
-                    src="./assets/icon/visit.png"
+                    src="./assets/icon/btn_Visit.png"
                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                    alt="basket_icon"
+                    alt="btn_Visit"
                     />
                 )
             }

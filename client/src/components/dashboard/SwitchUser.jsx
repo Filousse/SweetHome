@@ -62,16 +62,16 @@ function MydModalWithGrid(props) {
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[15].photoProfil}
+                                        src={user[19].photoProfil}
                                         width="40"
                                         height="40"
                                         style={{ 'borderRadius': '5px' }}
                                         className="d-inline-block align-top"
                                     />
                                 </td>
-                                <td className="pt-3">{user[15].surname} {user[15].name}</td>
-                                <td className="pt-3">{user[15].job}</td>
-                                <td><Button onClick={() => handelSwitchUser(user[15].email, user[15].name)} variant="outline-primary" >Service Éducatif</Button></td>
+                                <td className="pt-3">{user[19].surname} {user[19].name}</td>
+                                <td className="pt-3">{user[19].job}</td>
+                                <td><Button onClick={() => handelSwitchUser(user[19].email, user[19].name)} variant="outline-primary" >Service Éducatif</Button></td>
 
                             </tr>
                             <tr className="table-success" >
@@ -96,11 +96,11 @@ function MydModalWithGrid(props) {
                     }
                 </table>
             </Modal.Body>
-            { userReducer.adminName &&
+            
                 <Modal.Footer>
                     <Button  variant="outline-danger" onClick={handelAdminLogin}>Me connecter à mon profil</Button>
                 </Modal.Footer>
-            }
+                    
         </Modal>
     );
 }
@@ -113,7 +113,7 @@ const SwitchUser = () => {
             <div className="left-nav-container">
                 <div className="icons">
                     <div onClick={() => setModalShow(true)} className="icons-bis">
-                        <img className="img" src="./assets/icon/switchUser.png" alt="home" />
+                        <img className="img" src="./assets/icon/btn_SwitchUser.png" alt="btn_SwitchUser" />
                     </div>
                 </div>
             </div>

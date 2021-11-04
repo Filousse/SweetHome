@@ -26,20 +26,28 @@ const LayoutTransmission = (props) => {
     return (
         <Container fluid className="justify-content-center mb-4 pb-4">
             <Row className="justify-content-center mr-4 ml-4" >
-                <DayContainer day={"Aujourd'hui : " + aujourdhui} />
-                <DayContainer day={hier} />
+                <DayContainer sm={12}  day={"Aujourd'hui : " + aujourdhui} />
             </Row>
             <Row className="justify-content-center mr-4 ml-4" >
-                <DayContainer day={deuxJoursAvant} />
-                <DayContainer day={troisJoursAvant} />
+                <DayContainer sm={12}  day={hier} />
             </Row>
             <Row className="justify-content-center mr-4 ml-4" >
-                <DayContainer day={quatreJoursAvant} />
-                <DayContainer day={cinqJoursAvant} />
+                <DayContainer sm={12}  day={deuxJoursAvant} />
             </Row>
             <Row className="justify-content-center mr-4 ml-4" >
-                <DayContainer day={sixJoursAvant} />
-                <DayContainer day={uneSemaineAvant} />
+                <DayContainer sm={12}  day={troisJoursAvant} />
+            </Row>
+            <Row className="justify-content-center mr-4 ml-4" >
+                <DayContainer sm={12} day={quatreJoursAvant} />
+            </Row>
+            <Row className="justify-content-center mr-4 ml-4" >
+                <DayContainer sm={12} day={cinqJoursAvant} />
+            </Row>
+            <Row className="justify-content-center mr-4 ml-4" >
+                <DayContainer sm={12} day={sixJoursAvant} />
+            </Row>
+            <Row className="justify-content-center mr-4 ml-4" >
+                <DayContainer sm={12} day={uneSemaineAvant} />
             </Row>
         </Container>
     );

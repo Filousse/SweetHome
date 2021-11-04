@@ -14,7 +14,7 @@ const Medications = (props) => {
         <Container fluid>
             <Row className="m-4">
                 <Col sm={2} className="border border-dark pt-1">
-                    <h5 className="pt-3"className="pt-3">Petit déjeuner : </h5>
+                    <p className="pt-3"className="pt-3"><strong>Petit déjeuner :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
@@ -25,13 +25,13 @@ const Medications = (props) => {
                     </Col>
                 ) : (
                   <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={2} onChange={(e) => setTextOne(e.target.value)} placeholder="Editer un text informatif..." />
+                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextOne(e.target.value)} placeholder="Editer un text informatif..." />
                   </Col>
                 )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
-                    <h5 className="pt-3">Déjeuner : </h5>
+                    <p className="pt-3"><strong>Déjeuner :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
@@ -42,13 +42,13 @@ const Medications = (props) => {
                     </Col>
                 ) : (
                   <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={2} onChange={(e) => setTextTwo(e.target.value)} placeholder="Editer un text informatif..." />
+                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextTwo(e.target.value)} placeholder="Editer un text informatif..." />
                   </Col>
                 )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
-                    <h5 className="pt-3">Souper : </h5>
+                    <p className="pt-3"><strong>Souper :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
@@ -59,13 +59,13 @@ const Medications = (props) => {
                     </Col>
                 ) : (
                   <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={2} onChange={(e) => setTextThree(e.target.value)} placeholder="Editer un text informatif..." />
+                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextThree(e.target.value)} placeholder="Editer un text informatif..." />
                   </Col>
                 )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
-                    <h5 className="pt-3">Coucher : </h5>
+                    <p className="pt-3"><strong>Coucher :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
@@ -76,13 +76,13 @@ const Medications = (props) => {
                     </Col>
                 ) : (
                   <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={2} onChange={(e) => setTextFour(e.target.value)} placeholder="Editer un text informatif..." />
+                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextFour(e.target.value)} placeholder="Editer un text informatif..." />
                   </Col>
                 )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
-                    <h5 className="pt-1">Protocole crise d'épilepsie : </h5>
+                    <p className="pt-1"><strong>Protocole crise d'épilepsie :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
@@ -93,7 +93,7 @@ const Medications = (props) => {
                     </Col>
                 ) : (
                   <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={2} onChange={(e) => setTextFive(e.target.value)} placeholder="Editer un text informatif..." />
+                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextFive(e.target.value)} placeholder="Editer un text informatif..." />
                   </Col>
                 )}
             </Row>

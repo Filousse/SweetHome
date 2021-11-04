@@ -18,14 +18,14 @@ const Logout = () => {
       .then(() => removeCookie("jwt"))
       .catch((err) => console.log(err));
     
-    window.location = "/home";
+    window.location = "/";
   };
 
   return (
       <img 
         onClick={logout} 
-        src="./assets/icon/logout.png" 
-        alt="logout"
+        src="./assets/icon/btn_Logout.png" 
+        alt="btn_Logout"
         style={{"height":"30px", "width":"30px", cursor:"pointer"}}
       />
   );

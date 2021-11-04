@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Col, Row, Form, Button, Card } from "react-bootstrap";
+import { Col, Row, Form, Button, Card, Image } from "react-bootstrap";
+import InfoDemo from "../InfoDemo"
 
 const Meal = (props) => {
     const showUpdate = props.showUpdate;
@@ -10,10 +11,10 @@ const Meal = (props) => {
             <Row className="m-3 ml-3 mr-3 w-100">
                 <Form.Group as={Col} controlId="formGridPassword">
                     <Row className="justify-content-around border border-danger m-1 mb-3">
-                        <h5 className="mt-2"><strong>Particularité pour l'aide au repas :</strong></h5>
+                        <h5 className="mt-2 text-center"><strong>Particularité pour l'aide au repas :</strong></h5>
                     </Row>
                     {showUpdate ? (
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{ height: '107px' }}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{ height: '107px', overflow:"scroll" }}>
                             {!particularite ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum. dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum. dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum. dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>) : (<>{particularite}</>)}
                         </Row>
@@ -28,7 +29,7 @@ const Meal = (props) => {
                 {!showUpdate &&
                         <Row className="justify-content-center mb-4 p-4 border border-dark rounded">
                             <Form.Control
-                            className="w-50"
+                                className="w-50"
                                 type="file"
                                 id="file"
                                 name="file"
@@ -36,10 +37,10 @@ const Meal = (props) => {
                                 style={{ "marginBottom": "10px" }}
                                 onChange={(e) => setFile(e.target.files[0])}
                             />
-                            <Button className="w-50" >Valider</Button>
+                            <InfoDemo/>
                         </Row>
                 }
-                        <img src="../../uploads/guest/pictures/aaa.jpg" style={{ "width": "1000px", "height": "1000px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
+                        <Image fluid src="../../assets/icon/icon_MeatTest.png" style={{ "width": "1000px", "height": "600px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
                 </Row>
             </Card.Body>
         </Row>

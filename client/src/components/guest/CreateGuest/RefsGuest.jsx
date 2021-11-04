@@ -5,7 +5,6 @@ import { Link, useHistory } from "react-router-dom"
 import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions";
 import { isEmpty } from "../../Utils";
 
-
 const RefsGuest = () => {
     const guestsData = useSelector((state) => state.guestReducer);
     const usersData = useSelector((state) => state.usersReducer);
@@ -37,7 +36,6 @@ const RefsGuest = () => {
     }
 
     const handelNext = () => {
-        console.log("yep");
         if (educRef == "") {
             setErrorEduc(true)
             console.log("ErrorEduc",errorEduc);
@@ -50,8 +48,12 @@ const RefsGuest = () => {
     }
     return (
         <>
-            <Container className="justify-content-center p-4" style={{ maxWidth: "600px" }}>
-                <Card>
+            <Container className="justify-content-center p-4" style={{"backgroundColor": "rgb(256,236,188)" }} >
+                <Row className="justify-content-center mt-4">
+                    <img src="./assets/img/yellowCat.png" style={{ "maxWidth": 280 }} />
+                </Row>
+                <Row className="justify-content-center">
+                <Card style={{ maxWidth: "470px" }}>
                     <Card.Header className="justify-content-center">
                         <h2 className="text-center">Références :</h2>
                     </Card.Header>
@@ -123,6 +125,7 @@ const RefsGuest = () => {
                         </Row>
                     </Card.Footer>
                 </Card>
+                </Row>
             </Container>
         </>
     );

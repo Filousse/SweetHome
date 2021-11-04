@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Widget from "../Widget";
+import Widget from "./Widget";
 import WidgetData from "./WidgetData.json";
 import { Row, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux'

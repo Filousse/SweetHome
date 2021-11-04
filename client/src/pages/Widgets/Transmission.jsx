@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Row } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import LayoutTransmission from "../../components/transmission/LayoutTransmission"
 import { useSelector } from "react-redux"
 import { useEffect } from 'react';
@@ -33,64 +32,56 @@ const Transmission = () => {
             {!team &&
                 <>
                     { !userReducer.team &&
-                        <>
-
-                            <>
-                                <Row onClick={handelEducatif} style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                                    <h3 className={"text-center"} >Cahier de transmission éducatif</h3>
-                                </Row>
-                                <Row onClick={handelMedical} style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                                    <h3 className={"text-center"} >Cahier de transmission Médical</h3>
-                                </Row>
-                            </>
-                            }
-                        </>
+                        <Container className="w-75 justify-content-center p-2" style={{ "maxHeight": "100%", "minHeight": 600 }}>
+                            <Row className="m-4 justify-content-center">
+                                <Col sm={12} onClick={handelEducatif} className="border border-primary rounded p-2 m-4" style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }}>
+                                    <h3 className={"text-center text-light"} >Cahier de transmission éducatif</h3>
+                                </Col>
+                                <Col sm={12} onClick={handelMedical} className="border border-success rounded p-2 m-4" style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} >
+                                    <h3 className={"text-center text-light"} >Cahier de transmission médical</h3>
+                                </Col>
+                            </Row>
+                        </Container>
                     }
                     {team == "Éducatif" || userReducer.team == "Éducative" &&
-                        <>
-                            <Row style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                                <h3 className={"text-center"} >Cahier de transmission éducatif</h3>
-                            </Row>
+                        <Container className="justify-content-center p-2" style={{ "maxHeight": "100%" }}>
+                            <Col sm={12} className="border border-primary rounded p-2 mt-2" style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }}>
+                                <h3 className={"text-center text-light"} >Cahier de transmission éducatif</h3>
+                            </Col>
                             <LayoutTransmission team={team} />
-                            <Footer />
-                        </>
+                        </Container>
                     }
                     {team == "Médical" || userReducer.team == "Médical" &&
-                        <>
-                            <Row onClick={handelMedical} style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                                <h3 className={"text-center"} >Cahier de transmission Médical</h3>
-                            </Row>
+                        <Container className="justify-content-center p-2" style={{ "maxHeight": "100%" }}>
+                            <Col sm={12} className="border border-success rounded p-2 mt-2" style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} >
+                                <h3 className={"text-center text-light"} >Cahier de transmission médical</h3>
+                            </Col>
                             <LayoutTransmission team={team} />
-                            <Footer />
-                        </>
+                        </Container>
                     }
                 </>
             }
             { !userReducer.team &&
                 <>
                     {team == "Médical" &&
-                        <><Row onClick={handelMedical} style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                            <h3 className={"text-center"} >Cahier de transmission Médical</h3>
-                        </Row>
+                        <Container className="justify-content-center p-2" style={{ "maxHeight": "100%" }}>
+                            <Col sm={12} onClick={handelMedical} className="border border-success rounded p-2 mt-2" style={{ "backgroundColor": "#28da69", "cursor": "pointer" }} >
+                                <h3 className={"text-center text-light"} >Cahier de transmission médical</h3>
+                            </Col>
                             <LayoutTransmission team={team} />
-                            <Footer />
-                        </>
+                        </Container>
                     }
                     {team == "Éducatif" &&
-                    <>
-                        <Row style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }} className="justify-content-center m-4 mr-6 p-4">
-                            <h3 className={"text-center"} >Cahier de transmission éducatif</h3>
-                        </Row>
-                        <LayoutTransmission team={userReducer.team} />
-                            <Footer />
-                        </>
-                        
+                        <Container className="justify-content-center p-2" style={{ "maxHeight": "100%" }}>
+
+                            <Col sm={12} onClick={handelEducatif} className="border border-primary rounded p-2 mt-2" style={{ "backgroundColor": "#61a6fb", "cursor": "pointer" }}>
+                                <h3 className={"text-center text-light"} >Cahier de transmission éducatif</h3>
+                            </Col>
+                            <LayoutTransmission team={userReducer.team} />
+                        </Container>
                     }
                 </>
-
             }
-
-
         </>
     );
 };

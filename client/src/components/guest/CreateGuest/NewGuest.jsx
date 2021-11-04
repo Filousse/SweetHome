@@ -17,70 +17,74 @@ const NewGuest = () => {
         const educRef = "";
         const medicalRef = "";
         await dispatch(addGuest(
-            name, 
-            surname, 
-            dateBirthday, 
+            name,
+            surname,
+            dateBirthday,
             adminName,
             educRef,
             medicalRef,
-            ));
+        ));
         history.push('./Picture-guest');
-      }
+    }
 
     return (
         <>
-            <Container className="justify-content-center p-4" style={{ maxWidth: "600px" }}>
-                <Card className="justify-content-center" >
-                    <Card.Header className="justify-content-center">
-                        <h2 className="text-center">Nouveau dossier bénéficiare :</h2>
-                    </Card.Header>
-                    <Card.Body>
-                        <Form onSubmit={handleCreateGuest}>
-                            <Form.Group>
-                                <Form.Label>
-                                    Noms :
+            <Container style={{ "backgroundColor": "rgb(256,236,188)", "paddingRight": 15 }} className="justify-content-center p-4" >
+                <Row className="justify-content-center ">
+                    <img src="./assets/img/yellowCat.png" style={{ "maxWidth": 280 }} />
+                </Row>
+                <Row className="justify-content-center">
+                    <Card className="justify-content-center" >
+                        <Card.Header className="justify-content-center">
+                            <h2 className="text-center">Nouveau dossier bénéficiare :</h2>
+                        </Card.Header>
+                        <Card.Body>
+                            <Form onSubmit={handleCreateGuest}>
+                                <Form.Group>
+                                    <Form.Label>
+                                        Noms :
                                 </Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="name"
-                                    value={name}
-                                    onChange={(e) => { setName(e.target.value) }}
-                                    required
-                                >
-                                </Form.Control>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>
-                                    Prénoms :
+                                    <Form.Control
+                                        type="text"
+                                        name="name"
+                                        value={name}
+                                        onChange={(e) => { setName(e.target.value) }}
+                                        required
+                                    >
+                                    </Form.Control>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>
+                                        Prénoms :
                                 </Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="surname"
-                                    value={surname}
-                                    onChange={(e) => { setSurname(e.target.value) }}
-                                    required
-                                >
-                                </Form.Control>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>
-                                    Date de naissance :
+                                    <Form.Control
+                                        type="text"
+                                        name="surname"
+                                        value={surname}
+                                        onChange={(e) => { setSurname(e.target.value) }}
+                                        required
+                                    >
+                                    </Form.Control>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>
+                                        Date de naissance :
                                 </Form.Label>
-                                <Form.Control
-                                    type="date"
-                                    name="dateBirthday"
-                                    value={dateBirthday}
-                                    onChange={(e) => { setDateBirthday(e.target.value) }}
-                                    required
-                                >
-                                </Form.Control>
-                            </Form.Group>
-                            <Button className="w-100 mt-3" type="submit" >Créer le dossier bénéficiare</Button>
-                        </Form>
-                    </Card.Body>
-                </Card>
+                                    <Form.Control
+                                        type="date"
+                                        name="dateBirthday"
+                                        value={dateBirthday}
+                                        onChange={(e) => { setDateBirthday(e.target.value) }}
+                                        required
+                                    >
+                                    </Form.Control>
+                                </Form.Group>
+                                <Button className="w-100 mt-3" type="submit" >Créer le dossier bénéficiare</Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Row>
             </Container >
-
         </>
     );
 };

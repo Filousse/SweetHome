@@ -66,9 +66,9 @@ const ListNoRef = (props) => {
                                     <td class="table-info" >
                                         <img
                                             onClick={() => handelAddRef(guest_id)}
-                                            src="./assets/icon/follow.png"
+                                            src="./assets/icon/btn_AddRefs.png"
                                             style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                                            alt="basket_icon"
+                                            alt="btn_AddRefs"
                                         />
                                     </td>
                                 </tr>

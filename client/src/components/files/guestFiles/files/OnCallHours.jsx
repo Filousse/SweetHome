@@ -1,4 +1,4 @@
-import React, { setState, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { Card, Row, Col, Table, Form } from "react-bootstrap"
 
 export class OnCallHours extends PureComponent {
@@ -45,7 +45,7 @@ export class OnCallHours extends PureComponent {
                     <Row>
                         <Col sm={1}>
                             <img
-                                src="../../uploads/logo/logoCCAS.png"
+                                src="../../assets/icon/icon_Logo.png"
                                 style={{ "height": "75px", "width": "75px" }}
                                 alt="logo_asso"
                             />
@@ -59,10 +59,10 @@ export class OnCallHours extends PureComponent {
                     <Table responsive striped bordered hover size="lg">
                         <thead>
                             <tr>
-                                <th className="w-25 text-center">Nom :{showUpdate} </th>
-                                <th className="w-25 text-center">Début de l'abstreinte : </th>
-                                <th className="w-25 text-center">Fin de l'abstreinte :</th>
-                                <th className="w-25 text-center">Contact :</th>
+                                <th className="w-25 text-center text-justify">Nom{showUpdate} </th>
+                                <th className="w-25 text-center text-justify">Début de l'abstreinte</th>
+                                <th className="w-25 text-center text-justify">Fin de l'abstreinte</th>
+                                <th className="w-25 text-center text-justify">Contact</th>
                             </tr>
                         </thead>
                         <tbody>

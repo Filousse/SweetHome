@@ -13,9 +13,9 @@ const HeaderFile = (props) => {
         <>
             <Card.Header >
                 <Row >
-                    <Col xs lg={2}>
+                    <Col xs lg={2} >
                         <img
-                            src="../../uploads/logo/logoCCAS.png"
+                            src="../../assets/icon/icon_Logo.png"
                             style={{ "height": "75px", "width": "75px" }}
                             alt="logo_asso"
                         />
@@ -25,7 +25,7 @@ const HeaderFile = (props) => {
                             return (
                                 <>
                                     <Col xs lg={8} >
-                                        <h3> {propsData.widget} <br></br> {guest.name} {guest.surname}</h3>
+                                        <h3 className="text-responsive"> {propsData.widget} <br></br> {guest.name} {guest.surname}</h3>
                                         {usersReducer.map((user) => {
                                             if (user._id === guest.educRef) {
                                                 return (
@@ -41,7 +41,7 @@ const HeaderFile = (props) => {
                                             }
                                         })}
                                     </Col>
-                                    <Col xs lg={2}>
+                                    <Col xs lg={2}  >
                                         <img
                                             src={srcExtension(guest.picture)}
                                             style={{ "height": "120px", "width": "120px" }}

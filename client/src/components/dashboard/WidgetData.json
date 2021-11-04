@@ -1,68 +1,68 @@
 {
   "educative": [
     {
-      "flag": "./assets/img/ficheBesoin.png",
+      "flag": "./assets/icon/widget_Needs.png",
       "name": "Fiche besoins",
       "route": "/widget-needs"
     },
     {
-      "flag": "./assets/img/pictogramme.png",
+      "flag": "./assets/icon/widget_Picto.png",
       "name": "Pictogrammes",
       "route": "/widget-picto"
     },
     {
-      "flag": "./assets/img/planningJeunes.png",
+      "flag": "./assets/icon/widget_Planning.png",
       "name": "Planning des résidents",
       "route": "/widget-planning"
     },
     {
-      "flag": "./assets/img/hygiène.png",
+      "flag": "./assets/icon/widget_Hygiene.png",
       "name": "Fiche hygiène",
       "route": "/widget-hygiene"
     },
     {
-      "flag": "./assets/img/ficheRepas.png",
+      "flag": "./assets/icon/widget_Meal.png",
       "name": "Fiche repas",
       "route": "/widget-meal"
     }
   ],
   "medical": [
     {
-      "flag": "./assets/img/ficheMedical.png",
+      "flag": "./assets/icon/widget_MedialFil.png",
       "name": "Fiche médicale",
       "route": "/widget-medical"
     },
     {
-      "flag": "./assets/img/traitementMedical.png",
+      "flag": "./assets/icon/widget_Medicament.png",
       "name": "Traitement médicale",
       "route": "/widget-treatment"
     },
     {
-      "flag": "./assets/img/materielMedical.png",
+      "flag": "./assets/icon/widget_MaterialMedical.png",
       "name": "Matériel médical",
       "route": "/widget-material"
     }
   ],
   "admin": [
     {
-      "flag": "./assets/img/abstreinte.png",
+      "flag": "./assets/icon/widget_EmergencyCall.png",
       "name": "Contacts des abstreintes",
       "route": "/widget-abstreinte"
     }
   ],
   "educ_medic": [
     {
-      "flag": "./assets/img/transmission.png",
+      "flag": "./assets/icon/widget_Transmission.png",
       "name": "Transmission d'équipe",
       "route": "/widget-transmission"
     },
     {
-      "flag": "./assets/img/roulement.png",
+      "flag": "./assets/icon/widget_Turnover.png",
       "name": "Roulement du personnel",
       "route": "/widget-staff"
     },
     {
-      "flag": "./assets/img/information.png",
+      "flag": "./assets/icon/widget_Information.png",
       "name": "Information générale",
       "route": "/widget-info"
     }

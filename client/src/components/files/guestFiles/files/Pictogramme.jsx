@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Col, Row, Card, Form, Button } from "react-bootstrap"
+import InfoDemo from "../InfoDemo"
 
 const Pictogramme = (props) => {
     const showUpdate = props.showUpdate;
-
     const [name, setName] = useState("")
 
     return (
-        <Card.Body>
+        <Card.Body  style={{overflow:"scroll"}}>
             <>
                 <Form>
-                    {!showUpdate &&
-                        <Button className="m-4">Ajouter un pictogramme</Button>
-                    }
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -27,12 +24,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -44,12 +41,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -61,12 +58,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -78,12 +75,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -95,12 +92,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -112,12 +109,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -129,12 +126,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_PictoTest.png" className=" border border-dark" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -146,12 +143,12 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <img src="../../uploads/guest/pictogrammes/PictoTest.png" className=" border border-dark" style={{ "width": "300px", "height": "300px", "borderRadius": "20px" }} alt="user-picture" />
+                            <img src="../../assets/icon/icon_More.png" className=" border border-dark p-4" style={{ "width": "270px", "height": "270px", "borderRadius": "20px" }} alt="user-picture" />
                             {!showUpdate &&
                                 <>
                                     <Form.Control
@@ -163,7 +160,7 @@ const Pictogramme = (props) => {
                                         style={{ "marginBottom": "10px" }}
                                     // onChange={(e) => setFile(e.target.files[0])}
                                     />
-                                    <Button>Valider</Button>
+                                    <InfoDemo/>
                                 </>
                             }
                         </Form.Group>

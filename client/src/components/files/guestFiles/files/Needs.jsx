@@ -28,7 +28,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Rythme d'acceuil :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/005-clock.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!acceuil ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{acceuil}</>)}
                         </Row>
@@ -38,7 +38,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Communication :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/006-promotion.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!communication ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{communication}</>)}
                         </Row>
@@ -48,7 +48,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Ce que j'aime :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/007-like.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!like ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{like}</>)}
                         </Row>
@@ -61,7 +61,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Ce que je n'aime pas :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/004-dont-like.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!dontLike ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{dontLike}</>)}
                         </Row>
@@ -71,7 +71,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Surveillance particulière :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/008-danger.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!surveillance ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{surveillance}</>)}
                         </Row>
@@ -81,7 +81,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Toilette / habillage :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/003-shower.png"   style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!toilette ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{toilette}</>)}
                         </Row>
@@ -94,7 +94,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Protection mise aux toilettes :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/009-toilet.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!protection ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{protection}</>)}
                         </Row>
@@ -104,7 +104,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Particularité repas :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/002-repas.png"   style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!repas ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{repas}</>)}
                         </Row>
@@ -114,7 +114,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Alimentation spécifique :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/010-salad.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!alimentation ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{alimentation}</>)}
                         </Row>
@@ -127,7 +127,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Hydratation :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/001-drink.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!hydratation ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{hydratation}</>)}
                         </Row>
@@ -137,7 +137,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Equipe technique :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/012-wheel-chair.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!technique ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{technique}</>)}
                         </Row>
@@ -147,7 +147,7 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Divers :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/011-idea.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px'}}>
+                        <Row className="border border-dark p-3 ml-1 mr-1" style={{height:'107px', overflow: "scroll" }}>
                             {!divers ? (<>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, voluptatibus inventore dolor nostrum.
                             </>):(<>{divers}</>)}
                         </Row>
@@ -166,21 +166,21 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Rythme d'acceuil :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/005-clock.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setAcceuil(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setAcceuil(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Communication :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/006-promotion.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setCommunication(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setCommunication(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Ce que j'aime :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/007-like.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setLike(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setLike(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                 </Row>
 
@@ -190,21 +190,21 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Ce que je n'aime pas :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/004-dont-like.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setDontLike(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setDontLike(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Surveillance particulière :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/008-danger.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setSurveillance(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setSurveillance(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Toilette / habillage :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/003-shower.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setToilette(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setToilette(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                 </Row>
 
@@ -214,21 +214,21 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Protection mise aux toilettes :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/009-toilet.png"    style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setProtection(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setProtection(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Particularité repas :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/002-repas.png"    style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setRepas(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setRepas(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Alimentation spécifique :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/010-salad.png"    style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setAlimentation(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setAlimentation(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                 </Row>
 
@@ -238,21 +238,21 @@ const Needs = (props) => {
                             <Form.Label className="mt-2"><strong>Hydratation :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/001-drink.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setHydratation(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setHydratation(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Equipe technique :</strong></Form.Label>
                             <Image className="mt-1" src="../../assets/icon/012-wheel-chair.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setTechnique(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setTechnique(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Row className="justify-content-around border border-danger m-1 mb-3">
                             <Form.Label className="mt-2"><strong>Divers :</strong></Form.Label>
                             <Image className="mt-1"  src="../../assets/icon/011-idea.png"  style={{ "height": "30px", "width": "30px" }} />
                         </Row>
-                        <Form.Control as="textarea" onChange={(e) => setDivers(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px' }} />
+                        <Form.Control as="textarea" onChange={(e) => setDivers(e.target.value)} placeholder="Editer un text informatif..." style={{ height: '108px', overflow: "scroll"  }} />
                     </Form.Group>
                 </Row>
             </Form>

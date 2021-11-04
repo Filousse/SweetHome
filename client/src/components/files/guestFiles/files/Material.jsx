@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import InfoDemo from "../InfoDemo"
 
 const Material = (props) => {
     const showUpdate = props.showUpdate;
@@ -17,7 +18,7 @@ const Material = (props) => {
                         <h5 className="mt-2"><strong>Utilisation du matériel :</strong></h5>
                     </Row>
                     {showUpdate ? (
-                        <Row className="border border-dark m-3 p-3" style={{ height: '107px' }}>
+                        <Row className="border border-dark m-3 p-3" style={{ height: '107px', overflow:"scroll" }}>
                             {!textOne ? (
                                 <>Lorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectet</>
                             ) : (<>{textOne}</>)
@@ -29,7 +30,7 @@ const Material = (props) => {
                             </Row>
                         )}
                     <Row className="justify-content-center">
-                        <img src="../../uploads/guest/pictogrammes/PictoTest.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
+                        <img src="../../assets/icon/icon_Material.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
                     </Row>
                     {!showUpdate &&
                         <>
@@ -40,9 +41,8 @@ const Material = (props) => {
                                 name="file"
                                 accept=".jpg, .jpeg, .png"
                                 style={{ "marginBottom": "10px" }}
-                            // onChange={(e) => setFile(e.target.files[0])}
                             />
-                            <Button>Valider</Button>
+                            <InfoDemo />
                         </>
                     }
                 </Col>
@@ -51,7 +51,7 @@ const Material = (props) => {
                         <h5 className="mt-2"><strong>Utilisation du matériel :</strong></h5>
                     </Row>
                     {showUpdate ? (
-                        <Row className="border border-dark m-3 p-3" style={{ height: '107px' }}>
+                        <Row className="border border-dark m-3 p-3" style={{ height: '107px', overflow:"scroll" }}>
                             {!textTwo ? (
                                 <>Lorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectet</>
                             ) : (<>{textTwo}</>)
@@ -63,7 +63,7 @@ const Material = (props) => {
                             </Row>
                         )}
                                         <Row className="justify-content-center">
-                        <img src="../../uploads/guest/pictogrammes/PictoTest.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
+                        <img src="../../assets/icon/icon_Material.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
                     </Row>
                     {!showUpdate &&
                         <>
@@ -76,7 +76,7 @@ const Material = (props) => {
                                 style={{ "marginBottom": "10px" }}
                             // onChange={(e) => setFile(e.target.files[0])}
                             />
-                            <Button>Valider</Button>
+                            <InfoDemo />
                         </>
                     }
                 </Col>
@@ -87,7 +87,7 @@ const Material = (props) => {
                         <h5 className="mt-2"><strong>Utilisation du matériel :</strong></h5>
                     </Row>
                     {showUpdate ? (
-                        <Row className="border border-dark m-3 p-3" style={{ height: '107px' }}>
+                        <Row className="border border-dark m-3 p-3" style={{ height: '107px', overflow:"scroll" }}>
                             {!textThree ? (
                                 <>Lorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectet</>
                             ) : (<>{textThree}</>)
@@ -99,7 +99,7 @@ const Material = (props) => {
                             </Row>
                         )}
                                         <Row className="justify-content-center">
-                        <img src="../../uploads/guest/pictogrammes/PictoTest.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
+                        <img src="../../assets/icon/icon_Material.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
                     </Row>
                     {!showUpdate &&
                         <>
@@ -112,7 +112,7 @@ const Material = (props) => {
                                 style={{ "marginBottom": "10px" }}
                             // onChange={(e) => setFile(e.target.files[0])}
                             />
-                            <Button>Valider</Button>
+                            <InfoDemo />
                         </>
                     }
                 </Col>
@@ -121,7 +121,7 @@ const Material = (props) => {
                         <h5 className="mt-2"><strong>Utilisation du matériel :</strong></h5>
                     </Row>
                     {showUpdate ? (
-                        <Row className="border border-dark m-3 p-3" style={{ height: '107px' }}>
+                        <Row className="border border-dark m-3 p-3" style={{ height: '107px', overflow:"scroll" }}>
                             {!textFour ? (
                                 <>Lorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectetLorem ipsum dolor sit, amet consectet</>
                             ) : (<>{textFour}</>)
@@ -133,7 +133,7 @@ const Material = (props) => {
                             </Row>
                         )}
                                         <Row className="justify-content-center">
-                        <img src="../../uploads/guest/pictogrammes/PictoTest.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
+                        <img src="../../assets/icon/icon_Material.png" className="w-75 ml-4 mr-4 border border-dark" style={{ "borderRadius": "20px" }} alt="user-picture" />
                     </Row>
                     {!showUpdate &&
                         <>
@@ -146,7 +146,7 @@ const Material = (props) => {
                                 style={{ "marginBottom": "10px" }}
                             // onChange={(e) => setFile(e.target.files[0])}
                             />
-                            <Button>Valider</Button>
+                            <InfoDemo/>
                         </>
                     }
                 </Col>

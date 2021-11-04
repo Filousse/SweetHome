@@ -9,7 +9,7 @@ const Services = () => {
             </Row>
             <Row className="p-2 justify-content-between">
                 <Col md={6} sm={12}>
-                <Image className="w-100" src="./assets/homePage/services_acces.jpeg" alt="launchpad" />
+                <Image className="w-100" src="./assets/img/services_acces.jpeg" alt="launchpad" />
                 </Col>
                 <Col md={6} className="">
                     <Row className="m-4 justify-content-center" >
@@ -26,11 +26,11 @@ const Services = () => {
                     </Row>
                 </Col>
                 <Col md={6} sm={12}  xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
-                <Image  className="w-100" src="./assets/homePage/services_team.jpeg" alt="launchpad" />
+                <Image  className="w-100" src="./assets/img/services_team.jpeg" alt="launchpad" />
                 </Col>
             </Row>  
             <Row className="pb-4 justify-content-center">
-                <Button style={{fontSize: 20}} variant="info" className="w-75 mb-4 p-4"><strong>J'ai un projet de dossier usager informatiser</strong></Button>
+                <Button href="#Contact" style={{fontSize: 20}} variant="info" className="w-75 mb-4 p-4"><strong>J'ai un projet de dossier usager informatiser</strong></Button>
             </Row>
         </Container>
     );

@@ -133,7 +133,7 @@ const ModalRefs = (props) => {
         <>
             <img
                 onClick={() => setModalShow(true)}
-                src="./assets/icon/references.png"
+                src="./assets/icon/btn_References.png"
                 style={{ width: "30px", height: "30px", cursor: "pointer" }}
                 alt="references"
             />

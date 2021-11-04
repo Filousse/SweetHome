@@ -4,7 +4,7 @@ import { useHistory, Link } from "react-router-dom"
 import { Navbar, Nav, Button } from "react-bootstrap"
 import Logout from './authentification/Logout'
 import { switchColorTeam } from "../components/Utils"
-import Notification from "./notifications/Notification"
+import Timer from "./timer/Timer"
 
 
 export default function Header(props) {
@@ -12,21 +12,6 @@ export default function Header(props) {
   const logout = props.logout;
   const history = useHistory();
   const userData = useSelector((state) => state.userReducer);
-  const guestReducer = useSelector(state => state.guestReducer)
-  const [btnNotification, setBtnNotification] = useState(false)
-
-  // useEffect(() => {
-  //   const loadNotification = async () => {
-  //     await guestReducer.map((guest) => {
-  //       if (guest.educRef == userData._id  || guest.medicalRef == userData._id){
-  //           setBtnNotification(!btnNotification)
-  //       }
-  //     })
-  //   }
-  //   return () => {
-  //     loadNotification();
-  //   }
-  // }, [guestReducer, userData])
 
   const handleSignIn = () => {
     history.push("/signup")
@@ -79,12 +64,12 @@ export default function Header(props) {
                     <>
                       <Navbar.Brand >
                         <Link to="/guest">
-                          <img src="./assets/icon/beneficiaries.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Guest" />
                         </Link>
                       </Navbar.Brand>
                       <Navbar.Brand >
                         <Link to="/employee">
-                          <img src="./assets/icon/settingsEmployee.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                          <img src="./assets/icon/btn_User.png" style={{ "height": "35px", "width": "35px" }} alt="btn_User" />
                         </Link>
                       </Navbar.Brand>
                     </>
@@ -92,7 +77,7 @@ export default function Header(props) {
                     <>
                       <Navbar.Brand >
                         <Link to="/guest">
-                          <img src="./assets/icon/references.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Guest" />
                         </Link>
                       </Navbar.Brand>
                     </>
@@ -101,21 +86,19 @@ export default function Header(props) {
                 }
                 <Navbar.Brand >
                   <Link to="/messaging">
-                    <img src="./assets/icon/chat.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                    <img src="./assets/icon/btn_Chat.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Chat" />
                   </Link>
                 </Navbar.Brand>
-                {btnNotification &&
                   <Navbar.Brand>
-                    <Notification />
+                    <Timer />
                   </Navbar.Brand>
-                }
                 {logout
                   ? (<Navbar.Brand>
                     <Logout />
                   </Navbar.Brand>)
                   : (<Navbar.Brand>
                     <Link to="/dashboard">
-                      <img src="./assets/icon/apps.png" style={{ "height": "35px", "width": "35px" }} alt="launchpad" />
+                      <img src="./assets/icon/btn_App.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Apps" />
                     </Link>
                   </Navbar.Brand>)
                 }

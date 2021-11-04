@@ -15,24 +15,22 @@ const DeleteGuest = (props) => {
 
     const handleDelete = () => {
         dispatch(deleteGuest(guestId));
-        // window.location = "/guest";
-        // setShow(false);
     };
 
     return (
     <>
             <img
                 onClick={handleShow}
-                src="./assets/icon/delete.png"
+                src="./assets/icon/btn_Delete.png"
                 style={{width:"30px", height:"30px", cursor:"pointer"}}
                 alt="basket_icon"
             />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="bg-danger" closeButton>
-                    <Modal.Title >Avertissement :</Modal.Title>
+                    <Modal.Title className="text-light">Avertissement :</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
-                        Êtes-vous sûr de supprimer le compte de {guestId} {guestName} {guestSurname}!
+                <Modal.Body className="text-center">
+                        Êtes-vous sûr de supprimer le compte de {guestName} {guestSurname} ?
                     </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

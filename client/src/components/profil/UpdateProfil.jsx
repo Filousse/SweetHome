@@ -30,13 +30,13 @@ const UpdateProfil = () => {
     <>
       <Header />
       <Row className="justify-content-center m-4">
-        <h1> Profil de {userData.surname} {userData.name}:</h1>
+        <h1 className="text-center"> Profil de {userData.surname} {userData.name}:</h1>
       </Row>
       <Row className="justify-content-center m-4">
         <Card className="w-75" style={{ "maxWidth": "300px", "margin": "5px" }}>
           <Card.Body className="card-body" >
-            <Row className="justify-content-center m-4" >
-              <h5>Photo de profil :</h5>
+            <Row className="justify-content-center m-2" >
+              <h5>Photo de profil</h5>
               <img src={userData.photoProfil} style={{ "width": "200px", "height": "200px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
               <br />
               {error.maxSize &&
@@ -51,12 +51,12 @@ const UpdateProfil = () => {
         </Card>
         <Card className="w-75" style={{ "maxWidth": "300px", "margin": "5px" }}>
           <Card.Body className="card-body" >
-            <Row className="justify-content-center m-4" >
-              <h5>Biographie :</h5>
+            <Row className="justify-content-center m-2" >
+              <h5>Biographie</h5>
               {updateForm === false && (
                 <>
                   {userData.bio && (
-                    <Alert className="w-100" style={{ cursor: "pointer" }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>{userData.bio}</Alert>
+                    <Alert className="w-100" style={{ cursor: "pointer", "height": 195  }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>{userData.bio}</Alert>
                   )}
                   <Button className="w-100" onClick={() => setUpdateForm(!updateForm)}>
                     Modifier
@@ -69,7 +69,7 @@ const UpdateProfil = () => {
                     as="textarea"
                     defaultValue={userData.bio}
                     onChange={(e) => setBio(e.target.value)}
-                    style={{ "width": "200px", "height": "200px", "marginBottom": "10px" }}
+                    style={{ "width": "250px", "height": "200px", "marginBottom": "10px" }}
                   />
                   <Button onClick={handleUpdate} className="w-100" >
                     Valider

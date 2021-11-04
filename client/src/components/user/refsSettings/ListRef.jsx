@@ -62,7 +62,7 @@ const ListRef = (props) => {
                             <td class="table-warning" >
                                 <img
                                     onClick={() => handelDeleteRef(guest_id)}
-                                    src="./assets/icon/unfollow.png"
+                                    src="./assets/icon/btn_Delete.png"
                                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
                                     alt="basket_icon"
                                 />

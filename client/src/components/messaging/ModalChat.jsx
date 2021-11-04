@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Card, Modal, Button, Row, Col, Form } from 'react-bootstrap';
+import { Card, Modal, Button, Row, Col, Form, Image } from 'react-bootstrap';
+import { useSelector } from "react-redux"
 
 const ModalTchat = (props) => {
-  const data = { ...props }
+  const userReducer = useSelector(state => state.userReducer);
+  const data = { ...props };
   const [show, setShow] = useState(false);
   const [write, setWrite] = useState(false);
   const handleClose = () => setShow(false);
@@ -31,7 +33,7 @@ const ModalTchat = (props) => {
   return (
     <>
       <Card className="widget" style={data.style} onClick={handleShow} >
-        <img className="img" src={data.src} alt="flag" />
+        <Image className="image" src={data.src} alt="flag" />
         <div className="text-danger">{data.checkRefEduc} {data.checkRefMedical}</div>
         <div className="data-container" >
           <ul style={data.style} >
@@ -52,86 +54,90 @@ const ModalTchat = (props) => {
         {!write
           ? (
             <Modal.Body className="p-4" style={{ background: '#FDF2E9', maxHeight: 'calc(100vh - 210px)', overflowY: 'scroll' }}>
-                      {aujourdhui}
+            {aujourdhui}
               {
                 messagesArray.reverse().map((item) => {
                   return (
                     <Row className="justify-content-center mr-4  mt-4">
-                      <Col sm={9}>
+                      <Col xs={9}>
                         <Modal.Body key={item.id} className="border border-primary" style={{ "borderRadius": 30, "backgroundColor": "#D1E5FF" }} >
                           {item.message}
                         </Modal.Body>
                       </Col>
-                      <Col sm={1}>
-                        <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
+                      <Col xs={1}>
+                        <img src={userReducer.photoProfil} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                       </Col>
                     </Row>
                   )
                 })
               }
               <Row className="justify-content-center">
-                <Col className="mt-4 ml-3" sm={1}>
+                <Col className="mt-4 ml-3" xs={1}>
                   <img src={data.src} width="40" height="40" style={{ borderRadius: '20px' }} />
                 </Col>
-                <Col sm={10} >
+                <Col xs={10} >
                   <Modal.Body className="border border-success m-4" style={{ "borderRadius": 30, "backgroundColor": "#E4FADE" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus corrupti nisi dolores nobis omnis expedita, provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
               </Row>
+
+
+
               {deuxJoursAvant}
               <Row className="justify-content-center mr-4 mt-3">
-                <Col sm={9}>
+                <Col xs={9}>
                   <Modal.Body className="border border-primary" style={{ "borderRadius": 30, "backgroundColor": "#D1E5FF" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
-                <Col sm={1}>
-                  <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
+                <Col xs={1}>
+                  <img src={userReducer.photoProfil} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
               </Row>
+              
               <Row className="justify-content-center">
-                <Col className="mt-4 ml-3" sm={1}>
+                <Col className="mt-4 ml-3" xs={1}>
                   <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
-                <Col sm={10} >
+                <Col xs={10} >
                   <Modal.Body className="border border-success m-4" style={{ "borderRadius": 30, "backgroundColor": "#E4FADE" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus corrupti nisi dolores nobis omnis expedita, provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
               </Row>
               <Row className="justify-content-center mr-4 m-4">
-                <Col sm={9}>
+                <Col xs={9}>
                   <Modal.Body className="border border-primary" style={{ "borderRadius": 30, "backgroundColor": "#D1E5FF" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
-                <Col sm={1}>
-                  <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
+                <Col xs={1}>
+                  <img src={userReducer.photoProfil} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
               </Row>
               {quatreJoursAvant}
               <Row className="justify-content-center">
-                <Col className="mt-4 ml-3" sm={1}>
+                <Col className="mt-4 ml-3" xs={1}>
                   <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
-                <Col sm={10} >
+                <Col xs={10} >
                   <Modal.Body className="border border-success m-4" style={{ "borderRadius": 30, "backgroundColor": "#E4FADE" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus corrupti nisi dolores nobis omnis expedita, provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
               </Row>
               <Row className="justify-content-center">
-                <Col className="mt-4 ml-3" sm={1}>
+                <Col className="mt-4 ml-3" xs={1}>
                   <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
-                <Col sm={10} >
+                <Col xs={10} >
                   <Modal.Body className="border border-success m-4" style={{ "borderRadius": 30, "backgroundColor": "#E4FADE" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus corrupti nisi dolores nobis omnis expedita, provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
               </Row>
               <Row className="justify-content-center mr-4">
-                <Col sm={9}>
+                <Col xs={9}>
                   <Modal.Body className="border border-primary" style={{ "borderRadius": 30, "backgroundColor": "#D1E5FF" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
-                <Col sm={1}>
-                  <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
+                <Col xs={1}>
+                  <img src={userReducer.photoProfil} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
               </Row>
               <Row className="justify-content-center">
-                <Col className="mt-4 ml-3" sm={1}>
+                <Col className="mt-4 ml-3" xs={1}>
                   <img src={data.src} width="40" height="40" style={{ 'borderRadius': '20px' }} />
                 </Col>
-                <Col sm={10} >
+                <Col xs={10} >
                   <Modal.Body className="border border-success m-4" style={{ "borderRadius": 30, "backgroundColor": "#E4FADE" }} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus corrupti nisi dolores nobis omnis expedita, provident doloremque accusantium impedit labore, ullam possimus, voluptates et ratione maiores id doloribus consequatur?</Modal.Body>
                 </Col>
               </Row>
@@ -160,17 +166,17 @@ const ModalTchat = (props) => {
               <img
                 className="m-2"
                 onClick={openWrite}
-                src="./assets/icon/write.png"
+                src="./assets/icon/btn_Write.png"
                 style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                alt="basket_icon"
+                alt="btn_Write"
               />
             ) : (
               <img
                 className="m-2"
                 onClick={openWrite}
-                src="./assets/icon/visit.png"
+                src="./assets/icon/btn_Visit.png"
                 style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                alt="basket_icon"
+                alt="btn_Visit"
               />
             )}
         </Modal.Footer>
