@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form, Row } from "react-bootstrap"
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import { Modal, Button, Form, Row } from "react-bootstrap";
+import InfoDemo from "../files/guestFiles/InfoDemo";
 import { dateParser } from "../Utils"
 
 const Timer = () => {
@@ -46,7 +47,7 @@ const Timer = () => {
                                         </Form.Control>
                                     </td>
                                     <td class="table-warning p-2" >
-                                        <Button >Modifier </Button>
+                                        <InfoDemo />
                                     </td>
                                 </tr>
                             )

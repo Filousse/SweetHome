@@ -9,10 +9,7 @@ export default function userReducer(state = initialState, action) {
         case UPLOAD_PICTURE:
             return action.payload
         case UPDATE_BIO: 
-            return {
-                ...state,
-                bio: action.payload,
-            }
+            return action.payload
         case DELETE_USER:
             return action.payload
         default:

@@ -1,10 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useSelector } from "react-redux"
 import { useHistory } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import { ComponentToPrint } from './guestFiles/ComponentToPrint';
 import { clearUrlStyle } from "../Utils"
 import { Container, Row, Col, Alert } from "react-bootstrap"
-import { useSelector } from "react-redux"
+
 
 const ActionsFile = () => {
     const history = useHistory();

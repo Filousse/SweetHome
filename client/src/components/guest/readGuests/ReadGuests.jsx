@@ -8,9 +8,9 @@ import BtnUpdateRead from '../updateGuest/BtnUpdateRead';
 import IconInfo from './IconInfo';
 
 const ReadGuests = () => {
-    const guestsData = useSelector((state) => state.guestReducer);
-    const usersData = useSelector((state) => state.usersReducer);
-    const userData = useSelector((state) => state.userReducer);
+    const guestReducer = useSelector((state) => state.guestReducer);
+    const usersReducer = useSelector((state) => state.usersReducer);
+    const userReducer = useSelector((state) => state.userReducer);
 
     return (
         <>
@@ -24,7 +24,7 @@ const ReadGuests = () => {
                             <tr class="bg-warning">
                                 <th scope="col" colspan="2" className="text-light text-uppercase pl-2 pb-4">Bénéficiares</th>
                                 <th scope="col" colspan="2" className="text-light text-uppercase text-center  pb-4">Références</th>
-                                {!userData.adminName ? (
+                                {!userReducer.adminName ? (
                                     <th scope="col" colspan="2" className="text-light text-center  pr-4 pb-3">
                                         <Link to="/new-guest" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
                                             <img
@@ -43,8 +43,8 @@ const ReadGuests = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {guestsData.map((guest) => {
-                                if (guest.adminName === userData.name || guest.adminName === userData.adminName) {
+                            {guestReducer.map((guest) => {
+                                if (guest.adminName === userReducer.name || guest.adminName === userReducer.adminName) {
                                     return (
                                         <tr key={guest._id}>
                                             <td class="table-warning" >
@@ -61,7 +61,7 @@ const ReadGuests = () => {
                                                 {guest.name} {guest.surname}
                                             </td>
                                             <td class="table-warning text-right"  >
-                                                {usersData.map((user) => {
+                                                {usersReducer.map((user) => {
                                                     if (user._id === guest.educRef) {
                                                         return (
                                                             < IconInfo
@@ -74,7 +74,7 @@ const ReadGuests = () => {
                                                 })}
                                             </td>
                                             <td class="table-warning"  >
-                                                {usersData.map((user) => {
+                                                {usersReducer.map((user) => {
                                                     if (user._id === guest.medicalRef) {
                                                         return (
                                                             < IconInfo
@@ -94,7 +94,7 @@ const ReadGuests = () => {
                                                     adminName={guest.adminName}
                                                 />
                                             </td>
-                                            { guest.adminName === userData.name && (
+                                            { guest.adminName === userReducer.name && (
                                                 <td class="table-warning" >
                                                     <DeleteGuest
                                                         DataId={guest._id}

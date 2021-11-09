@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Row, Col, Modal, Button } from "react-bootstrap"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import ListRef from "./ListRef"
 import ListNoRef from "./ListNoRef"
 
 function MydModalWithGrid(props) {
-    const guestsData = useSelector((state) => state.guestReducer);
-    const usersData = useSelector((state) => state.usersReducer);
+    const guestReducer = useSelector((state) => state.guestReducer);
+    const usersReducer = useSelector((state) => state.usersReducer);
     const user_id = props.user_id;
     const user_team = props.user_team;
     const user_adminName = props.user_adminName;
@@ -19,7 +19,7 @@ function MydModalWithGrid(props) {
     return (
         <Modal {...props} aria-labelledby="contained-modal-title-center">
             <Modal.Header closeButton>
-                {usersData.map((user) => {
+                {usersReducer.map((user) => {
                     if (user._id === user_id) {
                         return (
                             <Modal.Title id="contained-modal-title-vcenter">
@@ -33,28 +33,26 @@ function MydModalWithGrid(props) {
                 {toggleModal
                     ? (
                         <>
-                            {guestsData.map((guest) => {
+                            {guestReducer.map((guest) => {
                                 if (guest.educRef === user_id) {
                                     return (
                                         <ListRef
-                                            user_id={user_id}
+                                            user_team={user_team}
                                             guest_id={guest._id}
                                             guest_name={guest.name}
                                             guest_surname={guest.surname}
                                             guest_picture={guest.picture}
-                                            user_team={user_team}
                                         />
                                     )
                                 }
                                 if (guest.medicalRef === user_id) {
                                     return (
                                         <ListRef
-                                            user_id={user_id}
+                                            user_team={user_team}
                                             guest_id={guest._id}
                                             guest_name={guest.name}
                                             guest_surname={guest.surname}
                                             guest_picture={guest.picture}
-                                            user_team={user_team}
                                         />
                                     )
                                 }
@@ -62,38 +60,55 @@ function MydModalWithGrid(props) {
                         </>
                     ) : (
                         <>
-                            {guestsData.map((guest) => {
-                                if (guest.educRef === "" &&
-                                    user_team === "Éducative") {
-                                    return (
-                                        <ListNoRef
-                                            user_id={user_id}
-                                            guest_id={guest._id}
-                                            guest_name={guest.name}
-                                            guest_surname={guest.surname}
-                                            guest_picture={guest.picture}
-                                            guest_adminName={guest.adminName}
-                                            user_team={user_team}
-                                            user_adminName={user_adminName}
-                                        />
-                                    )
+                            {user_team === "Éducative" &&
+                                <>
+                                {guestReducer.map((guest) => {
+
+                                    if (guest.educRef === "") {
+                                        return (
+                                            <> {user_team}
+                                                <ListNoRef
+                                                    user_id={user_id}
+                                                    guest_id={guest._id}
+                                                    guest_name={guest.name}
+                                                    guest_surname={guest.surname}
+                                                    guest_picture={guest.picture}
+                                                    guest_adminName={guest.adminName}
+                                                    user_team={user_team}
+                                                    user_adminName={user_adminName}
+                                                />
+                                            </>
+                                        )
+                                    }
+                                })
                                 }
-                                if (guest.medicalRef === "" && user_team === "Médical") {
-                                    return (
-                                        <ListNoRef
-                                            user_id={user_id}
-                                            guest_id={guest._id}
-                                            guest_name={guest.name}
-                                            guest_surname={guest.surname}
-                                            guest_picture={guest.picture}
-                                            guest_adminName={guest.adminName}
-                                            user_team={user_team}
-                                            user_adminName={user_adminName}
-                                        />
-                                    )
-                                }
-                            })
+                            </>
                             }
+                            {user_team === "Médical" &&
+                                <>
+                                    {guestReducer.map((guest) => {
+
+                                        if (guest.medicalRef === "") {
+                                            return (
+                                                <> {user_team}
+                                                    <ListNoRef
+                                                        user_id={user_id}
+                                                        guest_id={guest._id}
+                                                        guest_name={guest.name}
+                                                        guest_surname={guest.surname}
+                                                        guest_picture={guest.picture}
+                                                        guest_adminName={guest.adminName}
+                                                        user_team={user_team}
+                                                        user_adminName={user_adminName}
+                                                    />
+                                                </>
+                                            )
+                                        }
+                                    })
+                                    }
+                                </>
+                            }
+
                         </>
                     )
                 }

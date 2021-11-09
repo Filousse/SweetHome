@@ -4,12 +4,11 @@ import { useHistory } from "react-router-dom";
 import WidgetData from "../../dashboard/WidgetData.json";
 
 const FilesEduc = (props) => {
-  const data = {...props}
+  const propsData = {...props}
   const history = useHistory();
 
   const handelFile = (widgetName) => {
-      console.log("{data.guestId}",data.idGuest);
-      history.push(`/read-file/id=${data.idGuest}/widget=${widgetName}`)
+      history.push(`/read-file/id=${propsData.idGuest}/widget=${widgetName}`)
   }
   
     return (

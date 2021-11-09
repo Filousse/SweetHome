@@ -37,7 +37,9 @@ const ModalTchat = (props) => {
         <div className="text-danger">{data.checkRefEduc} {data.checkRefMedical}</div>
         <div className="data-container" >
           <ul style={data.style} >
-            <p>{data.name} {data.surname}</p>
+            <p >{data.name} {data.surname}</p>
+            <p style={{"fontSize":"15px"}}>{data.job}</p>
+            <p style={{"fontSize":"10px"}}>{data.bio}</p>
           </ul>
         </div>
       </Card>

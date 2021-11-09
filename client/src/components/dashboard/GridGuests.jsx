@@ -4,21 +4,21 @@ import { Row, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 
 const GridGuests = (props) => {
-    const dashboardData = { ...props };
+    const propsData = { ...props };
     const guestsReducer = useSelector((state) => state.guestReducer);
-    const userData = useSelector((state) => state.userReducer);
+    const userReducer = useSelector((state) => state.userReducer);
 
     return (
         <Container style={{ "maxWidth": "1200px" }} className=" w-100 p-4">
             <Row className="justify-content-center w-100 m-0">
-                <h1>Widget : {dashboardData.widget}</h1>
+                <h1>Widget : {propsData.widget}</h1>
             </Row>
             <Row className="justify-content-center w-100 m-0">
                 {guestsReducer.map((guest) => {
-                    if (guest.adminName === userData.name || guest.adminName === userData.adminName) {
+                    if (guest.adminName === userReducer.name || guest.adminName === userReducer.adminName) {
                         const checkRefEduc = () => {
                             let result;
-                            if (guest.educRef === userData._id) {
+                            if (guest.educRef === userReducer._id) {
                               result = "Référence";
                             } else {
                               result = "";
@@ -27,7 +27,7 @@ const GridGuests = (props) => {
                         }
                         const checkRefMedical = () => {
                             let result;
-                            if (guest.medicalRef  === userData._id) {
+                            if (guest.medicalRef  === userReducer._id) {
                               result = "Référence";
                             } else {
                               result = "";
@@ -36,14 +36,13 @@ const GridGuests = (props) => {
                         }
                         return (
                             <>
-                            {/* <div> {checkRefEduc()}</div> */}
                             <Widget
                                 checkRefMedical = {checkRefMedical()}
                                 checkRefEduc = {checkRefEduc()}
                                 guestId = {guest._id}
                                 guestWidget="guestWidget"
                                 flag={guest.picture}
-                                widget={dashboardData.widget}
+                                widget={propsData.widget}
                                 name={guest.name}
                                 surname={guest.surname}
                                 route={guest.name}

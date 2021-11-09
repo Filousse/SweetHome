@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 import { switchColorWidget } from "../Utils"
 
 const GridUser = () => {
-    const usersData = useSelector((state) => state.usersReducer);
-    const userData = useSelector((state) => state.userReducer);
+    const usersReducer = useSelector((state) => state.usersReducer);
+    const userReducer = useSelector((state) => state.userReducer);
 
     return (
         <Container fluid className=" w-100 p-4">
@@ -14,11 +14,13 @@ const GridUser = () => {
                 <h3 className="text-light text-center text-uppercase">messagerie</h3>
             </Row >
             <Row className="justify-content-center w-100 m-0">
-                {usersData && usersData.map((users) => {
-                    if (users.adminName === userData.name || users.adminName === userData.adminName && users.adminName != null) {
+                {usersReducer && usersReducer.map((users) => {
+                    if (users.adminName === userReducer.name || users.adminName === userReducer.adminName && users.adminName != null) {
                         return (
                             <Col className="d-flex justify-content-center col-md-3 col-sm-4 col-xs-6" >
                             <ModalChat 
+                              job={users.job}
+                              bio={users.bio}
                               userId={users.userId}
                               name={users.name} 
                               surname={users.surname} 

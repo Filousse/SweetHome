@@ -10,7 +10,7 @@ const GridWidget = () => {
     const [dataAdmin, setDataAdmin] = useState([]);
     const [dataEducMedic, setDataEducMedic] = useState([]);
 
-    const userData = useSelector((state) => state.userReducer);
+    const userReducer = useSelector((state) => state.userReducer);
 
     useEffect(() => {
         setDataEducatif(WidgetData.educative);
@@ -23,7 +23,7 @@ const GridWidget = () => {
     return (
         <Container style={{ "maxWidth": "1200px" }} className=" w-100 p-4">
             <Row className="justify-content-center w-100 m-0">
-                {userData.team === "Éducative" &&
+                {userReducer.team === "Éducative" &&
                     <>
                         {dataEducMedic.map((widget) => (
                             <Widget
@@ -59,7 +59,7 @@ const GridWidget = () => {
                         ))}
                     </>
                 }
-                {userData.team === "Médical" &&
+                {userReducer.team === "Médical" &&
                     <>
                         {dataEducMedic.map((widget) => (
                             <Widget
@@ -95,7 +95,7 @@ const GridWidget = () => {
                         ))}
                     </>
                 }
-                {!userData.team &&
+                {!userReducer.team &&
                     <>
                         {dataEducMedic.map((widget) => (
                             <Widget

@@ -46,7 +46,6 @@ export class ComponentToPrint extends PureComponent {
                     {widget === "Traitement médicale" &&
                         <Medications showUpdate={showUpdate} />
                     }
-                    {/* widget === "Contacts des abstreintes" => pages/abstreinte.jsx */}
                 </Card>
             </>
         );

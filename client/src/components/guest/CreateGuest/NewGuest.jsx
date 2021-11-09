@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { Container, Card, Form, Row, Button } from 'react-bootstrap'
-import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { Container, Card, Form, Row, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 import { addGuest } from '../../../actions/guest.actions'
 
 const NewGuest = () => {
+    const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [dateBirthday, setDateBirthday] = useState("");
-    const dispatch = useDispatch()
     const userData = useSelector((state) => state.userReducer);
 
-    const handleCreateGuest = async () => {
+    const handleCreateGuest = () => {
         const adminName = userData.name;
         const educRef = "";
         const medicalRef = "";
-        await dispatch(addGuest(
+        dispatch(addGuest(
             name,
             surname,
             dateBirthday,
@@ -43,7 +43,7 @@ const NewGuest = () => {
                                 <Form.Group>
                                     <Form.Label>
                                         Noms :
-                                </Form.Label>
+                                    </Form.Label>
                                     <Form.Control
                                         type="text"
                                         name="name"
@@ -56,7 +56,7 @@ const NewGuest = () => {
                                 <Form.Group>
                                     <Form.Label>
                                         Prénoms :
-                                </Form.Label>
+                                    </Form.Label>
                                     <Form.Control
                                         type="text"
                                         name="surname"
@@ -69,7 +69,7 @@ const NewGuest = () => {
                                 <Form.Group>
                                     <Form.Label>
                                         Date de naissance :
-                                </Form.Label>
+                                    </Form.Label>
                                     <Form.Control
                                         type="date"
                                         name="dateBirthday"

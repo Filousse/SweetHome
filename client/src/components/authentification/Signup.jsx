@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 import { useSelector } from 'react-redux'
 
 const Signup = (props) => {
+  const createEmployee = props.createEmployee;
+  const userData = useSelector((state) => state.userReducer);
   const [formSubmit, setFormSubmit] = useState(false);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -15,8 +17,6 @@ const Signup = (props) => {
   const [controlPassword, setControlPassword] = useState("");
   const [team, setTeam] = useState("Éducative");
   const [job, setJob] = useState("");
-  const createEmployee = props.createEmployee;
-  const userData = useSelector((state) => state.userReducer);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -27,8 +27,6 @@ const Signup = (props) => {
       ".password-confirm.error"
     );
     passwordConfirmError.innerHTML = "";
-
-
     if (password !== controlPassword) {
       passwordConfirmError.innerHTML =
         "Les mots de passe ne correspondent pas.";
@@ -58,7 +56,6 @@ const Signup = (props) => {
             }
           })
           .catch((err) => console.log(err));
-
       } else {
         await axios({
           method: "post",
@@ -83,7 +80,6 @@ const Signup = (props) => {
           })
           .catch((err) => console.log(err));
       }
-
     }
   };
 
@@ -95,7 +91,7 @@ const Signup = (props) => {
     <>
       {formSubmit ? (
         <>
-          <Container style={{ "backgroundColor": "rgb(252, 230, 248)","minHeight": 650 }} className="justify-content-center p-4">
+          <Container style={{ "backgroundColor": "rgb(252, 230, 248)", "minHeight": 650 }} className="justify-content-center p-4">
             {createEmployee
               ? <>
                 <Row className="justify-content-center m-4">

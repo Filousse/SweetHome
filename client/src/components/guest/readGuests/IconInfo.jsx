@@ -1,9 +1,7 @@
 import React from 'react';
 
 const IconInfo = (props) => {
-    const srcImg = props.srcImg;
-    const data = props.data;
-    const team = props.team;
+    const propsData = {...props};
 
     const switchColorTeam = (team) => {
         switch (team) {
@@ -13,26 +11,21 @@ const IconInfo = (props) => {
           case 'Médical': {
             return ( "border border-success rounded-circle" )
           }
-          case '': {
-            return { "backgroundColor": "#e826b1" }
-          }
           default:
-            return { "backgroundColor": "#e826b1" }
+            return null
         }
       }
 
     return (
         <>
             <div class="container">
-                <div class="tooltip--right" data-tooltip={data}>
+                <div class="tooltip--right" data-tooltip={propsData.data}>
                     <img
-                        // style={{marginLeft:"-10px"}}
                         alt=""
-                        src={srcImg}
+                        src={propsData.srcImg}
                         width="40"
                         height="40"
-                        
-                        class={switchColorTeam(team)}
+                        class={switchColorTeam(propsData.team)}
                     />
                 </div>
             </div>

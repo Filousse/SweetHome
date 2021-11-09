@@ -14,20 +14,20 @@ const Medications = (props) => {
         <Container fluid>
             <Row className="m-4">
                 <Col sm={2} className="border border-dark pt-1">
-                    <p className="pt-3"className="pt-3"><strong>Petit déjeuner :</strong></p>
+                    <p className="pt-3" className="pt-3"><strong>Petit déjeuner :</strong></p>
                 </Col>
                 {showUpdate ? (
                     <Col sm={10} className="border border-dark ">
                         {!textOne ? (
                             <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio sapiente voluptatum harum nulla, molestiae delectus necessitatibus quisquam, architecto consequatur excepturi dolorum voluptate ducimus amet vel nesciunt voluptates deserunt. Dicta!</>
-                            ):( <>{textOne}</>
+                        ) : (<>{textOne}</>
                         )}
                     </Col>
                 ) : (
-                  <Col>
+                    <Col>
                         <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextOne(e.target.value)} placeholder="Editer un text informatif..." />
-                  </Col>
-                )}
+                    </Col>
+                    )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
@@ -37,14 +37,14 @@ const Medications = (props) => {
                     <Col sm={10} className="border border-dark ">
                         {!textTwo ? (
                             <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio sapiente voluptatum harum nulla, molestiae delectus necessitatibus quisquam, architecto consequatur excepturi dolorum voluptate ducimus amet vel nesciunt voluptates deserunt. Dicta!</>
-                            ):( <>{textTwo}</>
-                        )}
+                        ) : (<>{textTwo}</>
+                            )}
                     </Col>
                 ) : (
-                  <Col>
+                    <Col>
                         <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextTwo(e.target.value)} placeholder="Editer un text informatif..." />
-                  </Col>
-                )}
+                    </Col>
+                    )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
@@ -54,14 +54,14 @@ const Medications = (props) => {
                     <Col sm={10} className="border border-dark ">
                         {!textThree ? (
                             <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio sapiente voluptatum harum nulla, molestiae delectus necessitatibus quisquam, architecto consequatur excepturi dolorum voluptate ducimus amet vel nesciunt voluptates deserunt. Dicta!</>
-                            ):( <>{textThree}</>
-                        )}
+                        ) : (<>{textThree}</>
+                            )}
                     </Col>
                 ) : (
-                  <Col>
+                    <Col>
                         <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextThree(e.target.value)} placeholder="Editer un text informatif..." />
-                  </Col>
-                )}
+                    </Col>
+                    )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
@@ -71,14 +71,14 @@ const Medications = (props) => {
                     <Col sm={10} className="border border-dark ">
                         {!textFour ? (
                             <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio sapiente voluptatum harum nulla, molestiae delectus necessitatibus quisquam, architecto consequatur excepturi dolorum voluptate ducimus amet vel nesciunt voluptates deserunt. Dicta!</>
-                            ):( <>{textFour}</>
-                        )}
+                        ) : (<>{textFour}</>
+                            )}
                     </Col>
                 ) : (
-                  <Col>
+                    <Col>
                         <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextFour(e.target.value)} placeholder="Editer un text informatif..." />
-                  </Col>
-                )}
+                    </Col>
+                    )}
             </Row>
             <Row className="m-4 ">
                 <Col sm={2} className="border border-dark pt-1">
@@ -88,16 +88,15 @@ const Medications = (props) => {
                     <Col sm={10} className="border border-dark ">
                         {!textFive ? (
                             <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio sapiente voluptatum harum nulla, molestiae delectus necessitatibus quisquam, architecto consequatur excepturi dolorum voluptate ducimus amet vel nesciunt voluptates deserunt. Dicta!</>
-                            ):( <>{textFive}</>
-                        )}
+                        ) : (<>{textFive}</>
+                            )}
                     </Col>
                 ) : (
-                  <Col>
-                        <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextFive(e.target.value)} placeholder="Editer un text informatif..." />
-                  </Col>
-                )}
+                        <Col>
+                            <Form.Control className="w-100 m-1" as="textarea" rows={4} onChange={(e) => setTextFive(e.target.value)} placeholder="Editer un text informatif..." />
+                        </Col>
+                    )}
             </Row>
-
         </Container>
     );
 };

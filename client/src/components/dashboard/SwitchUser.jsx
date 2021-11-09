@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Modal } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import axios from "axios";
 import cookie from "js-cookie";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom"
+import { Button, Modal } from "react-bootstrap";
 
 function MydModalWithGrid(props) {
     const history = useHistory()
@@ -72,7 +72,6 @@ function MydModalWithGrid(props) {
                                 <td className="pt-3">{user[19].surname} {user[19].name}</td>
                                 <td className="pt-3">{user[19].job}</td>
                                 <td><Button onClick={() => handelSwitchUser(user[19].email, user[19].name)} variant="outline-primary" >Service Éducatif</Button></td>
-
                             </tr>
                             <tr className="table-success" >
                                 <td >
@@ -96,11 +95,11 @@ function MydModalWithGrid(props) {
                     }
                 </table>
             </Modal.Body>
-            
-                <Modal.Footer>
-                    <Button  variant="outline-danger" onClick={handelAdminLogin}>Me connecter à mon profil</Button>
-                </Modal.Footer>
-                    
+
+            <Modal.Footer>
+                <Button variant="outline-danger" onClick={handelAdminLogin}>Me connecter à mon profil</Button>
+            </Modal.Footer>
+
         </Modal>
     );
 }

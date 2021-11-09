@@ -1,9 +1,8 @@
     import React, { useState } from 'react';
-    import { Col, Row, Card, Form, Image } from "react-bootstrap"
+    import { Col, Row, Card, Form } from "react-bootstrap"
 
     const GeneralInfo = (props) => {
         const showUpdate = props.showUpdate;
-        
         const [date, setDate] = useState("")
         const [accueil, setAccueil] = useState("")
         const [externat, setExternat] = useState("")
@@ -125,7 +124,6 @@
                     </>
                 ) : (
                     <>
-
                         <Form>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridPassword">

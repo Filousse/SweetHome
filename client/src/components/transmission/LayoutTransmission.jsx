@@ -2,8 +2,7 @@ import React from 'react';
 import { Container, Row } from "react-bootstrap";
 import DayContainer from './DayContainer';
 
-const LayoutTransmission = (props) => {
-    const teamData = { ...props };
+const LayoutTransmission = () => {
     const today = new Date()
     var options = { weekday: "long", year: "numeric", month: "long", day: "2-digit" };
     const aujourdhui = today.toLocaleDateString("fr-FR", options)

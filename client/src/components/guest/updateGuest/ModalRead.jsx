@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Modal, Button, Row } from 'react-bootstrap'
+import { Modal, Button, Row } from 'react-bootstrap'
 import FilesGuest from "./FilesGuest"
 import { useSelector } from "react-redux"
 
@@ -19,7 +19,7 @@ function ModalRead(props) {
                                         <h1>Profil de {guest.name} {guest.surname} :</h1>
                                     </Modal.Title>
                                 </Row>
-                                
+
                                 <Row className="mt-4">
                                     <img src={guest.picture} style={{ "width": "300px", "height": "300px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
                                 </Row>
@@ -29,7 +29,7 @@ function ModalRead(props) {
                 })}
             </Modal.Header>
             <Modal.Body >
-                <FilesGuest idGuest={props.idGuest}/>
+                <FilesGuest idGuest={props.idGuest} />
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>

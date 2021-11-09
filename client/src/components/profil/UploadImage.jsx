@@ -7,16 +7,16 @@ const UploadImage = () => {
 const [loading, setLoading] = useState(false);
 const [file, setFile] = useState();
 const dispatch = useDispatch();
-const userData = useSelector((state) => state.userReducer);
+const userReducer = useSelector((state) => state.userReducer);
 
   const handlePicture = (e) => {
     setLoading(!loading);
     e.preventDefault();
     const data = new FormData();
-    data.append("name", userData.name);
-    data.append("userId", userData._id);
+    data.append("name", userReducer.name);
+    data.append("userId", userReducer._id);
     data.append("file", file);
-    dispatch(uploadPicture(data, userData._id));
+    dispatch(uploadPicture(data, userReducer._id));
     setLoading(!loading);
   };
 

@@ -89,9 +89,9 @@ export default function Header(props) {
                     <img src="./assets/icon/btn_Chat.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Chat" />
                   </Link>
                 </Navbar.Brand>
-                  <Navbar.Brand>
-                    <Timer />
-                  </Navbar.Brand>
+                <Navbar.Brand>
+                  <Timer />
+                </Navbar.Brand>
                 {logout
                   ? (<Navbar.Brand>
                     <Logout />

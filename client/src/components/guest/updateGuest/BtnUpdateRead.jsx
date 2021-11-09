@@ -5,9 +5,9 @@ import ModalRead from "./ModalRead"
 
 const BtnUpdateRead = (props) => {
     const data = {...props};
+    const userReducer = useSelector((state) => state.userReducer);
     const [modalShowUpdate, setModalShowUpdate] = useState(false);
     const [modalShowView, setModalShowView] = useState(false)
-    const userData = useSelector((state) => state.userReducer);
 
     const handleUpdateGuest = () => {
         setModalShowUpdate(true)
@@ -19,7 +19,7 @@ const BtnUpdateRead = (props) => {
 
     return (
         <>
-            {(data.educRef === userData._id || data.medicalRef === userData._id || data.adminName === userData.name ) 
+            {(data.educRef === userReducer._id || data.medicalRef === userReducer._id || data.adminName === userReducer.name ) 
                 ?(
                     <img
                     onClick={handleUpdateGuest}

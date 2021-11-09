@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Col, Row, Card, Form, Button } from "react-bootstrap"
+import { Col, Row, Card, Form } from "react-bootstrap"
 import InfoDemo from "../InfoDemo"
 
 const Pictogramme = (props) => {
     const showUpdate = props.showUpdate;
-    const [name, setName] = useState("")
 
     return (
         <Card.Body  style={{overflow:"scroll"}}>
@@ -21,8 +20,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                
                                     />
                                     <InfoDemo/>
                                 </>
@@ -38,8 +36,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}    
                                     />
                                     <InfoDemo/>
                                 </>
@@ -55,8 +52,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                
                                     />
                                     <InfoDemo/>
                                 </>
@@ -72,8 +68,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                   
                                     />
                                     <InfoDemo/>
                                 </>
@@ -89,8 +84,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                  
                                     />
                                     <InfoDemo/>
                                 </>
@@ -106,8 +100,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                   
                                     />
                                     <InfoDemo/>
                                 </>
@@ -123,8 +116,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                   
                                     />
                                     <InfoDemo/>
                                 </>
@@ -140,8 +132,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                  
                                     />
                                     <InfoDemo/>
                                 </>
@@ -157,8 +148,7 @@ const Pictogramme = (props) => {
                                         id="file"
                                         name="file"
                                         accept=".jpg, .jpeg, .png"
-                                        style={{ "marginBottom": "10px" }}
-                                    // onChange={(e) => setFile(e.target.files[0])}
+                                        style={{ "marginBottom": "10px" }}                                   
                                     />
                                     <InfoDemo/>
                                 </>

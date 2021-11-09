@@ -16,7 +16,6 @@ router.get('/', userController.getAllUsers);
 router.get('/:id', userController.userInfo);
 router.put('/:id', userController.updateUser);
 router.delete('/:id', userController.deleteUser);
-// router.patch('/deleteNotif/:id', userController.deleteNotif);
 
 // upload
 router.post('/upload', upload.single('file'), uploadController.uploadProfil)

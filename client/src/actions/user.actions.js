@@ -4,7 +4,6 @@ export const GET_USER = "GET_USER";
 export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
 export const UPDATE_BIO = "UPDATE_BIO";
 export const DELETE_USER = "DELETE_USER";
-export const DELETE_NOTIFICATION = "DELETE_NOTIFICATION"
 
 export const GET_USER_ERRORS = "GET_USER_ERRORS";
 
@@ -47,12 +46,11 @@ export const uploadPicture = (data, id) => {
         data: { bio },
       })
         .then((res) => {
-          dispatch({ type: UPDATE_BIO, payload: bio });
+          dispatch({ type: UPDATE_BIO, payload: res.data });
         })
         .catch((err) => console.log(err));
     };
   };
-
  
   export const deleteUser = (userId) => {
     return(dispatch) => {

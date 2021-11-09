@@ -8,7 +8,6 @@ const FilesMedical = (props) => {
   const history = useHistory();
 
   const handelFile = (widgetName) => {
-      console.log("{data.guestId}",data.idGuest);
       history.push(`/read-file/id=${data.idGuest}/widget=${widgetName}`)
   }
 

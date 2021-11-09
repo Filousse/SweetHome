@@ -34,20 +34,6 @@ const GuestSchema = new mongoose.Schema(
         medicalRef: {
             type: String
         },
-        // files: {
-        //     type: [
-        //         {
-        //             Contacts: String,
-        //             Picto: String,
-        //             Planning: String,
-        //             MaterialMedical: String,
-        //             Treatment: String,
-        //             Toilet: String,
-        //             GeneralInfo: String,
-        //         }
-        //     ],
-        //     required: true,
-        // }
     },
     {
         timestamps: true,

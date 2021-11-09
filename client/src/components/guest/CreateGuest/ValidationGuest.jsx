@@ -12,12 +12,12 @@ const ValidationGuest = (props) => {
       <Row className="justify-content-center">
         <Card className="justify-content-center"style={{ "maxWidth": "470px" }} >
           <Card.Header className="justify-content-center">
-            <h3 className="text-center text-justify">Félicitation :<br></br>Votre dossier bénéficiare est créer!</h3>
+            <h3 className="text-center text-justify">Félicitation :<br></br>Dossier bénéficiare créé!</h3>
           </Card.Header>
           <Card.Body>
             <p className="text-justify">
               Les référents éducatif et médical ont reçu une notification pour remplir leurs fiches respectives.
-              Toutefois, en tant qu'administrateur vous pouvez également mettre à jour les fiches vous-même.
+              En tant qu'administrateur vous pouvez programmer une prochaine date pour remettre à jour le dossier du bénéficiare.
             </p>
           </Card.Body>
           <Card.Footer>

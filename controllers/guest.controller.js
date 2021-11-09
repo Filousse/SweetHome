@@ -1,11 +1,6 @@
 const GuestModel = require("../models/guest.model");
 const UserModel = require("../models/user.model");
-
 const ObjectID = require("mongoose").Types.ObjectId;
-// const { uploadErrors } = require("../utils/errors.utils");
-// const fs = require("fs");
-// const { promisify } = require("util");
-// const pipeline = promisify(require("stream").pipeline);
 
 
 module.exports.readGuest = async (req, res) => {
@@ -67,24 +62,8 @@ module.exports.followingEducRef = async (req, res) => {
       },
       { new: true },
       (err, docs) => {
-          // if (!err) res.status(201).json(docs);
+          if (!err) res.status(201).json(docs);
           if (err) return res.status(400).json(err);
-      }
-    );
-    await UserModel.findByIdAndUpdate(
-      req.body.educRef,
-      {
-        $addToSet: {
-          guestRefArray: {
-            guestId: req.params.id,
-            checkNotification: true,
-          },
-        }
-      },
-      { new: true },
-      (err, docs) => {
-          // if (!err) res.status(201).json(docs);
-         if (err) return res.status(400).json(err);
       }
     );
   } catch (err) {
@@ -106,23 +85,7 @@ module.exports.followingMedicalRef = async (req, res) => {
       { new: true, upsert: true, setDefaultsOnInsert: true },
       (err, docs) => {
         if (!err) return res.status(200).json(docs);
-        else return res.status(500).json({ message: err });
-      }
-    );
-    await UserModel.findByIdAndUpdate(
-      req.body.medicalRef,
-      {
-        $addToSet: {
-          guestRefArray: {
-            guestId: req.params.id,
-            checkNotification: true,
-          },
-        }
-      },
-      { new: true },
-      (err, docs) => {
-          // if (!err) res.status(201).json(docs);
-         if (err) return res.status(400).json(err);
+        if (err) return res.status(400).json(err);
       }
     );
   } catch (err) {
