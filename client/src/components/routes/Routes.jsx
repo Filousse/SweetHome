@@ -75,6 +75,7 @@ const Routes = () => {
                         <Route path="/signup" component={Signup} />
                         <Route path="/login" component={Login} />
                     </Switch>
+                    <Footer home={true} />
                 </>
                 )}
         </Router>

@@ -28,7 +28,7 @@ const Logout = () => {
         onClick={logout} 
         src="./assets/icon/btn_Logout.png" 
         alt="btn_Logout"
-        style={{"height":"30px", "width":"30px", cursor:"pointer"}}
+        style={{"height":"50px", "width":"50px", cursor:"pointer"}}
       />
   );
 };

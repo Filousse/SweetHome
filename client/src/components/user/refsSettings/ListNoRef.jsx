@@ -5,10 +5,10 @@ import { isEmpty } from "../../Utils"
 
 
 const ListNoRef = (props) => {
-    const propsData = {...props};
+    const propsData = { ...props };
     const guestsReducer = useSelector((state) => state.guestsReducer);
     const dispatch = useDispatch();
-    const [ loading, setLoading ] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         !isEmpty(guestsReducer) && setLoading(false);
@@ -21,6 +21,7 @@ const ListNoRef = (props) => {
             window.location = "/employee";
         } else {
             dispatch(updateMedicalRef(guestId, propsData.user_id));
+            dispatch(getGuests());
             alert("Référence ajouté !")
             window.location = "/employee";
         }
@@ -28,46 +29,42 @@ const ListNoRef = (props) => {
 
     return (
         <>
-            {propsData.user_adminName === propsData.guest_adminName  &&
-                <>
-                    <div className="table-responsive pl-3 pr-3">
-                        <table className="table table-sm">
-                            <thead class="bg-info">
-                                <tr class="bg-info">
-                                    <th scope="col" className="text-light" colspan="2">Bénéficiare sans référence :</th>
-                                    <th scope="col" className="text-light"></th>
-                                    <th scope="col" className="text-light" colspan="2">Ajouter :</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr >
-                                    <td class="table-info info" >
-                                        <img
-                                            alt=""
-                                            src={propsData.guest_picture}
-                                            width="40"
-                                            height="40"
-                                            style={{ 'borderRadius': '5px' }}
-                                            className="d-inline-block align-top"
-                                        />
-                                    </td>
-                                    <td class="table-info mb-3" >{propsData.guest_name} {propsData.guest_surname}</td>
-                                    <td class="table-info" ></td>
-                                    <td class="table-info" ></td>
-                                    <td class="table-info" >
-                                        <img
-                                            onClick={() => handelAddRef(propsData.guest_id)}
-                                            src="./assets/icon/btn_AddRefs.png"
-                                            style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                                            alt="btn_AddRefs"
-                                        />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </>
-            }
+            <div className="table-responsive pl-3 pr-3">
+                <table className="table table-sm">
+                    <thead class="bg-info">
+                        <tr class="bg-info">
+                            <th scope="col" className="text-light" colspan="2">Bénéficiare sans référence :</th>
+                            <th scope="col" className="text-light"></th>
+                            <th scope="col" className="text-light" colspan="2">Ajouter :</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td class="table-info info" >
+                                <img
+                                    alt=""
+                                    src={propsData.guest_picture}
+                                    width="40"
+                                    height="40"
+                                    style={{ 'borderRadius': '5px' }}
+                                    className="d-inline-block align-top"
+                                />
+                            </td>
+                            <td class="table-info mb-3" >{propsData.guest_name} {propsData.guest_surname}</td>
+                            <td class="table-info" ></td>
+                            <td class="table-info" ></td>
+                            <td class="table-info" >
+                                <img
+                                    onClick={() => handelAddRef(propsData.guest_id)}
+                                    src="./assets/icon/btn_AddRefs.png"
+                                    style={{ width: "30px", height: "30px", cursor: "pointer" }}
+                                    alt="btn_AddRefs"
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };

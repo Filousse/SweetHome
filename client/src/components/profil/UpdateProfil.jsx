@@ -51,12 +51,13 @@ const UpdateProfil = () => {
         <Card className="w-75" style={{ "maxWidth": "300px", "margin": "5px" }}>
           <Card.Body className="card-body" >
             <Row className="justify-content-center m-2" >
-              <h5>Message public</h5>
+              <h5 className="text-center text-justify" >Message public</h5>
               {updateForm === false && (
                 <>
-                  {userReducer.bio && (
-                    <Alert className="w-100" style={{ cursor: "pointer", "height": 195  }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>{userReducer.bio}</Alert>
-                  )}
+                    <Alert className="w-100" style={{ cursor: "pointer", "height": 195  }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>
+                      {userReducer.bio?(<p>{userReducer.bio}</p>):(<p>Écrivez votre message publique...</p>)}
+                    </Alert>
+                  
                   <Button className="w-100" onClick={() => setUpdateForm(!updateForm)}>
                     Modifier
                   </Button>

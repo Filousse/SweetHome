@@ -9,45 +9,27 @@ const GridGuests = (props) => {
     const userReducer = useSelector((state) => state.userReducer);
 
     return (
-        <Container style={{ "maxWidth": "1200px" }} className=" w-100 p-4">
-            <Row className="justify-content-center w-100 m-0">
-                <h1>Widget : {propsData.widget}</h1>
+        <Container style={{ "maxWidth": "1200px", "minHeight": 550 }} className=" w-100 p-4">
+            <Row className="justify-content-center m-0 bg-secondary rounded">
+                <h1 className="text-center text-justify text-light"> Widget : {propsData.widget}</h1>
             </Row>
             <Row className="justify-content-center w-100 m-0">
                 {guestsReducer.map((guest) => {
-                    if (guest.adminName === userReducer.name || guest.adminName === userReducer.adminName) {
-                        const checkRefEduc = () => {
-                            let result;
-                            if (guest.educRef === userReducer._id) {
-                              result = "Référence";
-                            } else {
-                              result = "";
-                            }
-                            return result;
-                        }
-                        const checkRefMedical = () => {
-                            let result;
-                            if (guest.medicalRef  === userReducer._id) {
-                              result = "Référence";
-                            } else {
-                              result = "";
-                            }
-                            return result;
-                        }
+                    if (guest.adminName === userReducer.name ||
+                        guest.adminName === "Demo" ||
+                        guest.adminName === userReducer.adminName) {
                         return (
                             <>
-                            <Widget
-                                checkRefMedical = {checkRefMedical()}
-                                checkRefEduc = {checkRefEduc()}
-                                guestId = {guest._id}
-                                guestWidget="guestWidget"
-                                flag={guest.picture}
-                                widget={propsData.widget}
-                                name={guest.name}
-                                surname={guest.surname}
-                                route={guest.name}
-                                team={"guest"}
-                            />
+                                <Widget
+                                    guestId={guest._id}
+                                    guestWidget="guestWidget"
+                                    flag={guest.picture}
+                                    widget={propsData.widget}
+                                    name={guest.name}
+                                    surname={guest.surname}
+                                    route={guest.name}
+                                    team={"guest"}
+                                />
                             </>
                         )
                     }

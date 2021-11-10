@@ -49,12 +49,11 @@ export default function Header(props) {
                   width="60"
                   height="60"
                   style={{ 'borderRadius': '20px' }}
-                  className="d-inline-block align-top"
                 />
               </Link>
             </Navbar.Brand>
             <Navbar.Text className="text-light" >
-              {userData.surname} {userData.name}
+              <h5>{userData.surname} {userData.name}</h5>
             </Navbar.Text>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse className="justify-content-end">
@@ -64,12 +63,12 @@ export default function Header(props) {
                     <>
                       <Navbar.Brand >
                         <Link to="/guest">
-                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Guest" />
+                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "50px", "width": "50px" }} alt="btn_Guest" />
                         </Link>
                       </Navbar.Brand>
                       <Navbar.Brand >
                         <Link to="/employee">
-                          <img src="./assets/icon/btn_User.png" style={{ "height": "35px", "width": "35px" }} alt="btn_User" />
+                          <img src="./assets/icon/btn_User.png" style={{ "height": "50px", "width": "50px" }} alt="btn_User" />
                         </Link>
                       </Navbar.Brand>
                     </>
@@ -77,7 +76,7 @@ export default function Header(props) {
                     <>
                       <Navbar.Brand >
                         <Link to="/guest">
-                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Guest" />
+                          <img src="./assets/icon/btn_Guest.png" style={{ "height": "50px", "width": "50px" }} alt="btn_Guest" />
                         </Link>
                       </Navbar.Brand>
                     </>
@@ -86,11 +85,11 @@ export default function Header(props) {
                 }
                 <Navbar.Brand >
                   <Link to="/messaging">
-                    <img src="./assets/icon/btn_Chat.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Chat" />
+                    <img src="./assets/icon/btn_Chat.png" style={{ "height": "50px", "width": "50px" }} alt="btn_Chat" />
                   </Link>
                 </Navbar.Brand>
                 <Navbar.Brand>
-                  <Timer />
+                  <Timer admin={userData.adminName}/>
                 </Navbar.Brand>
                 {logout
                   ? (<Navbar.Brand>
@@ -98,7 +97,7 @@ export default function Header(props) {
                   </Navbar.Brand>)
                   : (<Navbar.Brand>
                     <Link to="/dashboard">
-                      <img src="./assets/icon/btn_App.png" style={{ "height": "35px", "width": "35px" }} alt="btn_Apps" />
+                      <img src="./assets/icon/btn_App.png" style={{ "height": "50px", "width": "50px" }} alt="btn_Apps" />
                     </Link>
                   </Navbar.Brand>)
                 }

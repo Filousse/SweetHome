@@ -17,7 +17,6 @@ const Widget = (props) => {
   return (
             <Card className="widget" style={switchColorWidget(data.team)} onClick={handleWidget} >
               <Image className="image" src={data.flag} alt="flag" />
-              <div className="text-danger">{data.checkRefEduc}{data.checkRefMedical}</div>
               <div className="data-container" >
                 <ul style={switchColorWidget(data.team)} >
                   <p>{data.name} {data.surname}</p>

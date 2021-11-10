@@ -8,7 +8,6 @@ import { Button, Modal } from "react-bootstrap";
 function MydModalWithGrid(props) {
     const history = useHistory()
     const user = useSelector(state => state.usersReducer);
-    const userReducer = useSelector(state => state.userReducer);
 
     const removeCookie = (key) => {
         if (window !== "undefined") {
@@ -56,43 +55,48 @@ function MydModalWithGrid(props) {
             </Modal.Header>
             <Modal.Body>
                 <table className="table justify-content-md-center">
-                    {userReducer.name !== "Gomesin" &&
-                        <>
+                    {user.map((user) => {
+                        if(user.surname === "Thomas") {
+                            return(
                             <tr className="table-primary" >
                                 <td >
                                     <img
                                         alt=""
-                                        src={user[19].photoProfil}
-                                        width="40"
-                                        height="40"
+                                        src={user.photoProfil}
+                                        width="50"
+                                        height="50"
                                         style={{ 'borderRadius': '5px' }}
                                         className="d-inline-block align-top"
                                     />
                                 </td>
-                                <td className="pt-3">{user[19].surname} {user[19].name}</td>
-                                <td className="pt-3">{user[19].job}</td>
-                                <td><Button onClick={() => handelSwitchUser(user[19].email, user[19].name)} variant="outline-primary" >Service Éducatif</Button></td>
+                                <td className="pt-3">{user.surname} {user.name}</td>
+                                <td className="pt-3">{user.job}</td>
+                                <td><Button onClick={() => handelSwitchUser(user.email, "provoost")} variant="outline-primary" >Service Éducatif</Button></td>
                             </tr>
-                            <tr className="table-success" >
-                                <td >
-                                    <img
-                                        alt=""
-                                        src={user[5].photoProfil}
-                                        width="40"
-                                        height="40"
-                                        style={{ 'borderRadius': '5px' }}
-                                        className="d-inline-block align-top"
-                                    />
-                                </td>
-                                <td className="pt-3">{user[5].surname} {user[5].name}</td>
-                                <td className="pt-3">{user[5].job}</td>
-                                <td >
-                                    <Button
-                                        onClick={() => handelSwitchUser(user[5].email, user[5].name)} variant="outline-success" >Service Médical</Button>
-                                </td>
-                            </tr>
-                        </>
-                    }
+                            )}if(user.surname === "Yasmine") {
+                                return(
+                                <tr className="table-success" >
+                                    <td >
+                                        <img
+                                            alt=""
+                                            src={user.photoProfil}
+                                            width="50"
+                                            height="50"
+                                            style={{ 'borderRadius': '5px' }}
+                                            className="d-inline-block align-top"
+                                        />
+                                    </td>
+                                    <td className="pt-3">{user.surname} {user.name}</td>
+                                    <td className="pt-3">{user.job}</td>
+                                    <td >
+                                        <Button
+                                            onClick={() => handelSwitchUser(user.email, "saelens")} variant="outline-success" >Service Médical</Button>
+                                    </td>
+                                </tr>
+
+                                )}
+                    })}
+
                 </table>
             </Modal.Body>
 

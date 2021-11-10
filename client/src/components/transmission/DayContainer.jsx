@@ -42,7 +42,9 @@ const DayContainer = (props) => {
                 <h3 className="text-center">{days.day}</h3>
             </Row>
             {guestReducer.map((guest) => {
-                if (guest.adminName === userReducer.name || guest.adminName === userReducer.adminName) {
+                if (guest.adminName === userReducer.name || 
+                    guest.adminName === "Demo" ||
+                    guest.adminName === userReducer.adminName) {
                     return (
                         <Accordion defaultActiveKey="">
                             <Card>
@@ -106,7 +108,6 @@ const DayContainer = (props) => {
                                                                     )
                                                                 }
                                                             })}
-
                                                         </>
                                                     }
                                                     <Row>
@@ -114,7 +115,7 @@ const DayContainer = (props) => {
                                                     </Row>
                                                     <img
                                                         alt=""
-                                                        src="./uploads/profil/Gomesin.jpg"
+                                                        src="./uploads/profil/Gadenne.jpg"
                                                         width="50"
                                                         height="50"
                                                         className="d-inline-block align-top  border border-primary rounded-circle mt-2"
@@ -125,7 +126,7 @@ const DayContainer = (props) => {
                                                     </Row>
                                                     <img
                                                         alt=""
-                                                        src="./uploads/profil/ctibo.jpg"
+                                                        src="./uploads/profil/Benomar.jpg"
                                                         width="50"
                                                         height="50"
                                                         className="d-inline-block align-top  border border-primary rounded-circle mt-2"
@@ -136,7 +137,7 @@ const DayContainer = (props) => {
                                                     </Row>
                                                     <img
                                                         alt=""
-                                                        src="./uploads/profil/Pierre.jpg"
+                                                        src="./uploads/profil/Jaspart.jpg"
                                                         width="50"
                                                         height="50"
                                                         className="d-inline-block align-top  border border-primary rounded-circle mt-2"

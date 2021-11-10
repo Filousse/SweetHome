@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
     },
     photoProfil: {
       type: String,
-      default: "../uploads/profil/random-user.png"
+      default: "../uploads/guest/pictures/random-user.png"
     },
     association:{
       type: String,

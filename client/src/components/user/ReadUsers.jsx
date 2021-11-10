@@ -11,7 +11,7 @@ const ReadUsers = () => {
 
     return (
         <>
-            <Container fluid className="justify-content-center">
+            <Container style={{"minHeight":550}} fluid className="justify-content-center">
                 <Row className="justify-content-center mt-5 mb-5">
                     <Row className="w-75 justify-content-center bg-secondary rounded-lg m-2" style={{ "minWidth": 360 }}>
                         <h3 className="text-light text-center text-uppercase p-2">Gestion des employés</h3>
@@ -34,7 +34,8 @@ const ReadUsers = () => {
                         </thead>
                         <tbody>
                             {usersData.map((user) => {
-                                if (user.team === "Éducative" && userData.name === user.adminName) {
+                                if (user.team === "Éducative" && userData.name === user.adminName ||
+                                    user.team === "Éducative" && user.adminName === "Demo") {
                                     return (
                                         <tr key={user._id}>
                                             <td class="table-primary pr-5" >
@@ -73,7 +74,7 @@ const ReadUsers = () => {
                         </tbody>
                         <thead class="bg-success">
                             <tr class="bg-success">
-                                <th scope="col" className="text-light text-uppercase pl-4 pb-3" colspan="2">Equipe médical</th>
+                                <th scope="col" className="text-light text-uppercase pl-4 pb-3" colspan="2">Équipe médical</th>
                                 <th scope="col" className="text-light text-uppercase pb-3">Fonctions</th>
                                 <th scope="col" className="text-light pl-4" colspan="2">
                                     <Link to="/new-user" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
@@ -88,7 +89,8 @@ const ReadUsers = () => {
                         </thead>
                         <tbody>
                             {usersData.map((user) => {
-                                if (user.team === "Médical" && userData.name === user.adminName) {
+                                if (user.team === "Médical" && userData.name === user.adminName ||
+                                user.team === "Médical" && user.adminName === "Demo") {
                                     return (
                                         <tr key={user._id}>
                                             <td class="table-success" >
@@ -112,7 +114,7 @@ const ReadUsers = () => {
                                             </td>
                                             <td class="table-success" >
                                                 <DeleteUser
-                                                    DataUser_id={user._id}
+                                                    id={user._id}
                                                     name={user.name}
                                                     surname={user.surname}
                                                 />

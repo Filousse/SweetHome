@@ -21,7 +21,7 @@ const GridWidget = () => {
 
 
     return (
-        <Container style={{ "maxWidth": "1200px" }} className=" w-100 p-4">
+        <Container style={{ "maxWidth": "1200px" , "minHeight":550 }} className=" w-100 p-4">
             <Row className="justify-content-center w-100 m-0">
                 {userReducer.team === "Éducative" &&
                     <>

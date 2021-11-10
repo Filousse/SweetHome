@@ -9,13 +9,18 @@ const GridUser = () => {
     const userReducer = useSelector((state) => state.userReducer);
 
     return (
-        <Container fluid className=" w-100 p-4">
+        <Container style={{"minHeight":550}} fluid className=" w-100 p-4">
             <Row className="m-4 p-2 justify-content-center bg-secondary rounded-lg">
                 <h3 className="text-light text-center text-uppercase">messagerie</h3>
             </Row >
             <Row className="justify-content-center w-100 m-0">
                 {usersReducer && usersReducer.map((users) => {
-                    if (users.adminName === userReducer.name || users.adminName === userReducer.adminName && users.adminName != null) {
+                    if (    users.adminName === "Demo" ||
+                            users.adminName === userReducer.name && users.adminName != null ||
+                            userReducer.surname === "Yasmine" && users.adminName != null  ||
+                            userReducer.surname === "Thomas" && users.adminName != null
+                            
+                        ) {       
                         return (
                             <Col className="d-flex justify-content-center col-md-3 col-sm-4 col-xs-6" >
                             <ModalChat 

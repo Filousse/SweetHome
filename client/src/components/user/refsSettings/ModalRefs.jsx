@@ -62,27 +62,25 @@ function MydModalWithGrid(props) {
                         <>
                             {user_team === "Éducative" &&
                                 <>
-                                {guestReducer.map((guest) => {
-
-                                    if (guest.educRef === "") {
-                                        return (
-                                            <> {user_team}
-                                                <ListNoRef
-                                                    user_id={user_id}
-                                                    guest_id={guest._id}
-                                                    guest_name={guest.name}
-                                                    guest_surname={guest.surname}
-                                                    guest_picture={guest.picture}
-                                                    guest_adminName={guest.adminName}
-                                                    user_team={user_team}
-                                                    user_adminName={user_adminName}
-                                                />
-                                            </>
-                                        )
-                                    }
-                                })
-                                }
-                            </>
+                                    {guestReducer.map((guest) => {
+                                        if (guest.educRef === "") {
+                                            return (
+                                                <>{guest.adminName}
+                                                    <ListNoRef
+                                                        user_id={user_id}
+                                                        guest_id={guest._id}
+                                                        guest_name={guest.name}
+                                                        guest_surname={guest.surname}
+                                                        guest_picture={guest.picture}
+                                                        guest_adminName={guest.adminName}
+                                                        user_team={user_team}
+                                                        user_adminName={user_adminName}
+                                                    />
+                                                </>
+                                            )
+                                        }
+                                    })}
+                                </>
                             }
                             {user_team === "Médical" &&
                                 <>
@@ -90,7 +88,7 @@ function MydModalWithGrid(props) {
 
                                         if (guest.medicalRef === "") {
                                             return (
-                                                <> {user_team}
+                                                <>
                                                     <ListNoRef
                                                         user_id={user_id}
                                                         guest_id={guest._id}
@@ -108,7 +106,6 @@ function MydModalWithGrid(props) {
                                     }
                                 </>
                             }
-
                         </>
                     )
                 }

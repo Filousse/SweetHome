@@ -95,7 +95,7 @@ const Signup = (props) => {
             {createEmployee
               ? <>
                 <Row className="justify-content-center m-4">
-                  <div class="alert alert-success m-4" role="alert">Enregistrement réussi, un email de bienvenue à été envoyé au nouvel employer.</div>
+                  <div class="alert alert-success m-4" role="alert">Enregistrement réussi, un email de bienvenue a été envoyé au nouvel employer.</div>
                 </Row>
                 <Row className="justify-content-center">
                   <Button onClick={handelBackEmployee}>retour à la liste des employés</Button>
@@ -130,8 +130,8 @@ const Signup = (props) => {
                     <Form.Control
                       required
                       type="text"
-                      name="name"
-                      id="name"
+                      name="surname"
+                      id="surname"
                       onChange={(e) => setName(e.target.value)}
                       value={name}
                     />
@@ -141,8 +141,8 @@ const Signup = (props) => {
                     <Form.Control
                       required
                       type="text"
-                      name="surname"
-                      id="surname"
+                      name="name"
+                      id="name"
                       onChange={(e) => setSurname(e.target.value)}
                       value={surname}
                     />

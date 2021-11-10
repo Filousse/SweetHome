@@ -13,6 +13,8 @@ const DeleteGuest = (props) => {
 
     const handleDelete = () => {
         dispatch(deleteGuest(propsData.DataId));
+        handleClose(false);
+        window.location = "/guest";
     };
 
     return (

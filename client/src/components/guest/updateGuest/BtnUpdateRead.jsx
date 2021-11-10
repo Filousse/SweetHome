@@ -19,7 +19,10 @@ const BtnUpdateRead = (props) => {
 
     return (
         <>
-            {(data.educRef === userReducer._id || data.medicalRef === userReducer._id || data.adminName === userReducer.name ) 
+            {(data.educRef === userReducer._id ||
+             data.medicalRef === userReducer._id ||
+              data.adminName === userReducer.name ||
+              data.adminName === "Demo" && !userReducer.adminName ) 
                 ?(
                     <img
                     onClick={handleUpdateGuest}

@@ -36,13 +36,13 @@ const NewGuest = () => {
                 <Row className="justify-content-center">
                     <Card className="justify-content-center" >
                         <Card.Header className="justify-content-center">
-                            <h2 className="text-center">Nouveau dossier bénéficiare :</h2>
+                            <h2 className="text-center">Nouveau dossier bénéficiare</h2>
                         </Card.Header>
                         <Card.Body>
                             <Form onSubmit={handleCreateGuest}>
                                 <Form.Group>
                                     <Form.Label>
-                                        Noms :
+                                        Noms
                                     </Form.Label>
                                     <Form.Control
                                         type="text"
@@ -55,7 +55,7 @@ const NewGuest = () => {
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>
-                                        Prénoms :
+                                        Prénoms
                                     </Form.Label>
                                     <Form.Control
                                         type="text"

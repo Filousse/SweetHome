@@ -4,7 +4,8 @@ import { Modal, Button, Form, Row } from "react-bootstrap";
 import InfoDemo from "../files/guestFiles/InfoDemo";
 import { dateParser } from "../Utils"
 
-const Timer = () => {
+const Timer = (props) => {
+    const adminOnly = props.admin;
     const str = dateParser("2021-06-02");
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -14,44 +15,52 @@ const Timer = () => {
 
     return (
         <>
-            <img onClick={handleShow} src="./assets/icon/btn_Timer.png" style={{ "height": "35px", "width": "35px", "cursor": "pointer" }} alt="launchpad" />
+            <img onClick={handleShow} src="./assets/icon/btn_Timer.png" style={{ "height": "50px", "width": "50px", "cursor": "pointer" }} alt="launchpad" />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className=" bg-warning" closeButton>
-                    <Modal.Title>Dates des mises à jour des dossiers bénéficiares.</Modal.Title>
+                    <Modal.Title className="text-center text-justify text-light">Dates des mises à jour des dossiers bénéficiares.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="ml-3 m-2">
-                    {guestReducer.map((guest) => {
-                        if (userReducer.name === guest.adminName) {
-                            return (
-                                <tr key={guest._id}>
-                                    <td class="table-warning p-2" >
-                                        <img
-                                            alt=""
-                                            src={guest.picture}
-                                            width="40"
-                                            height="40"
-                                            style={{ 'borderRadius': '5px' }}
-                                            className="d-inline-block align-top"
-                                        />
-                                    </td>
-                                    <td class="table-warning p-2" >
-                                        {guest.name} {guest.surname}
-                                    </td>
-                                    <td class="table-warning p-2" >
-                                        <Form.Control
-                                            type="date"
-                                            defaultValue="2021-06-01"
-                                            name="deadLine"
-                                        // onChange={(e) => { setDateBirthday(e.target.value) }}
-                                        >
-                                        </Form.Control>
-                                    </td>
-                                    <td class="table-warning p-2" >
-                                        <InfoDemo />
-                                    </td>
-                                </tr>
-                            )
+                    <>
+                        {!adminOnly &&
+                            <>
+                                {guestReducer.map((guest) => {
+                                    if (userReducer.name === guest.adminName ||
+                                        guest.adminName === "Demo") {
+                                        return (
+                                            <tr key={guest._id}>
+                                                <td class="table-warning p-2" >
+                                                    <img
+                                                        alt=""
+                                                        src={guest.picture}
+                                                        width="40"
+                                                        height="40"
+                                                        style={{ 'borderRadius': '5px' }}
+                                                        className="d-inline-block align-top"
+                                                    />
+                                                </td>
+                                                <td class="table-warning p-2" >
+                                                    {guest.name} {guest.surname}
+                                                </td>
+                                                <td class="table-warning p-2" >
+                                                    <Form.Control
+                                                        type="date"
+                                                        defaultValue="2021-06-01"
+                                                        name="deadLine"
+                                                    >
+                                                    </Form.Control>
+                                                </td>
+                                                <td class="table-warning p-2" >
+                                                    <InfoDemo />
+                                                </td>
+                                            </tr>
+                                        )
+                                    }
+                                })}
+                            </>
                         }
+                    </>
+                    {guestReducer.map((guest) => {
                         if (userReducer._id == guest.educRef) {
                             return (
                                 <Row className="justify-content-center m-1 w-100">
@@ -73,6 +82,9 @@ const Timer = () => {
                                 </Row>
                             )
                         }
+                    })}
+
+                    {guestReducer.map((guest) => {
                         if (userReducer._id == guest.medicalRef) {
                             return (
                                 <Row className="justify-content-center m-1 w-100">

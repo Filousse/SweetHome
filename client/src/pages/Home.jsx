@@ -19,10 +19,8 @@ const Home = () => {
             </section>
             <section id="Contact">            
                 <Contact/>
-            </section>
-            <Footer home={true} />  
-        </div>
-
+            </section>  
+        </div>        
     );
 };
 export default Home;

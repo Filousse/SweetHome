@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { Container, Row } from 'react-bootstrap'
@@ -14,7 +14,7 @@ const ReadGuests = () => {
 
     return (
         <>
-            <Container fluid className="justify-content-center">
+            <Container style={{"minHeight":550}} fluid className="justify-content-center">
                 <Row className="justify-content-center mt-5 mb-5">
                     <Row className="w-75 justify-content-center bg-secondary rounded-lg m-2" style={{ "minWidth": 320 }}>
                         <h3 className="text-light text-center text-uppercase p-2">Gestion des bénéficiares</h3>
@@ -44,7 +44,10 @@ const ReadGuests = () => {
                         </thead>
                         <tbody>
                             {guestReducer.map((guest) => {
-                                if (guest.adminName === userReducer.name || guest.adminName === userReducer.adminName) {
+                                if (guest.adminName === userReducer.name || 
+                                    guest.adminName === userReducer.adminName ||
+                                    userReducer.adminName === "Demo" ||
+                                    guest.adminName === "Demo" ) {
                                     return (
                                         <tr key={guest._id}>
                                             <td class="table-warning" >
@@ -67,7 +70,7 @@ const ReadGuests = () => {
                                                             < IconInfo
                                                                 team="Éducative"
                                                                 srcImg={user.photoProfil}
-                                                                data={user.name}
+                                                                data={user.surname}
                                                             />
                                                         )
                                                     }
@@ -80,7 +83,7 @@ const ReadGuests = () => {
                                                             < IconInfo
                                                                 team="Médical"
                                                                 srcImg={user.photoProfil}
-                                                                data={user.name}
+                                                                data={user.surname}
                                                             />
                                                         )
                                                     }
@@ -94,15 +97,28 @@ const ReadGuests = () => {
                                                     adminName={guest.adminName}
                                                 />
                                             </td>
-                                            { guest.adminName === userReducer.name && (
-                                                <td class="table-warning" >
-                                                    <DeleteGuest
-                                                        DataId={guest._id}
-                                                        DataName={guest.name}
-                                                        DataSurname={guest.surname}
-                                                    />
-                                                </td>
-                                            )}
+                                            {!userReducer.adminName &&
+                                                <>
+                                                {guest.adminName === userReducer.name && (
+                                                    <td class="table-warning" >
+                                                        <DeleteGuest
+                                                            DataId={guest._id}
+                                                            DataName={guest.name}
+                                                            DataSurname={guest.surname}
+                                                        />
+                                                    </td>
+                                                )}
+                                                {guest.adminName === "Demo"  && (
+                                                    <td class="table-warning" >
+                                                        <DeleteGuest
+                                                            DataId={guest._id}
+                                                            DataName={guest.name}
+                                                            DataSurname={guest.surname}
+                                                        />
+                                                    </td>
+                                                )}
+                                                </>
+                                            }
                                         </tr>
                                     );
                                 }

@@ -5,44 +5,61 @@ import { deleteUser } from "../../actions/user.actions";
 
 
 const DeleteUser = (props) => {
-    const userData = {...props}
+    const userData = { ...props }
     const dispatch = useDispatch();
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [demoUser, setDemoUser] = useState(false);
 
     const handleDelete = () => {
-        dispatch(deleteUser(userData.id));
-        window.location = "/employee";
-        handleClose();
+        if (userData.surname === "Thomas" ||
+            userData.surname === "Yasmine") {
+            setDemoUser(true)
+        }else{
+            dispatch(deleteUser(userData.id));
+            handleClose(false);
+            window.location = "/employee";
+        }
+
     };
 
     return (
-    <>
+        <>
             <img
                 onClick={handleShow}
                 src="./assets/icon/btn_Delete.png"
-                style={{width:"30px", height:"30px", cursor:"pointer"}}
+                style={{ width: "30px", height: "30px", cursor: "pointer" }}
                 alt="basket_icon"
             />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="bg-danger" closeButton>
                     <Modal.Title >Avertissement :</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
-                    Êtes-vous sûr de supprimer le compte de {userData.name} {userData.surname}!
+                {demoUser ? (
+                    <Modal.Body >
+                        <p classname="text-center">
+                            Cette employé est un employé demo est cette action est interdite. Veuillez supprimé un autre employé!
+                        </p>
                     </Modal.Body>
+                ) : (
+                        <Modal.Body >
+                            Êtes-vous sûr de supprimer le compte de {userData.name} {userData.surname}?
+                        </Modal.Body>
+                    )}
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Annuler
-                        </Button>
+                    </Button>
+                    {!demoUser &&
                     <Button variant="primary" onClick={handleDelete}>
                         Supprimer
-                        </Button>
+                    </Button>
+                    }
                 </Modal.Footer>
             </Modal>
-    </>
+        </>
     )
 }
 

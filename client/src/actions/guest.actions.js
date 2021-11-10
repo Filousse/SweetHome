@@ -52,7 +52,7 @@ export const uploadGuestPicture = ( data, id ) => {
             }
             return axios.get(`${process.env.REACT_APP_API_URL}api/guest/`+id)
             .then((res)=> {
-                dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture });
+                dispatch({ type: UPLOAD_PICTURE, payload: res.data });
             })
         })
         .catch((err)=> console.log(err))

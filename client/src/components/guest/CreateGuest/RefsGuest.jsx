@@ -14,8 +14,6 @@ const RefsGuest = () => {
     const [isLoading, setLoading] = useState(false);
     const [educRef, setEducRef] = useState("");
     const [medicalRef, setMedicalRef] = useState("");
-    const [errorEduc, setErrorEduc] = useState(false);
-    const [errorMedical, setErrorMedical] = useState(false);
 
     useEffect(() => {
         !isEmpty(guestReducer[guestReducer.length - 1]) && setLoading(false);
@@ -24,26 +22,17 @@ const RefsGuest = () => {
     const handelEducRef = () => {
         setLoading(true);
         dispatch(updateEducRef(guestReducer[guestReducer.length - 1]._id, educRef));
-        dispatch(getGuests());
         setLoading(false)
     }
 
     const handelMedicalRef = () => {
         setLoading(true);
         dispatch(updateMedicalRef(guestReducer[guestReducer.length - 1]._id, medicalRef));
-        dispatch(getGuests());
         setLoading(false)
     }
 
     const handelNext = () => {
-        if (educRef == "") {
-            setErrorEduc(true)
-        } if (medicalRef == "") {
-            setErrorMedical(true)
-        }
-        if (!medicalRef == "" && !educRef == "") {
-            history.push("/validation-guest")
-        }
+        history.push("/validation-guest")
     }
     return (
         <>
@@ -57,25 +46,27 @@ const RefsGuest = () => {
                             <h2 className="text-center">Références :</h2>
                         </Card.Header>
                         <Card.Body className="card-body" >
-                            <Row className="justify-content-center m-4" >
-                                <h5>Référent éducatif :</h5>
+                            <Form className="m-2" onSubmit={handelEducRef}>
+                                <Form.Label>
+                                 Référent éducatif
+                                </Form.Label>
                                 <Form.Control
-                                    as="select"
-                                    custom
-                                    onChange={(e) => { setEducRef(e.target.value) }}
-                                    required
+                                as="select"
+                                onChange={(e) => { setEducRef(e.target.value) }}
+                                required="true"
                                 >
-                                    <option >selectionner</option>
+                                <option >selectionner</option>
                                     {usersReducer.map((user) => {
-                                        if (user.team === "Éducative" && user.adminName === userReducer.name) {
+                                        if (user.team === "Éducative" && user.adminName === userReducer.name ||
+                                            user.team === "Éducative" && user.adminName === "Demo" ) {
                                             return (
                                                 <option key={user._id} value={user._id}>{user.surname} {user.name}</option>
                                             )
                                         }
                                     })}
                                 </Form.Control>
-                                <Button onClick={handelEducRef} className="w-100 mt-2">
-                                    {isLoading ? "Envoi..." : "Valider"}
+                                <Button type="submit" className="w-100 mt-2">
+                                    Envoyer
                                 </Button>
                                 {usersReducer.map((user) => {
                                     if (user._id === guestReducer[guestReducer.length - 1].educRef) {
@@ -83,12 +74,11 @@ const RefsGuest = () => {
                                     }
                                 })
                                 }
-                                {errorEduc &&
-                                    <Alert className="m-4" variant="danger">Veuillez selectionner votre référent éducatif</Alert>
-                                }
-                            </Row >
-                            <Row className="justify-content-center m-4 pt-4" >
-                                <h5>Référent Médical</h5>
+                            </Form>
+                            <Form className="m-2" onSubmit={handelMedicalRef}>
+                                <Form.Label>
+                                    Référent Médical
+                                </Form.Label>
                                 <Form.Control
                                     as="select"
                                     custom
@@ -97,26 +87,24 @@ const RefsGuest = () => {
                                 >
                                     <option >selectionner</option>
                                     {usersReducer.map((user) => {
-                                        if (user.team === "Médical" && user.adminName === userReducer.name) {
+                                        if (user.team === "Médical" && user.adminName === userReducer.name  ||
+                                        user.team === "Médical" && user.adminName === "Demo") {
                                             return (
                                                 <option key={user._id} value={user._id}>{user.surname} {user.name}</option>
                                             )
                                         }
                                     })}
                                 </Form.Control>
-                                <Button onClick={handelMedicalRef} className="w-100 mt-2">
-                                    {isLoading ? "Envoi..." : "Valider"}
+                                <Button type="submit" className="w-100 mt-2">
+                                    Envoyer
                                 </Button>
                                 {usersReducer.map((user) => {
                                     if (user._id === guestReducer[guestReducer.length - 1].medicalRef) {
-                                        return (<option className=" mt-2" key={user._id}>Reférent actuel : {user.surname} {user.name}</option>)
+                                        return (<p className=" mt-2" key={user._id}>Reférent actuel : {user.surname} {user.name}</p>)
                                     }
                                 })
                                 }
-                                {errorMedical &&
-                                    <Alert className="m-4" variant="danger">Veuillez selectionner votre référent médical</Alert>
-                                }
-                            </Row >
+                            </Form >
                         </Card.Body>
                         <Card.Footer>
                             <Row className="justify-content-center m-2">

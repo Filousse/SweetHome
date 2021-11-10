@@ -5,9 +5,9 @@ const Footer = (props) => {
     const home = props.home;
 
     return (
-        <footer style={{"relative":"absolute", "bottom":"0px"}} className="bg-dark w-100"  >
+         <>
             { home ? (
-                <Container className="text-center text-md-left p-2">
+                <Container className="bg-dark w-100 text-center text-md-left p-2">
                     <Row>
                         <Col className="md-6 mt-md-0">
                             <p className="m-4 text-uppercase text-light">Sweet Home</p>
@@ -31,9 +31,12 @@ const Footer = (props) => {
                             </ul>
                         </Col>
                     </Row>
+                    <Row className="bg-dark justify-content-center w-100 footer-copyright text-center text-light py-3">© 2021 Copyright:
+                        <a href="https://github.com/Filousse">  ThibaultBrasseur.dev</a>
+                    </Row>
                 </Container>
             ) : (
-                    <>
+                <Container className="bg-dark w-100" >
                             <Row className="justify-content-center">
                                 <h3 className="m-2 text-uppercase text-light">
                                 Sweet Home
@@ -43,12 +46,13 @@ const Footer = (props) => {
                                 <p className=" m-4 text-light text-center text-justify">Logiciel de gestion des dossiers de l'usager du secteur social et médicaux-social.
                                 </p>
                             </Row>
-                    </>
+                            <Row className="bg-dark justify-content-center w-100 footer-copyright text-center text-light py-3">© 2021 Copyright:
+                                <a href="https://github.com/Filousse">  ThibaultBrasseur.dev</a>
+                            </Row>
+                </Container>
                 )}
-            <div className="footer-copyright text-center text-light py-3">© 2021 Copyright:
-        <a href="https://github.com/Filousse">  ThibaultBrasseur.dev</a>
-            </div>
-        </footer>
+
+        </>
     )
 }
 
