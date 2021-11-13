@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/Filousse/mern-project/issues"
   },
+  "engines": {
+    "node": "14.17.2"
+  },
   "homepage": "https://github.com/Filousse/mern-project#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
