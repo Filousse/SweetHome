@@ -13,10 +13,10 @@ const app = express();
 const corsOptions = {
     origin: process.env.CLIENT_URL,
     credentials: true,
-    'allowedHeaders': ['sessionId', 'Content-Type'],
-    'exposedHeaders': ['sessionId'],
+    'allowedHeaders': ['sessionId', 'Content-Type', 'Origin', 'kid', 'gwk'],
+    'exposedHeaders': ['sessionId', 'kid', 'gwk'],
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTION',
-    'preflightContinue': false
+    'preflightContinue': true
   }
 app.use(cors(corsOptions));
 
