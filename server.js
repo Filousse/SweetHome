@@ -8,7 +8,6 @@ require("./config/db");
 const { checkUser, requireAuth } = require('./middleware/auth.middleware')
 const cors = require('cors');
 
-
 const app = express();
 
 const corsOptions = {
@@ -16,7 +15,7 @@ const corsOptions = {
     credentials: true,
     'allowedHeaders': ['sessionId', 'Content-Type'],
     'exposedHeaders': ['sessionId'],
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTION',
     'preflightContinue': false
   }
 app.use(cors(corsOptions));
