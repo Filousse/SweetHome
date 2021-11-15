@@ -13,8 +13,8 @@ const app = express();
 const corsOptions = {
     origin: process.env.CLIENT_URL,
     credentials: true,
-    'allowedHeaders': ['sessionId', 'Content-Type', 'Origin', 'kid', 'gwk'],
-    'exposedHeaders': ['sessionId', 'kid', 'gwk'],
+    'allowedHeaders': ['sessionId', 'Content-Type', 'Origin', 'kid', 'jwt'],
+    'exposedHeaders': ['sessionId', 'kid', 'jwt'],
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTION',
     'preflightContinue': true
   }
