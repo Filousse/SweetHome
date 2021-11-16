@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
-import { Container, Card, Form, Row, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Card, Form, Row, Button, Spinner } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { uploadGuestPicture } from "../../../actions/guest.actions"
+import { uploadGuestPicture } from "../../../actions/guest.actions";
+import { isEmpty } from "../../Utils"
+
 
 const PictureGuest = (props) => {
     const propsData = {...props};
     const guestReducer = useSelector((state) => state.guestReducer);
     const error = useSelector((state) => state.errorReducer.guestError);
     const dispatch = useDispatch();
+    const [isLoading, setLoading] = useState(true);
     const [file, setFile] = useState("");
+
+    useEffect(() => {
+        if(!isEmpty(guestReducer[guestReducer.length - 1])){
+            setLoading(false);
+        }else{window.location.reload(false)}
+    }, [guestReducer]);
 
     const handleCreatePicture = () => {
         const data = new FormData();
@@ -28,7 +37,12 @@ const PictureGuest = (props) => {
     };
 
     return (
-        <> 
+        <>
+        {isLoading ?(
+            <Row className="justify-content-center" style={{ marginTop: 100, height: 400 }}>
+                <Spinner animation="border" variant="primary" style={{ "top": "100px" }} />
+            </Row>        
+            ):(
             <Container className="justify-content-center p-4" style={{ "backgroundColor": "rgb(256,236,188)" }}>
             {!propsData.withoutFooter &&
                 <Row className="justify-content-center" >
@@ -47,7 +61,7 @@ const PictureGuest = (props) => {
                                         <img src={guestReducer[guestReducer.length - 1].picture} style={{ "width": "90%", "height": "90%", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
                                     ) : (
                                         <>
-                                            {guestReducer.map((guest) => {
+                                            {guestReducer && guestReducer.map((guest) => {
                                                 if (guest._id === propsData.guestId) {
                                                     return (<img src={guest.picture} style={{ "width": "250px", "height": "250px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />)
                                                 }
@@ -101,6 +115,7 @@ const PictureGuest = (props) => {
                     </Card>
                 </Row>
             </Container>
+        )}
         </>
     );
 };

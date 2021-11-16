@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Card } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import { srcExtension } from "../../Utils";
+import { srcExtension } from "../../Utils"
+import { isEmpty } from "../../Utils"
 
 
 const HeaderFile = (props) => {
     const propsData = { ...props };
     const guestReducer = useSelector(state => state.guestReducer)
     const usersReducer = useSelector(state => state.usersReducer)
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        !isEmpty(guestReducer) && !isEmpty(usersReducer) && setLoading(false);
+    }, [guestReducer, usersReducer]);
 
     return (
         <>
@@ -20,20 +27,20 @@ const HeaderFile = (props) => {
                             alt="logo_asso"
                         />
                     </Col>
-                    {guestReducer.map((guest) => {
+                    {guestReducer && guestReducer.map((guest) => {
                         if (guest._id == propsData.guestId) {
                             return (
                                 <>
                                     <Col xs lg={8} >
                                         <h3 className="text-responsive"> {propsData.widget} <br></br> {guest.name} {guest.surname}</h3>
-                                        {usersReducer.map((user) => {
+                                        {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guest.educRef) {
                                                 return (
                                                     <Card.Subtitle key={guest._id} className="mb-2 text-muted">Référent éducatif : {user.name} {user.surname}</Card.Subtitle>
                                                 )
                                             }
                                         })}
-                                        {usersReducer.map((user) => {
+                                        {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guest.medicalRef) {
                                                 return (
                                                     <Card.Subtitle key={guest._id} className="mb-2 text-muted">Référent médical : {user.name} {user.surname}</Card.Subtitle>

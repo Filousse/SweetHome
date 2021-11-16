@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Modal, Button } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import ListRef from "./ListRef"
 import ListNoRef from "./ListNoRef"
+import { isEmpty } from "../../Utils"
 
 function MydModalWithGrid(props) {
     const guestReducer = useSelector((state) => state.guestReducer);
@@ -11,6 +12,11 @@ function MydModalWithGrid(props) {
     const user_team = props.user_team;
     const user_adminName = props.user_adminName;
     const [toggleModal, setToggleModal] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        !isEmpty(guestReducer) && !isEmpty(usersReducer) && setLoading(false);
+    }, [guestReducer, usersReducer]);
 
     const handleToggle = () => {
         setToggleModal(!toggleModal);
@@ -19,7 +25,7 @@ function MydModalWithGrid(props) {
     return (
         <Modal {...props} aria-labelledby="contained-modal-title-center">
             <Modal.Header closeButton>
-                {usersReducer.map((user) => {
+                {usersReducer && usersReducer.map((user) => {
                     if (user._id === user_id) {
                         return (
                             <Modal.Title id="contained-modal-title-vcenter">
@@ -33,10 +39,11 @@ function MydModalWithGrid(props) {
                 {toggleModal
                     ? (
                         <>
-                            {guestReducer.map((guest) => {
+                            {guestReducer && guestReducer.map((guest) => {
                                 if (guest.educRef === user_id) {
                                     return (
                                         <ListRef
+                                            key={guest._id}
                                             user_team={user_team}
                                             guest_id={guest._id}
                                             guest_name={guest.name}
@@ -62,10 +69,10 @@ function MydModalWithGrid(props) {
                         <>
                             {user_team === "Éducative" &&
                                 <>
-                                    {guestReducer.map((guest) => {
+                                    {guestReducer && guestReducer.map((guest) => {
                                         if (guest.educRef === "") {
                                             return (
-                                                <>{guest.adminName}
+                                                <>
                                                     <ListNoRef
                                                         user_id={user_id}
                                                         guest_id={guest._id}
@@ -84,7 +91,7 @@ function MydModalWithGrid(props) {
                             }
                             {user_team === "Médical" &&
                                 <>
-                                    {guestReducer.map((guest) => {
+                                    {guestReducer && guestReducer.map((guest) => {
 
                                         if (guest.medicalRef === "") {
                                             return (

@@ -30,7 +30,7 @@ export const uploadPicture = (data, id) => {
             return axios
               .get(`${process.env.REACT_APP_API_URL}api/user/${id}`)
               .then((res) => {
-                dispatch({ type: UPLOAD_PICTURE, payload: res.datas });
+                dispatch({ type: UPLOAD_PICTURE, payload: res.data.photoProfil                });
               });
           }
         })

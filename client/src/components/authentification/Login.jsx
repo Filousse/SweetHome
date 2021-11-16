@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Form, Button, Card, Row, Container } from "react-bootstrap"
 import axios from 'axios'
-import { Link } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 
 export default function Login(props) {
   const data = { ...props };
@@ -10,6 +10,8 @@ export default function Login(props) {
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState();
   const [passwordError, setPasswordError] = useState();
+  const history = useHistory();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ export default function Login(props) {
           setLoading(false);
         } else {
           setLoading(true);
-          window.location = "/dashboard";
+          history.push("/dashboard")
         }
       })
       .catch((err) => {

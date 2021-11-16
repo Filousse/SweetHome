@@ -57,7 +57,6 @@ const UpdateProfil = () => {
                     <Alert className="w-100" style={{ cursor: "pointer", "height": 195  }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>
                       {userReducer.bio?(<p>{userReducer.bio}</p>):(<p>Écrivez votre message publique...</p>)}
                     </Alert>
-                  
                   <Button className="w-100" onClick={() => setUpdateForm(!updateForm)}>
                     Modifier
                   </Button>

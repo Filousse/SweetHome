@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Button, Modal } from "react-bootstrap"
 import { useDispatch } from "react-redux";
 import { deleteGuest } from "../../actions/guest.actions";
+import { useHistory } from "react-router-dom"
+
 
 const DeleteGuest = (props) => {
     const propsData = {...props}
     const dispatch = useDispatch();
-
+    const history = useHistory();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -14,7 +16,7 @@ const DeleteGuest = (props) => {
     const handleDelete = () => {
         dispatch(deleteGuest(propsData.DataId));
         handleClose(false);
-        window.location = "/guest";
+        history.push("/guest");
     };
 
     return (

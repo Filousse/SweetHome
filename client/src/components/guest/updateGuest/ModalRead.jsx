@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import { Modal, Button, Row } from 'react-bootstrap'
 import FilesGuest from "./FilesGuest"
 import { useSelector } from "react-redux"
+import { isEmpty } from "../../Utils"
 
 
 function ModalRead(props) {
-    const guestReducer = useSelector((state) => state.guestReducer)
+    const guestReducer = useSelector((state) => state.guestReducer);
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        !isEmpty(guestReducer) && setLoading(false);
+    }, [guestReducer]);
 
     return (
         <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
             <Modal.Header closeButton>
-                {guestReducer.map((guest) => {
+                {guestReducer && guestReducer.map((guest) => {
                     if (guest._id === props.idGuest) {
                         return (
                             <Row className="justify-content-center">

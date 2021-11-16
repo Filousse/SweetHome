@@ -33,7 +33,7 @@ function MydModalWithGrid(props) {
                 },
             }).then((res) => {
                 console.log(res);
-                window.location = "/dashboard";
+                history.push("/dashboard")
             })
                 .catch((err) => {
                     console.log(err);

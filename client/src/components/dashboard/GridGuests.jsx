@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Widget from './Widget';
 import { Row, Container } from 'react-bootstrap';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import { isEmpty } from "../Utils"
 
 const GridGuests = (props) => {
     const propsData = { ...props };
     const guestsReducer = useSelector((state) => state.guestReducer);
     const userReducer = useSelector((state) => state.userReducer);
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        !isEmpty(guestsReducer) && setLoading(false);
+    }, [guestsReducer]);
 
     return (
         <Container style={{ "maxWidth": "1200px", "minHeight": 550 }} className=" w-100 p-4">

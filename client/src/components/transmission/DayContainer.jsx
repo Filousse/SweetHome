@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Accordion, Card, Button, Form } from "react-bootstrap";
 import { useSelector } from "react-redux"
+import { isEmpty } from "../Utils"
 
 const DayContainer = (props) => {
     const days = { ...props }
     const guestReducer = useSelector(state => state.guestReducer)
     const userReducer = useSelector((state) => state.userReducer);
     const [write, setWrite] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [dayNote, setDayNote] = useState([
         {
             guestId: '',
             note: '',
         }
-    ])
+    ]);
+
+    useEffect(() => {
+        !isEmpty(guestReducer) && !isEmpty(userReducer) && setLoading(false);
+    }, [guestReducer, userReducer]);
 
     const date = new Date()
     var options = { weekday: "long", year: "numeric", month: "long", day: "2-digit" };
@@ -41,7 +47,7 @@ const DayContainer = (props) => {
             <Row className="justify-content-center m-3">
                 <h3 className="text-center">{days.day}</h3>
             </Row>
-            {guestReducer.map((guest) => {
+            {guestReducer && guestReducer.map((guest) => {
                 if (guest.adminName === userReducer.name || 
                     guest.adminName === "Demo" ||
                     guest.adminName === userReducer.adminName) {

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Form, Button, Card, Row, Container } from "react-bootstrap"
 import axios from "axios";
 import Login from "./Login";
-import { Link } from "react-router-dom"
 import { useSelector } from 'react-redux'
+import { useHistory, Link } from "react-router-dom"
+
 
 const Signup = (props) => {
   const createEmployee = props.createEmployee;
   const userData = useSelector((state) => state.userReducer);
+  const history = useHistory();
   const [formSubmit, setFormSubmit] = useState(false);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -84,7 +86,7 @@ const Signup = (props) => {
   };
 
   const handelBackEmployee = () => {
-    window.location = "/employee"
+    history.push("/employee")
   }
 
   return (

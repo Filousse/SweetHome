@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Button, Modal } from "react-bootstrap"
 import { useDispatch } from "react-redux";
 import { deleteUser } from "../../actions/user.actions";
-
+import { useHistory } from "react-router-dom"
 
 const DeleteUser = (props) => {
     const userData = { ...props }
     const dispatch = useDispatch();
-
+    const history = useHistory();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -20,7 +20,7 @@ const DeleteUser = (props) => {
         }else{
             dispatch(deleteUser(userData.id));
             handleClose(false);
-            window.location = "/employee";
+            history.push("/employee");
         }
 
     };

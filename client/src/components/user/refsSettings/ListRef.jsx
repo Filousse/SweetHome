@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions"
-import { isEmpty } from "../../Utils"
+import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions"
+import { isEmpty } from "../../Utils";
+import { useHistory } from "react-router-dom"
+
 
 const ListRef = (props) => {
+    const history = useHistory();
     const [ loading, setLoading ] = useState(false);
     const guestsReducer = useSelector((state) => state.guestsReducer);
     const propsData = {...props};
@@ -17,12 +20,12 @@ const ListRef = (props) => {
         if (propsData.user_team === "Éducative") {
             dispatch(updateEducRef(propsData.guest_id, ""));
             alert("Référence supprimé !");
-            window.location = "/employee";
+            history.push("/employee");
 
         } else {
             dispatch(updateMedicalRef(propsData.guest_id, ""));
             alert("Référence supprimé !");
-            window.location = "/employee";
+            history.push("/employee");
         }
     }
 

@@ -1,8 +1,11 @@
 import React from "react";
 import axios from "axios";
 import cookie from "js-cookie";
+import { useHistory } from "react-router-dom"
+
 
 const Logout = () => {
+  const history = useHistory();
   // Front remove 
   const removeCookie = (key) => {
     if (window !== "undefined") {
@@ -19,8 +22,7 @@ const Logout = () => {
     })
       .then(() => removeCookie("jwt"))
       .catch((err) => console.log(err));
-    
-    window.location = "/";
+      history.push("/")
   };
 
   return (

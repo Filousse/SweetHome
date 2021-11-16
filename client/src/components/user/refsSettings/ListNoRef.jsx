@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions"
 import { isEmpty } from "../../Utils"
+import { useHistory } from "react-router-dom"
 
 
 const ListNoRef = (props) => {
+    const history = useHistory();
     const propsData = { ...props };
     const guestsReducer = useSelector((state) => state.guestsReducer);
     const dispatch = useDispatch();
@@ -17,13 +19,13 @@ const ListNoRef = (props) => {
     const handelAddRef = (guestId) => {
         if (propsData.user_team === "Éducative") {
             dispatch(updateEducRef(guestId, propsData.user_id));
-            alert("Référence éducative ajouté !")
-            window.location = "/employee";
+            alert("Référence éducative ajouté !");
+            history.push("/employee");
         } else {
             dispatch(updateMedicalRef(guestId, propsData.user_id));
             dispatch(getGuests());
-            alert("Référence ajouté !")
-            window.location = "/employee";
+            alert("Référence ajouté !");
+            history.push("/employee");
         }
     }
 

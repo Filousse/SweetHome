@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Modal, Button, Form, Row } from "react-bootstrap";
+import { Modal, Spinner, Form, Row } from "react-bootstrap";
 import InfoDemo from "../files/guestFiles/InfoDemo";
-import { dateParser } from "../Utils"
+import { dateParser } from "../Utils";
+import { isEmpty } from "../Utils"
 
 const Timer = (props) => {
     const adminOnly = props.admin;
@@ -10,11 +11,23 @@ const Timer = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const userReducer = useSelector(state => state.userReducer)
-    const guestReducer = useSelector(state => state.guestReducer)
+    const userReducer = useSelector(state => state.userReducer);
+    const guestReducer = useSelector(state => state.guestReducer);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if(!isEmpty(guestReducer)){
+            setLoading(false);
+        }else{setLoading(true)}
+    }, [guestReducer]);
 
     return (
-        <>
+    <>
+       {loading ?
+        (
+            <Spinner animation="border" variant="primary" />
+        ):(
+            <>
             <img onClick={handleShow} src="./assets/icon/btn_Timer.png" style={{ "height": "50px", "width": "50px", "cursor": "pointer" }} alt="launchpad" />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className=" bg-warning" closeButton>
@@ -24,7 +37,7 @@ const Timer = (props) => {
                     <>
                         {!adminOnly &&
                             <>
-                                {guestReducer.map((guest) => {
+                                {guestReducer && guestReducer.map((guest) => {
                                     if (userReducer.name === guest.adminName ||
                                         guest.adminName === "Demo") {
                                         return (
@@ -60,7 +73,7 @@ const Timer = (props) => {
                             </>
                         }
                     </>
-                    {guestReducer.map((guest) => {
+                    {guestReducer && guestReducer.map((guest) => {
                         if (userReducer._id == guest.educRef) {
                             return (
                                 <Row className="justify-content-center m-1 w-100">
@@ -84,7 +97,7 @@ const Timer = (props) => {
                         }
                     })}
 
-                    {guestReducer.map((guest) => {
+                    {guestReducer && guestReducer.map((guest) => {
                         if (userReducer._id == guest.medicalRef) {
                             return (
                                 <Row className="justify-content-center m-1 w-100">
@@ -110,6 +123,8 @@ const Timer = (props) => {
                 </Modal.Body>
             </Modal>
         </>
+        )}
+    </>
     );
 };
 

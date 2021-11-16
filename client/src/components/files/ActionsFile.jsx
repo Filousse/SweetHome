@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import { ComponentToPrint } from './guestFiles/ComponentToPrint';
 import { clearUrlStyle } from "../Utils"
-import { Container, Row, Col, Alert } from "react-bootstrap"
+import { Container, Row, Col, Alert } from "react-bootstrap";
+import { isEmpty } from "../Utils"
 
 
 const ActionsFile = () => {
@@ -19,7 +20,13 @@ const ActionsFile = () => {
     const widgetUrl = url.substring(url.lastIndexOf("widget=") + 7)
     const widget = clearUrlStyle(widgetUrl)
     const componentRef = useRef();
-    const [showUpdate, setShowUpdate] = useState(true)
+    const [showUpdate, setShowUpdate] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        !isEmpty(guestReducer) && setLoading(false);
+    }, [guestReducer]);
 
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
