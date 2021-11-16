@@ -24,7 +24,7 @@ const NewGuest = () => {
             educRef,
             medicalRef,
         ));
-        history.push('./Picture-guest');
+        history.push('./references-guest');
     }
 
     return (

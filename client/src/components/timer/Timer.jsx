@@ -68,7 +68,7 @@ const Timer = (props) => {
                                                 </td>
                                             </tr>
                                         )
-                                    }
+                                    }else return null
                                 })}
                             </>
                         }

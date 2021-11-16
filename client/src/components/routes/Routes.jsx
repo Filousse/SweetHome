@@ -8,7 +8,7 @@ import Login from "../authentification/Login"
 import CreateUser from "../user/CreateUser"
 import UpdateProfil from "../profil/UpdateProfil"
 import NewGuest from "../guest/CreateGuest/NewGuest"
-import PictureGuest from "../guest/CreateGuest/PictureGuest"
+import PictureGuest from "../guest/updateGuest/PictureGuest"
 import RefsGuest from "../guest/CreateGuest/RefsGuest"
 import ValidationGuest from "../guest/CreateGuest/ValidationGuest"
 // Pages

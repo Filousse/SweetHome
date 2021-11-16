@@ -72,11 +72,11 @@ const RefsGuest = () => {
                                         </Form.Control>
                                         <Button type="submit" className="w-100 mt-2">
                                             Envoyer
-                                </Button>
+                                        </Button>
                                         {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guestReducer[guestReducer.length - 1].educRef) {
-                                                return (<option className=" mt-2" key={user._id}>Reférent actuel : {user.surname} {user.name}</option>)
-                                            }
+                                                return (<option className=" mt-2" key={user._id}>Reférent éducatif : {user.surname} {user.name}</option>)
+                                            }else return null
                                         })
                                         }
                                     </Form>
@@ -105,7 +105,7 @@ const RefsGuest = () => {
                                 </Button>
                                         {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guestReducer[guestReducer.length - 1].medicalRef) {
-                                                return (<p className=" mt-2" key={user._id}>Reférent actuel : {user.surname} {user.name}</p>)
+                                                return (<p className=" mt-2" key={user._id}>Reférent médical : {user.surname} {user.name}</p>)
                                             }
                                         })
                                         }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Modal, Button } from 'react-bootstrap'
-import PictureGuest from "../CreateGuest/PictureGuest"
+import PictureGuest from "../updateGuest/PictureGuest"
 import FilesGuest from "./FilesGuest"
 import { useSelector } from "react-redux"
 import { isEmpty } from "../../Utils"
