@@ -1,8 +1,15 @@
 import React from 'react';
 import { Container, Card, Row } from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 const ValidationGuest = (props) => {
+  const history = useHistory();
+
+  const handelReadsGuest = () => {
+    history.push("/guest");
+    window.location.reload();
+  }
 
   return (
     <Container className="justify-content-center p-4 " style={{ "backgroundColor": "rgb(256,236,188)", "height": 600 }} >
@@ -22,7 +29,7 @@ const ValidationGuest = (props) => {
           </Card.Body>
           <Card.Footer>
             <Row className="justify-content-center m-2">
-              <Link to='/guest'>Terminé</Link>
+              <Link onClick={handelReadsGuest}>Terminé</Link>
             </Row>
           </Card.Footer>
         </Card>

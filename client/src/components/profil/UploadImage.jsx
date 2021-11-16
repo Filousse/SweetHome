@@ -18,6 +18,7 @@ const userReducer = useSelector((state) => state.userReducer);
     data.append("file", file);
     dispatch(uploadPicture(data, userReducer._id));
     setLoading(!loading);
+    window.location.reload();
   };
 
   return (

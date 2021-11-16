@@ -34,7 +34,8 @@ export default function Login(props) {
           setLoading(false);
         } else {
           setLoading(true);
-          history.push("/dashboard")
+          history.push("/dashboard");
+          window.location.reload();
         }
       })
       .catch((err) => {

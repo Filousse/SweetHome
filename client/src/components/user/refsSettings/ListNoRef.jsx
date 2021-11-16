@@ -21,11 +21,14 @@ const ListNoRef = (props) => {
             dispatch(updateEducRef(guestId, propsData.user_id));
             alert("Référence éducative ajouté !");
             history.push("/employee");
+            window.location.reload();
         } else {
             dispatch(updateMedicalRef(guestId, propsData.user_id));
             dispatch(getGuests());
-            alert("Référence ajouté !");
+            alert("Référence médical ajouté !");
             history.push("/employee");
+            window.location.reload();
+
         }
     }
 

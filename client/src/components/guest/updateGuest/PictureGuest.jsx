@@ -21,10 +21,11 @@ const PictureGuest = (props) => {
 
     const handleUpdatePicture = () => {
         const data = new FormData();
-        data.append("name", guestReducer[guestReducer.length - 1].name);
+        data.append("name", propsData.guestName);
         data.append("guestId", propsData.guestId);
         data.append("file", file);
-        dispatch(uploadGuestPicture(data, guestReducer[guestReducer.length - 1]._id));
+        dispatch(uploadGuestPicture(data, propsData.guestId));
+        window.location.reload();
     };
 
     return (
@@ -38,7 +39,7 @@ const PictureGuest = (props) => {
                         <Row className="justify-content-center"  >
                             <Card className="justify-content-center mb-4" >
                                 <Card.Header className="justify-content-center">
-                                    <h2 className="text-center">Photo de profil :</h2>
+            <h2 className="text-center">Photo de profil :</h2>
                                 </Card.Header>
                                 <Card.Body className="justify-content-center" >
                                     <Row className="justify-content-center" style={{ "maxWidth": 450 }} >

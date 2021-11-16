@@ -33,7 +33,8 @@ function MydModalWithGrid(props) {
                 },
             }).then((res) => {
                 console.log(res);
-                history.push("/dashboard")
+                history.push("/dashboard");
+                window.location.reload()
             })
                 .catch((err) => {
                     console.log(err);

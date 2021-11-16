@@ -25,6 +25,7 @@ const NewGuest = () => {
             medicalRef,
         ));
         history.push('./references-guest');
+        window.location.reload();
     }
 
     return (

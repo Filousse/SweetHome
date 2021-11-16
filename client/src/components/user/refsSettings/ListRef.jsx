@@ -21,11 +21,12 @@ const ListRef = (props) => {
             dispatch(updateEducRef(propsData.guest_id, ""));
             alert("Référence supprimé !");
             history.push("/employee");
-
+            window.location.reload();
         } else {
             dispatch(updateMedicalRef(propsData.guest_id, ""));
             alert("Référence supprimé !");
             history.push("/employee");
+            window.location.reload();
         }
     }
 

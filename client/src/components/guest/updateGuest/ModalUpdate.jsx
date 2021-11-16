@@ -29,7 +29,18 @@ function UpdateGuest(props) {
             </Modal.Header>
             <Modal.Body className="show-grid">
                 <Container>
-                    <PictureGuest withoutFooter={true} guestId={props.idGuest} />
+                    {guestReducer && guestReducer.map((guest)=> {
+                        if(guest._id === props.idGuest){
+                            return(
+                                <PictureGuest 
+                                withoutFooter={true} 
+                                guestId={props.idGuest} 
+                                guestName={guest.name}
+                                />                            
+                            )
+                        }
+                    })}
+ 
                     {guestReducer && guestReducer.map((guest)=> {
                         if(guest._id === props.idGuest){
                             return(
