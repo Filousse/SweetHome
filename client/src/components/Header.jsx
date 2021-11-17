@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import axios from "axios"
 import { useSelector } from 'react-redux'
 import { useHistory, Link } from "react-router-dom"
 import { Navbar, Nav, Button } from "react-bootstrap"
@@ -13,13 +14,33 @@ export default function Header(props) {
   const history = useHistory();
   const userData = useSelector((state) => state.userReducer);
 
-  const handleSignIn = () => {
-    history.push("/signup")
-  }
+  // const handleSignIn = () => {
+  //   history.push("/signup")
+  // }
 
-  const handleLogin = () => {
-    history.push("/login")
-  }
+  // const handleLogin = () => {
+  //   history.push("/login")
+  // }
+
+
+  const handleVisitDemo = (e) => {
+    const email = "tibo@gmail.com";
+    const password = "tibotibo";
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}api/user/login`,
+      withCredentials: true,
+      data: { email, password,
+      },
+    })
+      .then((res) => {
+          history.push("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -27,9 +48,12 @@ export default function Header(props) {
         ? (
           <Navbar fixed="top" bg="info" variant="light" expand="md">
             <Navbar.Brand>
+              <Button onClick={handleVisitDemo} className="text-light" size="sm" style={{ "marginRight": "10px" }} variant="warning" >Profil de démonstration</Button>
+            </Navbar.Brand>
+            {/* <Navbar.Brand>
               <Button onClick={handleLogin} size="sm" style={{ "marginRight": "10px" }} variant="light" >Se connecter</Button>
               <Button onClick={handleSignIn} size="sm" style={{ "marginRight": "10px" }} variant="warning" >Essai Gratuit</Button>
-            </Navbar.Brand>
+            </Navbar.Brand> */}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -45,10 +69,11 @@ export default function Header(props) {
               <Link to="/update-profil">
                 <img
                   alt=""
-                  src={userData.photoProfil}
+                    src="./uploads/profil/random-user.png"
+                  // src={userData.photoProfil}
                   width="60"
                   height="60"
-                  style={{ 'borderRadius': '20px' }}
+                  style={{ 'borderRadius': '5px' }}
                 />
               </Link>
             </Navbar.Brand>

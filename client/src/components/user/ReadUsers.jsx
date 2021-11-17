@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import DeleteUser from './DeleteUser';
 import ModalRefs from './refsSettings/ModalRefs';
+import InfoDemo from "../files/guestFiles/InfoDemo";
+
 
 const ReadUsers = () => {
     const usersData = useSelector((state) => state.usersReducer);
@@ -22,13 +24,14 @@ const ReadUsers = () => {
                                 <th scope="col" className="text-light text-uppercase pl-4 pb-3" colspan="2">Équipe éducative</th>
                                 <th scope="col" className="text-light text-uppercase pb-3">Fonctions</th>
                                 <th scope="col" className="text-light pl-4" colspan="2">
-                                    <Link to="/new-user" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
+                                <InfoDemo createEmploye={true} />
+                                    {/* <Link to="/new-user" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
                                         <img
                                             src="./assets/icon/btn_AddUser.png"
                                             style={{ "height": "45px", "width": "45px" }}
                                             alt="btn_AddUser"
                                         />
-                                    </Link>
+                                    </Link> */}
                                 </th>
                             </tr>
                         </thead>
@@ -77,13 +80,14 @@ const ReadUsers = () => {
                                 <th scope="col" className="text-light text-uppercase pl-4 pb-3" colspan="2">Équipe médical</th>
                                 <th scope="col" className="text-light text-uppercase pb-3">Fonctions</th>
                                 <th scope="col" className="text-light pl-4" colspan="2">
-                                    <Link to="/new-user" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
+                                <InfoDemo createEmploye={true} />
+                                    {/* <Link to="/new-user" style={{ cursor: "pointer", borderRadius: '25px' }} className="p-1 bg-light" >
                                         <img
                                             src="./assets/icon/btn_AddUser.png"
                                             style={{ "height": "45px", "width": "45px" }}
                                             alt="btn_AddUser"
                                         />
-                                    </Link>
+                                    </Link> */}
                                 </th>
                             </tr>
                         </thead>

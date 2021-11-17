@@ -8,7 +8,7 @@ const ValidationGuest = (props) => {
 
   const handelReadsGuest = () => {
     history.push("/guest");
-    window.location.reload();
+    // window.location.reload();
   }
 
   return (

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Modal } from "react-bootstrap"
 import { useDispatch } from "react-redux";
-import { deleteUser } from "../../actions/user.actions";
-import { useHistory } from "react-router-dom"
+// import { deleteUser } from "../../actions/user.actions";
+import { useHistory } from "react-router-dom";
+import InfoDemo from "../files/guestFiles/InfoDemo";
+
 
 const DeleteUser = (props) => {
     const userData = { ...props }
@@ -13,17 +15,17 @@ const DeleteUser = (props) => {
     const handleShow = () => setShow(true);
     const [demoUser, setDemoUser] = useState(false);
 
-    const handleDelete = () => {
-        if (userData.surname === "Thomas" ||
-            userData.surname === "Yasmine") {
-            setDemoUser(true)
-        }else{
-            dispatch(deleteUser(userData.id));
-            handleClose(false);
-            history.push("/employee");
-        }
-
-    };
+// Ready for reel Version
+    // const handleDelete = () => {
+    //     if (userData.surname === "Thomas" ||
+    //         userData.surname === "Yasmine") {
+    //         setDemoUser(true)
+    //     }else{
+    //         dispatch(deleteUser(userData.id));
+    //         handleClose(false);
+    //         history.push("/employee");
+    //     }
+    // };
 
     return (
         <>
@@ -49,14 +51,14 @@ const DeleteUser = (props) => {
                         </Modal.Body>
                     )}
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <InfoDemo deleteEmploye={true} />
+                    {/* <Button variant="secondary" onClick={handleClose}>
                         Annuler
                     </Button>
                     {!demoUser &&
                     <Button variant="primary" onClick={handleDelete}>
                         Supprimer
-                    </Button>
-                    }
+                    </Button> */}
                 </Modal.Footer>
             </Modal>
         </>

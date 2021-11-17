@@ -87,7 +87,7 @@ const Signup = (props) => {
 
   const handelBackEmployee = () => {
     history.push("/employee")
-    window.location.reload();
+    // window.location.reload();
   }
 
   return (

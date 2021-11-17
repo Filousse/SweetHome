@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { FormControl, Button, Card, Row, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import UploadImage from "./UploadImage";
-import { updateBio } from "../../actions/user.actions";
+// import { updateBio } from "../../actions/user.actions";
 import { dateParser } from "../Utils";
 import Header from "../../components/Header";
 import { isEmpty } from "../Utils";
+import InfoDemo from "../files/guestFiles/InfoDemo";
 
 
 const UpdateProfil = () => {
@@ -19,11 +20,11 @@ const UpdateProfil = () => {
   useEffect(() => {
     !isEmpty(userReducer) && setLoading(false);
   }, [userReducer]);
-
-  const handleUpdate = () => {
-    dispatch(updateBio(userReducer._id, bio));
-    setUpdateForm(false);
-  };
+  // Ready for reel Version
+  // const handleUpdate = () => {
+  //   dispatch(updateBio(userReducer._id, bio));
+  //   setUpdateForm(false);
+  // };
 
   return (
     <>
@@ -36,7 +37,8 @@ const UpdateProfil = () => {
           <Card.Body className="card-body" >
             <Row className="justify-content-center m-2" >
               <h5>Photo de profil</h5>
-              <img src={userReducer.photoProfil} style={{ "width": "200px", "height": "200px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
+              <img src="./uploads/profil/random-user.png" style={{ "width": "200px", "height": "200px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" />
+              {/* <img src={userReducer.photoProfil} style={{ "width": "200px", "height": "200px", "marginBottom": "10px", "borderRadius": "20px" }} alt="user-picture" /> */}
               <br />
               {error.maxSize &&
                 <p class="text-danger"> {error.maxSize}</p>
@@ -57,6 +59,7 @@ const UpdateProfil = () => {
                     <Alert className="w-100" style={{ cursor: "pointer", "height": 195  }} variant={"info"} onClick={() => setUpdateForm(!updateForm)}>
                       {userReducer.bio?(<p>{userReducer.bio}</p>):(<p>Écrivez votre message publique...</p>)}
                     </Alert>
+                    {/* <InfoDemo bio={true} /> */}
                   <Button className="w-100" onClick={() => setUpdateForm(!updateForm)}>
                     Modifier
                   </Button>
@@ -70,9 +73,10 @@ const UpdateProfil = () => {
                     onChange={(e) => setBio(e.target.value)}
                     style={{ "width": "250px", "height": "200px", "marginBottom": "10px" }}
                   />
-                  <Button onClick={handleUpdate} className="w-100" >
+                  <InfoDemo photoUser={true} />
+                  {/* <Button onClick={handleUpdate} className="w-100" >
                     Valider
-              </Button>
+                  </Button> */}
                 </>
               )}
               <p style={{textAlign: "center"}}>Membre depuis le : {dateParser(userReducer.createdAt)}</p>

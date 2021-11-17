@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Card, Form, Row, Button } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom'
-import { addGuest } from '../../../actions/guest.actions'
+import { useHistory, Link } from 'react-router-dom'
+// import { addGuest } from '../../../actions/guest.actions'
+import InfoDemo from "../../files/guestFiles/InfoDemo";
+
 
 const NewGuest = () => {
     const dispatch = useDispatch()
@@ -12,21 +14,21 @@ const NewGuest = () => {
     const [dateBirthday, setDateBirthday] = useState("");
     const userData = useSelector((state) => state.userReducer);
 
-    const handleCreateGuest = () => {
-        const adminName = userData.name;
-        const educRef = "";
-        const medicalRef = "";
-        dispatch(addGuest(
-            name,
-            surname,
-            dateBirthday,
-            adminName,
-            educRef,
-            medicalRef,
-        ));
-        history.push('./references-guest');
-        window.location.reload();
-    }
+    // const handleCreateGuest = () => {
+    //     const adminName = userData.name;
+    //     const educRef = "";
+    //     const medicalRef = "";
+    //     dispatch(addGuest(
+    //         name,
+    //         surname,
+    //         dateBirthday,
+    //         adminName,
+    //         educRef,
+    //         medicalRef,
+    //     ));
+    //     history.push('./references-guest');
+    //     window.location.reload();
+    // }
 
     return (
         <>
@@ -40,7 +42,7 @@ const NewGuest = () => {
                             <h2 className="text-center">Nouveau dossier bénéficiare</h2>
                         </Card.Header>
                         <Card.Body>
-                            <Form onSubmit={handleCreateGuest}>
+                            <Form >
                                 <Form.Group>
                                     <Form.Label>
                                         Noms
@@ -80,9 +82,15 @@ const NewGuest = () => {
                                     >
                                     </Form.Control>
                                 </Form.Group>
-                                <Button className="w-100 mt-3" type="submit" >Créer le dossier bénéficiare</Button>
+                                <InfoDemo newGuest={true} />
+                                {/* <Button className="w-100 mt-3" type="submit" >Créer le dossier bénéficiare</Button> */}
                             </Form>
                         </Card.Body>
+                        <Card.Footer>
+                            <Row className="justify-content-center m-2">
+                                <Link to="/references-guest">Suivant</Link>
+                            </Row>
+                        </Card.Footer>
                     </Card>
                 </Row>
             </Container >

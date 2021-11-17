@@ -3,6 +3,7 @@ import { Container, Card, Form, Row, Button, Spinner } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { uploadGuestPicture } from "../../../actions/guest.actions";
 import { isEmpty } from "../../Utils"
+import InfoDemo from "../../files/guestFiles/InfoDemo";
 
 
 const PictureGuest = (props) => {
@@ -18,15 +19,15 @@ const PictureGuest = (props) => {
             setLoading(false);
         }
     }, [guestReducer]);
-
-    const handleUpdatePicture = () => {
-        const data = new FormData();
-        data.append("name", propsData.guestName);
-        data.append("guestId", propsData.guestId);
-        data.append("file", file);
-        dispatch(uploadGuestPicture(data, propsData.guestId));
-        window.location.reload();
-    };
+    // Ready for reel Version
+    // const handleUpdatePicture = () => {
+    //     const data = new FormData();
+    //     data.append("name", propsData.guestName);
+    //     data.append("guestId", propsData.guestId);
+    //     data.append("file", file);
+    //     dispatch(uploadGuestPicture(data, propsData.guestId));
+    //     // window.location.reload();
+    // };
 
     return (
         <>
@@ -39,7 +40,7 @@ const PictureGuest = (props) => {
                         <Row className="justify-content-center"  >
                             <Card className="justify-content-center mb-4" >
                                 <Card.Header className="justify-content-center">
-            <h2 className="text-center">Photo de profil :</h2>
+                                    <h2 className="text-center">Photo de profil :</h2>
                                 </Card.Header>
                                 <Card.Body className="justify-content-center" >
                                     <Row className="justify-content-center" style={{ "maxWidth": 450 }} >
@@ -67,9 +68,10 @@ const PictureGuest = (props) => {
                                                 onChange={(e) => setFile(e.target.files[0])}
                                             />
                                             <Row className="justify-content-center">
-                                                <Button className="w-50" onClick={handleUpdatePicture}>
+                                            <InfoDemo pictureGuest={true} />
+                                                {/* <Button className="w-50" onClick={handleUpdatePicture}>
                                                     Valider
-                                                </Button>
+                                                </Button> */}
                                             </Row>
                                         </Form>
                                     </Row>

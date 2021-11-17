@@ -5,6 +5,7 @@ export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
 export const UPDATE_BIO = "UPDATE_BIO";
 export const DELETE_USER = "DELETE_USER";
 
+
 export const GET_USER_ERRORS = "GET_USER_ERRORS";
 
 export const getUser = (uid) => {

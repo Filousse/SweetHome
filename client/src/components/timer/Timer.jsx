@@ -64,7 +64,7 @@ const Timer = (props) => {
                                                     </Form.Control>
                                                 </td>
                                                 <td class="table-warning p-2" >
-                                                    <InfoDemo />
+                                                    <InfoDemo timer={true} />
                                                 </td>
                                             </tr>
                                         )

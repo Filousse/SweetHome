@@ -29,7 +29,7 @@ const ReadGuests = () => {
                 </Row>
             ) : (
                     <Container style={{ "minHeight": 550 }} fluid className="justify-content-center">
-                        <Row className="justify-content-center mt-5 mb-5">
+                        <Row className="justify-content-center mt-5 mb-5 m-0">
                             <Row className="w-75 justify-content-center bg-secondary rounded-lg m-2" style={{ "minWidth": 320 }}>
                                 <h3 className="text-light text-center text-uppercase p-2">Gestion des bénéficiares</h3>
                             </Row >

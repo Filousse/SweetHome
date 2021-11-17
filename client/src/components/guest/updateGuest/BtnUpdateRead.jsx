@@ -25,10 +25,10 @@ const BtnUpdateRead = (props) => {
               data.adminName === "Demo" && !userReducer.adminName ) 
                 ?(
                     <img
-                    onClick={handleUpdateGuest}
-                    src="./assets/icon/btn_Update.png"
-                    style={{ width: "30px", height: "30px", cursor: "pointer" }}
-                    alt="btn_Update"
+                        onClick={handleUpdateGuest}
+                        src="./assets/icon/btn_Update.png"
+                        style={{ width: "30px", height: "30px", cursor: "pointer" }}
+                        alt="btn_Update"
                     />
                 ) : (
                     <img

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Modal } from "react-bootstrap"
 import { useDispatch } from "react-redux";
-import { deleteGuest } from "../../actions/guest.actions";
+// import { deleteGuest } from "../../actions/guest.actions";
 import { useHistory } from "react-router-dom"
+import InfoDemo from "../files/guestFiles/InfoDemo";
 
 
 const DeleteGuest = (props) => {
@@ -12,12 +13,13 @@ const DeleteGuest = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const handleDelete = () => {
-        dispatch(deleteGuest(propsData.DataId));
-        handleClose(false);
-        history.push("/guest");
-    };
+    
+    // Ready for reel Version
+    // const handleDelete = () => {
+    //     dispatch(deleteGuest(propsData.DataId));
+    //     handleClose(false);
+    //     history.push("/guest");
+    // };
 
     return (
     <>
@@ -38,9 +40,10 @@ const DeleteGuest = (props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Annuler
                         </Button>
-                    <Button variant="primary" onClick={handleDelete}>
+                        <InfoDemo deleteGuest={true} />
+                        {/* <Button variant="primary" onClick={handleDelete}>
                         Supprimer
-                        </Button>
+                        </Button> */}
                 </Modal.Footer>
             </Modal>
     </>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions";
+// import { updateEducRef, updateMedicalRef, getGuests } from "../../../actions/guest.actions";
 import { Link, useHistory } from "react-router-dom";
 import { Card, Form, Row, Button, Container, Spinner } from 'react-bootstrap';
 import { isEmpty } from "../../Utils";
+import InfoDemo from "../../files/guestFiles/InfoDemo";
+
 
 const RefsGuest = () => {
     const guestReducer = useSelector((state) => state.guestReducer);
@@ -18,18 +20,18 @@ const RefsGuest = () => {
     useEffect(() => {
         !isEmpty(guestReducer) && setLoading(false);
     }, [guestReducer]);
+    // Ready for reel Version
+    // const handelEducRef = () => {
+    //     setLoading(true);
+    //     dispatch(updateEducRef(guestReducer[guestReducer.length - 1]._id, educRef));
+    //     setLoading(false)
+    // }
 
-    const handelEducRef = () => {
-        setLoading(true);
-        dispatch(updateEducRef(guestReducer[guestReducer.length - 1]._id, educRef));
-        setLoading(false)
-    }
-
-    const handelMedicalRef = () => {
-        setLoading(true);
-        dispatch(updateMedicalRef(guestReducer[guestReducer.length - 1]._id, medicalRef));
-        setLoading(false)
-    }
+    // const handelMedicalRef = () => {
+    //     setLoading(true);
+    //     dispatch(updateMedicalRef(guestReducer[guestReducer.length - 1]._id, medicalRef));
+    //     setLoading(false)
+    // }
 
     const handelNext = () => {
         history.push("/validation-guest")
@@ -51,7 +53,7 @@ const RefsGuest = () => {
                                     <h2 className="text-center">Références :</h2>
                                 </Card.Header>
                                 <Card.Body className="card-body" >
-                                    <Form className="m-2" onSubmit={handelEducRef}>
+                                    <Form className="m-2" >
                                         <Form.Label>
                                             Référent éducatif
                                 </Form.Label>
@@ -70,17 +72,18 @@ const RefsGuest = () => {
                                                 }
                                             })}
                                         </Form.Control>
-                                        <Button type="submit" className="w-100 mt-2">
+                                        <InfoDemo refsGuest={true} />
+                                        {/* <Button type="submit" className="w-100 mt-2">
                                             Envoyer
-                                        </Button>
-                                        {usersReducer && usersReducer.map((user) => {
+                                        </Button> */}
+                                        {/* {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guestReducer[guestReducer.length - 1].educRef) {
                                                 return (<option className=" mt-2" key={user._id}>Reférent éducatif : {user.surname} {user.name}</option>)
                                             }else return null
                                         })
-                                        }
+                                        } */}
                                     </Form>
-                                    <Form className="m-2" onSubmit={handelMedicalRef}>
+                                    <Form className="m-2" >
                                         <Form.Label>
                                             Référent Médical
                                 </Form.Label>
@@ -100,15 +103,16 @@ const RefsGuest = () => {
                                                 }
                                             })}
                                         </Form.Control>
-                                        <Button type="submit" className="w-100 mt-2">
+                                        <InfoDemo refsGuest={true} />
+                                        {/* <Button type="submit" className="w-100 mt-2">
                                             Envoyer
-                                </Button>
-                                        {usersReducer && usersReducer.map((user) => {
+                                        </Button> */}
+                                        {/* {usersReducer && usersReducer.map((user) => {
                                             if (user._id === guestReducer[guestReducer.length - 1].medicalRef) {
                                                 return (<p className=" mt-2" key={user._id}>Reférent médical : {user.surname} {user.name}</p>)
                                             }
                                         })
-                                        }
+                                        } */}
                                     </Form >
                                 </Card.Body>
                                 <Card.Footer>

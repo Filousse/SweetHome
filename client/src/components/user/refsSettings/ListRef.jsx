@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions"
+// import { updateEducRef, updateMedicalRef } from "../../../actions/guest.actions"
 import { isEmpty } from "../../Utils";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
+import InfoDemo from "../../files/guestFiles/InfoDemo";
 
 
 const ListRef = (props) => {
@@ -15,20 +16,20 @@ const ListRef = (props) => {
     useEffect(() => {
         !isEmpty(guestsReducer) && setLoading(false);
     }, [guestsReducer]);
-
-    const handelDeleteRef = () => {
-        if (propsData.user_team === "Éducative") {
-            dispatch(updateEducRef(propsData.guest_id, ""));
-            alert("Référence supprimé !");
-            history.push("/employee");
-            window.location.reload();
-        } else {
-            dispatch(updateMedicalRef(propsData.guest_id, ""));
-            alert("Référence supprimé !");
-            history.push("/employee");
-            window.location.reload();
-        }
-    }
+    // Ready for reel Version
+    // const handelDeleteRef = () => {
+    //     if (propsData.user_team === "Éducative") {
+    //         dispatch(updateEducRef(propsData.guest_id, ""));
+    //         alert("Référence supprimé !");
+    //         history.push("/employee");
+    //         // window.location.reload();
+    //     } else {
+    //         dispatch(updateMedicalRef(propsData.guest_id, ""));
+    //         alert("Référence supprimé !");
+    //         history.push("/employee");
+    //         // window.location.reload();
+    //     }
+    // }
 
     return (
         <>
@@ -57,12 +58,13 @@ const ListRef = (props) => {
                             <td class="table-warning" ></td>
                             <td class="table-warning" ></td>
                             <td class="table-warning" >
-                                <img
+                                <InfoDemo deleteRefEmploye={true} />
+                                {/* <img
                                     onClick={() => handelDeleteRef(propsData.guest_id)}
                                     src="./assets/icon/btn_Delete.png"
                                     style={{ width: "30px", height: "30px", cursor: "pointer" }}
                                     alt="basket_icon"
-                                />
+                                /> */}
                             </td>
                         </tr>
                     </tbody>
