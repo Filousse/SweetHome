@@ -23,7 +23,7 @@ const App = () => {
         .catch((err) => console.log("No token"));
     };
     fetchToken();
-    if (uid) dispatch(getUser(uid));
+    if (uid) dispatch(getUser("uid"));
   }, [uid, dispatch]);
 
   return (
