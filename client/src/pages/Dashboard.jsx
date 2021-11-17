@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <>
       <Header logout={true}></Header>
-      <SwitchUser />
+      {/* <SwitchUser /> */}
       <GridWidgets />
     </>
   );

@@ -7,23 +7,24 @@ import Routes from "./components/routes/Routes";
 
 
 const App = () => {
-  const [uid, setUid] = useState(null);
+  const [uid, setUid] = useState("null");
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchToken = async () => {
-      await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_API_URL}jwtid`,
-        withCredentials: true,
-      })
-        .then((res) => {
-          setUid(res.data);
-        })
-        .catch((err) => console.log("No token"));
+      console.log("JWT don't work!")
+      // await axios({
+      //   method: "get",
+      //   url: `${process.env.REACT_APP_API_URL}jwtid`,
+      //   withCredentials: true,
+      // })
+      //   .then((res) => {
+      //     setUid(res.data);
+      //   })
+      //   .catch((err) => console.log("No token"));
     };
     fetchToken();
-    if (uid) dispatch(getUser("uid"));
+    if (uid) dispatch(getUser(uid));
   }, [uid, dispatch]);
 
   return (
