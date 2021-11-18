@@ -28,12 +28,11 @@ const ReadGuests = () => {
                     <Spinner animation="border" variant="primary" style={{ "top": "100px" }} />
                 </Row>
             ) : (
-                    <Container style={{ "minHeight": 550 }} fluid className="justify-content-center">
-                        <Row className="justify-content-center mt-5 mb-5 m-0">
-                            <Row className="w-75 justify-content-center bg-secondary rounded-lg m-2" style={{ "minWidth": 320 }}>
-                                <h3 className="text-light text-center text-uppercase p-2">Gestion des bénéficiares</h3>
-                            </Row >
-                            <table className="table table-sm w-75 mb-4">
+                    <Container style={{ "minHeight": 550 }} className="justify-content-center p-2">
+                        <Row className="mb-2 justify-content-center bg-secondary rounded-lg" style={{ "margin": 0 }}>
+                            <h3 className="text-light text-center text-uppercase p-2">Gestion des bénéficiares</h3>
+                        </Row >
+                        <table className="table table-sm mb-4">
                                 <thead class="bg-warning">
                                     <tr class="bg-warning">
                                         <th scope="col" colspan="2" className="text-light text-uppercase pl-2 pb-4">Bénéficiares</th>
@@ -139,11 +138,9 @@ const ReadGuests = () => {
                                     })}
                                 </tbody>
                             </table>
-                        </Row>
                     </Container>
                 )}
         </>
-
     );
 };
 
